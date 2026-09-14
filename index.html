@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Салон красоты «Кима» — Шахтинск</title>
+<meta name="description" content="Окрашивание, стрижки и восстановление волос в Шахтинске. Стилисты Анастасия, Татьяна и Антонина. Абая, 78 · ежедневно 10:00–19:00. Запись в WhatsApp.">
+<meta name="theme-color" content="#F7F2EA">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Салон красоты «Кима» — Шахтинск">
+<meta property="og:description" content="Окрашивание, стрижки и восстановление волос. Работы стилистов, отзывы и онлайн-запись в WhatsApp.">
+<meta property="og:image" content="https://webdesign321321.github.io/salon-kima-shakhtinsk/og.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%A8%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#F7F2EA; --cream:#EFE6D8; --sand:#E2D3BE; --line:rgba(43,33,27,.14); --espresso:#2B211B; --cocoa:#6B5646; --muted:#8C7A6B;
+  --gold:#B08A52; --gold2:#D6B57C; --blush:#E9D5C8; --white:#FFFDF9; --wa:#1FA855;
+  --serif:'Playfair Display',Georgia,'Times New Roman',serif; --sans:'Golos Text',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box}
+html{background:var(--ivory);-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--ivory);color:var(--espresso);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+[hidden]{display:none!important}
+::selection{background:var(--gold2);color:var(--espresso)}
+.wrap{width:min(1280px,100% - 32px);margin-inline:auto}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:11px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+.eyebrow::before{content:"";width:34px;height:1px;background:currentColor}
+.h2{margin:14px 0 0;font-family:var(--serif);font-weight:400;font-size:clamp(40px,6vw,88px);line-height:1;letter-spacing:-.02em}
+.h2 em,.h1 em{font-style:italic;color:var(--gold)}
+.lead{color:var(--cocoa);font-size:17px;max-width:520px}
+.sec{padding-block:clamp(80px,11vw,160px)}
+.head{display:grid;gap:18px;margin-bottom:clamp(40px,5vw,70px)}
+.head>p{margin:0}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:54px;padding:0 28px;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;transition:transform .4s var(--ease),background .3s,color .3s,box-shadow .4s;white-space:nowrap}
+.btn-dark{background:var(--espresso);color:var(--ivory);box-shadow:0 18px 40px -22px rgba(43,33,27,.8)}
+.btn-dark:hover{background:#3b2e25;transform:translateY(-2px)}
+.btn-line{border:1px solid rgba(43,33,27,.35)}
+.btn-line:hover{background:var(--espresso);color:var(--ivory)}
+.btn-wa{background:var(--wa);color:#fff}
+.btn svg{width:18px;height:18px}
+
+/* intro */
+.intro{position:fixed;inset:0;z-index:100;display:none;place-items:center;background:var(--ivory);cursor:pointer}
+.anim .intro{display:grid}
+.intro .mark{position:relative;text-align:center}
+.intro svg{width:min(200px,46vw);height:auto;overflow:visible}
+.intro svg path{fill:none;stroke:var(--gold);stroke-width:1.2}
+.intro .name{margin-top:-8px;font-family:var(--serif);font-style:italic;font-size:clamp(54px,9vw,96px);line-height:1;overflow:hidden}
+.intro .name span{display:inline-block}
+.intro .sub{margin-top:12px;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--muted)}
+
+/* header */
+.hdr{position:fixed;inset:0 0 auto;z-index:50;transition:background .4s,box-shadow .4s,backdrop-filter .4s}
+.hdr.solid{background:rgba(247,242,234,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+.hdr .wrap{height:76px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{display:flex;flex-direction:column;line-height:1}
+.logo b{font-family:var(--serif);font-style:italic;font-weight:500;font-size:28px}
+.logo small{margin-top:4px;font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--muted)}
+.nav{display:none;gap:30px;font-size:14px}
+.nav a{position:relative;color:var(--cocoa)}
+.nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-5px;height:1px;background:var(--gold);transition:right .4s var(--ease)}
+.nav a:hover::after{right:0}
+.hdr .btn{height:44px;padding:0 20px;font-size:12px}
+
+/* hero */
+.hero{position:relative;padding-block:112px 50px;overflow:hidden}
+.hero-grid{display:grid;gap:40px;align-items:center}
+.h1{margin:18px 0 22px;font-family:var(--serif);font-weight:400;font-size:clamp(52px,9vw,128px);line-height:.95;letter-spacing:-.03em}
+.h1 .ln{display:block;overflow:hidden;padding-bottom:.08em}
+.h1 .ln>span{display:inline-block}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:44px;border-top:1px solid var(--line)}
+.stats div{padding:18px 12px 0 0}
+.stats div+div{padding-left:14px;border-left:1px solid var(--line)}
+.stats b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(28px,3.4vw,44px);line-height:1}
+.stats span{display:block;margin-top:8px;font-size:12px;color:var(--muted);line-height:1.35}
+.art{position:relative;width:min(100%,520px);justify-self:center}
+.arch{position:relative;border-radius:999px 999px 20px 20px;overflow:hidden;aspect-ratio:4/5;background:var(--sand)}
+.arch img{width:100%;height:100%;object-fit:cover}
+.arch-outline{position:absolute;inset:-14px -14px 14px 14px;border:1px solid var(--gold);border-radius:999px 999px 26px 26px;pointer-events:none}
+.bubble{position:absolute;left:-26px;bottom:14%;width:clamp(120px,32%,178px);aspect-ratio:1;border-radius:50%;overflow:hidden;border:6px solid var(--ivory);box-shadow:0 30px 60px -30px rgba(43,33,27,.5)}
+.bubble img{width:100%;height:100%;object-fit:cover;object-position:30% 20%}
+.seal{position:absolute;right:-18px;top:8%;width:128px;height:128px}
+.seal svg{width:100%;height:100%;animation:spin 22s linear infinite}
+.seal .core{position:absolute;inset:30px;border-radius:50%;background:var(--espresso);color:var(--ivory);display:grid;place-items:center;text-align:center;line-height:1}
+.seal .core b{display:block;font-family:var(--serif);font-size:30px;font-weight:400}
+.seal .core small{display:block;font-size:9px;letter-spacing:.14em;text-transform:uppercase;margin-top:3px;color:var(--gold2)}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* marquee */
+.marquee{border-block:1px solid var(--line);padding-block:20px;overflow:hidden;background:var(--cream)}
+.marquee .tr{display:flex;width:max-content;animation:mq 42s linear infinite}
+.marquee span{font-family:var(--serif);font-style:italic;font-size:clamp(26px,3.6vw,46px);white-space:nowrap;padding-right:34px}
+.marquee span i{font-style:normal;color:var(--gold);font-size:.5em;vertical-align:.35em;padding-left:34px}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* before/after */
+.ba-grid{display:grid;gap:40px;align-items:center}
+.ba{position:relative;width:min(100%,460px);aspect-ratio:9/15;border-radius:24px;overflow:hidden;justify-self:center;box-shadow:0 40px 80px -40px rgba(43,33,27,.55);user-select:none;touch-action:pan-y;background:var(--sand)}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba .after{clip-path:inset(0 0 0 var(--x,50%))}
+.ba .handle{position:absolute;top:0;bottom:0;left:var(--x,50%);width:2px;margin-left:-1px;background:var(--ivory);pointer-events:none}
+.ba .handle::after{content:"⟷";position:absolute;top:50%;left:50%;width:52px;height:52px;margin:-26px 0 0 -26px;border-radius:50%;background:var(--ivory);color:var(--espresso);display:grid;place-items:center;font-size:18px;box-shadow:0 10px 30px -10px rgba(0,0,0,.5)}
+.ba .tag{position:absolute;top:16px;padding:6px 12px;border-radius:999px;background:rgba(43,33,27,.6);color:var(--ivory);font-size:11px;letter-spacing:.18em;text-transform:uppercase;backdrop-filter:blur(6px)}
+.ba .t-before{left:16px}.ba .t-after{right:16px}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.quote-big{margin:26px 0 0;font-family:var(--serif);font-style:italic;font-size:clamp(26px,3vw,40px);line-height:1.2}
+.who{margin-top:18px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* portfolio */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px}
+.chip{height:42px;padding:0 18px;border-radius:999px;border:1px solid var(--line);font-size:14px;color:var(--cocoa);transition:background .3s,color .3s,border-color .3s}
+.chip[aria-pressed="true"]{background:var(--espresso);border-color:var(--espresso);color:var(--ivory)}
+.grid{columns:2;column-gap:12px}
+.work{position:relative;display:block;width:100%;margin:0 0 12px;break-inside:avoid;border-radius:16px;overflow:hidden;background:var(--sand);cursor:zoom-in}
+.work img{width:100%;height:auto;transition:transform 1.2s var(--ease)}
+.work:hover img{transform:scale(1.05)}
+.work figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 14px 12px;background:linear-gradient(transparent,rgba(30,22,17,.72));color:var(--ivory);font-size:13px;line-height:1.3;opacity:0;transform:translateY(10px);transition:opacity .4s,transform .4s var(--ease)}
+.work figcaption b{display:block;font-family:var(--serif);font-weight:400;font-size:18px}
+.work:hover figcaption,.work:focus-visible figcaption{opacity:1;transform:none}
+.work.hide{display:none}
+dialog.lb{max-width:min(92vw,900px);max-height:92svh;padding:0;border:0;border-radius:18px;background:var(--espresso);color:var(--ivory);overflow:hidden}
+dialog.lb::backdrop{background:rgba(24,18,14,.82);backdrop-filter:blur(4px)}
+.lb img{max-height:78svh;width:auto;margin:0 auto}
+.lb .cap{padding:14px 20px 18px;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.lb .cap b{font-family:var(--serif);font-weight:400;font-size:20px}
+.lb .cap span{display:block;font-size:13px;color:var(--gold2)}
+.lb .x{position:absolute;top:12px;right:12px;width:42px;height:42px;border-radius:50%;background:rgba(0,0,0,.45);color:#fff;font-size:22px;line-height:1}
+
+/* services */
+.services{background:var(--espresso);color:var(--ivory)}
+.services .eyebrow{color:var(--gold2)}
+.services .lead{color:rgba(247,242,234,.72)}
+.svc{display:grid;gap:0;border-top:1px solid rgba(247,242,234,.16)}
+.svc-item{position:relative;display:grid;gap:10px;padding:28px 0;border-bottom:1px solid rgba(247,242,234,.16)}
+.svc-item .num{font-size:12px;letter-spacing:.2em;color:var(--gold2)}
+.svc-item h3{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(32px,4vw,54px);line-height:1.05}
+.svc-item p{margin:0;color:rgba(247,242,234,.7);max-width:560px}
+.svc-item ul{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 0;padding:0;list-style:none}
+.svc-item li{padding:6px 12px;border:1px solid rgba(247,242,234,.22);border-radius:999px;font-size:13px}
+.svc-item .price{font-size:13px;color:var(--gold2)}
+.svc-item .peek{display:none}
+.svc-item .book{justify-self:start;margin-top:6px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);border-bottom:1px solid currentColor;padding-bottom:2px}
+
+/* stylists */
+.team{display:grid;gap:18px}
+.person{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:18px;display:grid;gap:16px}
+.person .pics{display:grid;grid-template-columns:1.4fr 1fr;gap:8px;height:280px;overflow:hidden}
+.person .pics img{width:100%;height:280px;object-fit:cover;border-radius:14px}
+.person .pics img:only-child{grid-column:1/-1}
+.person h3{margin:0;font-family:var(--serif);font-weight:400;font-size:32px;line-height:1.1}
+.person .role{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.person p{margin:0;color:var(--cocoa);font-size:15px}
+.person .btn{height:48px;justify-self:start}
+
+/* germany */
+.germany{background:var(--cream)}
+.g-grid{display:grid;gap:36px;align-items:center}
+.g-photo{position:relative;width:min(100%,420px);justify-self:center}
+.g-photo img{border-radius:999px 999px 20px 20px;aspect-ratio:9/14;object-fit:cover;width:100%}
+.g-photo .was{position:absolute;left:-18px;top:18%;width:36%;aspect-ratio:9/14;border-radius:16px;overflow:hidden;border:5px solid var(--cream);box-shadow:0 24px 50px -24px rgba(43,33,27,.6)}
+.g-photo .was img{width:100%;height:100%;object-fit:cover;border-radius:0;aspect-ratio:auto}
+.g-photo .was span{position:absolute;left:8px;top:8px;padding:4px 10px;border-radius:999px;background:rgba(43,33,27,.65);color:var(--ivory);font-size:10px;letter-spacing:.18em;text-transform:uppercase}
+.g-photo .flag{position:absolute;right:-10px;bottom:30px;background:var(--ivory);border-radius:14px;padding:12px 16px;box-shadow:0 20px 40px -20px rgba(43,33,27,.5);font-size:13px;line-height:1.35}
+.g-photo .flag b{display:block;font-family:var(--serif);font-size:20px;font-weight:400}
+.g-text blockquote{margin:24px 0 0;font-family:var(--serif);font-size:clamp(34px,4.6vw,64px);line-height:1.08;letter-spacing:-.01em}
+.g-text blockquote em{color:var(--gold)}
+
+/* reviews */
+.revs{display:grid;gap:16px}
+.rev{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:28px 26px;display:grid;gap:16px;align-content:start}
+.rev .stars{color:var(--gold);letter-spacing:3px}
+.rev q{font-family:var(--serif);font-size:21px;line-height:1.4;quotes:"«" "»"}
+.rev cite{font-style:normal;font-size:13px;color:var(--muted)}
+.rev cite b{color:var(--espresso);font-weight:600}
+.rev.big{background:var(--espresso);color:var(--ivory);border-color:var(--espresso)}
+.rev.big q{font-size:clamp(24px,2.6vw,32px)}
+.rev.big cite{color:rgba(247,242,234,.6)}
+.rev.big cite b{color:var(--gold2)}
+
+/* academy */
+.academy-grid{display:grid;gap:36px;align-items:center}
+.ac-photos{position:relative;display:grid;grid-template-columns:1.3fr 1fr;gap:12px;align-items:end}
+.ac-photos img{width:100%;object-fit:cover;border-radius:18px}
+.ac-photos .a1{aspect-ratio:3/4}
+.ac-photos .a2{aspect-ratio:3/5}
+.ac-list{list-style:none;margin:28px 0 30px;padding:0;display:grid;gap:0;border-top:1px solid var(--line)}
+.ac-list li{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.ac-list li span{color:var(--muted);font-size:14px;text-align:right}
+.ac-quote{margin:0;padding:18px 20px;border-left:2px solid var(--gold);background:var(--cream);border-radius:0 14px 14px 0;font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.45}
+
+/* booking */
+.booking{background:linear-gradient(180deg,var(--ivory),var(--cream))}
+.bk{display:grid;gap:24px}
+.form{background:var(--white);border:1px solid var(--line);border-radius:26px;padding:clamp(20px,3.4vw,44px);display:grid;gap:26px;box-shadow:0 40px 90px -60px rgba(43,33,27,.55)}
+.fl{display:grid;gap:10px}
+.fl>label,.fl>.lbl{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{min-height:46px;padding:0 16px;border-radius:14px;border:1px solid var(--line);background:var(--ivory);font-size:15px;transition:background .25s,color .25s,border-color .25s}
+.opt[aria-pressed="true"]{background:var(--espresso);border-color:var(--espresso);color:var(--ivory)}
+.row2{display:grid;gap:14px}
+.inp{height:54px;width:100%;border-radius:14px;border:1px solid var(--line);background:var(--ivory);padding:0 16px;font-size:16px;outline:none;transition:border-color .25s}
+.inp:focus{border-color:var(--gold)}
+.inp.err{border-color:#C0553F;animation:shake .45s}
+@keyframes shake{20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+.summary{background:var(--espresso);color:var(--ivory);border-radius:26px;padding:clamp(22px,3vw,40px);display:grid;gap:18px;align-content:start}
+.summary h3{margin:0;font-family:var(--serif);font-weight:400;font-style:italic;font-size:34px}
+.summary .lines{display:grid;gap:10px;border-block:1px solid rgba(247,242,234,.16);padding-block:18px}
+.summary .line{display:flex;justify-content:space-between;gap:14px;font-size:15px}
+.summary .line span:first-child{color:rgba(247,242,234,.6)}
+.summary .btn{width:100%;height:58px}
+.summary .fine{margin:0;font-size:13px;color:rgba(247,242,234,.6)}
+
+/* contacts */
+.contact-grid{display:grid;gap:24px}
+.c-card{background:var(--white);border:1px solid var(--line);border-radius:26px;padding:clamp(22px,3vw,40px)}
+.addr{margin:12px 0 18px;font-family:var(--serif);font-weight:400;font-size:clamp(40px,5vw,68px);line-height:1}
+.hours{display:grid;margin:0 0 24px}
+.hours div{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--muted)}
+.hours div.today{color:var(--espresso);font-weight:500}
+.hours div.today span:first-child::after{content:" · сегодня";color:var(--gold);font-size:12px}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:14px;margin-bottom:6px}
+.status i{width:9px;height:9px;border-radius:50%;background:#aaa}
+.status i.on{background:#35a55a;box-shadow:0 0 0 4px rgba(53,165,90,.18)}
+.links{display:grid;gap:10px}
+.links a{display:flex;justify-content:space-between;align-items:center;height:58px;padding:0 20px;border:1px solid var(--line);border-radius:14px;transition:background .3s,border-color .3s}
+.links a:hover{border-color:var(--gold);background:var(--ivory)}
+.links a em{font-style:normal;font-size:13px;color:var(--muted)}
+.c-photo{border-radius:26px;overflow:hidden;min-height:360px;position:relative}
+.c-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.c-photo .over{position:absolute;left:18px;bottom:18px;right:18px;background:rgba(247,242,234,.92);backdrop-filter:blur(8px);border-radius:16px;padding:14px 18px;font-size:14px;line-height:1.4}
+.c-photo .over b{font-family:var(--serif);font-weight:400;font-size:22px;display:block}
+
+footer{padding-block:40px 110px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+footer .wrap{display:grid;gap:12px}
+footer .big{font-family:var(--serif);font-style:italic;font-size:clamp(70px,16vw,220px);line-height:.9;color:var(--espresso);letter-spacing:-.03em}
+
+.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;transform:translateY(140%);transition:transform .5s var(--ease)}
+.sticky.show{transform:none}
+.sticky .btn{width:100%;height:58px}
+
+@media (min-width:720px){
+  .wrap{width:min(1280px,100% - 64px)}
+  .grid{columns:3;column-gap:14px}
+  .work{margin-bottom:14px}
+  .team{grid-template-columns:repeat(3,1fr)}
+  .revs{grid-template-columns:repeat(2,1fr)}
+  .row2{grid-template-columns:1fr 1fr}
+}
+@media (min-width:1000px){
+  .nav{display:flex}
+  .hero{padding-block:140px 80px}
+  .hero-grid{grid-template-columns:1.15fr 1fr}
+  .head{grid-template-columns:1.2fr 1fr;align-items:end}
+  .head>p{justify-self:end}
+  .ba-grid{grid-template-columns:1fr 1.1fr}
+  .grid{columns:4}
+  .svc-item{grid-template-columns:70px 1fr 1.15fr 170px;align-items:start;gap:34px;padding:44px 0}
+  .svc-item .peek{display:block;width:170px;aspect-ratio:3/4;border-radius:14px;overflow:hidden;transform:rotate(3deg);transition:transform .6s var(--ease)}
+  .svc-item .peek img{width:100%;height:100%;object-fit:cover}
+  .svc-item:hover .peek{transform:rotate(-2deg) scale(1.04)}
+  .g-grid{grid-template-columns:1fr 1.2fr}
+  .revs{grid-template-columns:1.3fr 1fr 1fr}
+  .rev.big{grid-row:span 2}
+  .academy-grid{grid-template-columns:1fr 1fr}
+  .bk{grid-template-columns:1.4fr 1fr;align-items:start}
+  .summary{position:sticky;top:100px}
+  .contact-grid{grid-template-columns:1fr 1fr}
+  footer{padding-bottom:40px}
+  footer .wrap{grid-template-columns:1fr auto;align-items:end}
+  .sticky{display:none}
+}
+@media (max-width:420px){
+  .bubble{left:-8px}
+  .seal{right:-4px;width:108px;height:108px}
+  .seal .core{inset:24px}.seal .core b{font-size:24px}
+  .arch-outline{inset:-8px -8px 8px 8px}
+  .person .pics{height:240px}
+}
+.still *{animation:none!important;transition:none!important}
+.anim .rv{opacity:0;transform:translateY(40px)}
+</style>
+</head>
+<body>
+
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="mark">
+    <svg viewBox="0 0 200 240"><path id="archPath" d="M20 238 V100 A80 80 0 0 1 180 100 V238"/><path d="M40 238 V104 A60 60 0 0 1 160 104 V238" opacity=".45"/></svg>
+    <div class="name"><span>Кима</span></div>
+    <div class="sub">Салон красоты · Шахтинск</div>
+  </div>
+</div>
+
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <a class="logo" href="#top"><b>Кима</b><small>салон красоты</small></a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#works">Работы</a><a href="#services">Услуги</a><a href="#team">Мастера</a><a href="#reviews">Отзывы</a><a href="#academy">Обучение</a><a href="#contacts">Контакты</a>
+    </nav>
+    <a class="btn btn-dark" href="#booking">Записаться</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow h-in">Салон красоты · Шахтинск</span>
+        <h1 class="h1">
+          <span class="ln"><span>Цвет,</span></span>
+          <span class="ln"><span>который</span></span>
+          <span class="ln"><span><em>вам идёт</em></span></span>
+        </h1>
+        <p class="lead h-in">Окрашивание, стрижки и восстановление волос. Мягкий бежевый блонд, рассветление и яркие пряди — красивый цвет без компромиссов для качества волос.</p>
+        <div class="cta h-in">
+          <a class="btn btn-dark" href="#booking">Записаться онлайн</a>
+          <a class="btn btn-line" href="#works">Смотреть работы</a>
+        </div>
+        <div class="stats h-in">
+          <div><b>10 лет</b><span>салону красоты</span></div>
+          <div><b>Школа</b><span>выпускаем мастеров</span></div>
+          <div><b>4 900</b><span>подписчиков в Instagram</span></div>
+        </div>
+      </div>
+      <div class="art h-art">
+        <div class="arch-outline"></div>
+        <div class="arch"><img src="img/sunkissed-2.jpg" srcset="img/sunkissed-2-sm.jpg 616w, img/sunkissed-2.jpg 1201w" sizes="(max-width: 700px) 92vw, 520px" alt="Мягкие светлые блики на длинных волосах — работа стилиста Татьяны" fetchpriority="high"></div>
+        <div class="bubble"><img src="img/sign-girl-sm.jpg" alt="Золотая надпись «Салон красоты Кима» на стене салона"></div>
+        <div class="seal" aria-hidden="true">
+          <svg viewBox="0 0 128 128"><defs><path id="c" d="M64,64 m-52,0 a52,52 0 1,1 104,0 a52,52 0 1,1 -104,0"/></defs><text font-family="Golos Text" font-size="10.5" letter-spacing="3.1" fill="#2B211B"><textPath href="#c">САЛОН КРАСОТЫ «КИМА» · ШАХТИНСК · </textPath></text></svg>
+          <div class="core"><div><b>10</b><small>лет</small></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true"><div class="tr">
+    <span>Рассветление<i>✦</i></span><span>Бежевый блонд<i>✦</i></span><span>Каре<i>✦</i></span><span>Wolf Cut<i>✦</i></span><span>Карамельный беж<i>✦</i></span><span>Холодное восстановление<i>✦</i></span><span>Корейская завивка<i>✦</i></span>
+    <span>Рассветление<i>✦</i></span><span>Бежевый блонд<i>✦</i></span><span>Каре<i>✦</i></span><span>Wolf Cut<i>✦</i></span><span>Карамельный беж<i>✦</i></span><span>Холодное восстановление<i>✦</i></span><span>Корейская завивка<i>✦</i></span>
+  </div></div>
+
+  <section class="sec">
+    <div class="wrap ba-grid">
+      <div class="ba rv" id="ba" style="--x:50%">
+        <img src="img/ba-before.jpg" alt="До: чёрная база">
+        <img class="after" src="img/ba-after.jpg" alt="После: мягкий бежевый оттенок">
+        <span class="tag t-before">До</span><span class="tag t-after">После</span>
+        <div class="handle"></div>
+        <input type="range" min="0" max="100" value="50" aria-label="Сравнить до и после">
+      </div>
+      <div class="rv">
+        <span class="eyebrow">Преображение</span>
+        <h2 class="h2">Чёрная база →<br><em>бежевый блонд</em></h2>
+        <p class="quote-big">«Запрос был именно таким — уйти от чёрного и получить мягкий, дорогой бежевый оттенок».</p>
+        <p class="lead" style="margin-top:18px">У клиентки дома малыш полутора месяцев — поэтому работали максимально быстро, бережно и без лишнего времени в кресле.</p>
+        <div class="who">Стилист Анастасия Байсеитова</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="works" style="padding-top:0">
+    <div class="wrap">
+      <div class="head rv">
+        <div><span class="eyebrow">Портфолио</span><h2 class="h2">Работы <em>наших стилистов</em></h2></div>
+        <p class="lead">Все фото — настоящие работы салона из нашего Instagram. Нажмите на фото, чтобы рассмотреть.</p>
+      </div>
+      <div class="chips rv" id="chips">
+        <button class="chip" data-f="all" aria-pressed="true">Все</button>
+        <button class="chip" data-f="blond" aria-pressed="false">Блонд и беж</button>
+        <button class="chip" data-f="light" aria-pressed="false">Рассветление</button>
+        <button class="chip" data-f="bright" aria-pressed="false">Яркие пряди</button>
+        <button class="chip" data-f="cut" aria-pressed="false">Стрижки и укладки</button>
+      </div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section class="sec services" id="services">
+    <div class="wrap">
+      <div class="head rv">
+        <div><span class="eyebrow">Услуги</span><h2 class="h2">Что мы <em>делаем</em></h2></div>
+        <p class="lead">Технику подбираем индивидуально. Стоимость зависит от длины и исходника — назовём после консультации.</p>
+      </div>
+      <div class="svc" id="svc"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="team">
+    <div class="wrap">
+      <div class="head rv">
+        <div><span class="eyebrow">Команда</span><h2 class="h2">Ваши <em>мастера</em></h2></div>
+        <p class="lead">Записывайтесь к конкретному стилисту — или выберите «любой мастер», и мы подберём время.</p>
+      </div>
+      <div class="team">
+        <article class="person rv">
+          <div class="pics"><img src="img/blond-lob-2-sm.jpg" alt="Работа Анастасии: светлый блонд"><img src="img/bal-long-2-sm.jpg" alt="Работа Анастасии: рассветление"></div>
+          <div><div class="role">Стилист</div><h3>Анастасия Байсеитова</h3></div>
+          <p>Рассветление, бежевый блонд и рельефное окрашивание. Бережная работа со сложными исходниками и восстановление.</p>
+          <button class="btn btn-line" data-master="Анастасия Байсеитова">Записаться к Анастасии</button>
+        </article>
+        <article class="person rv">
+          <div class="pics"><img src="img/sunkissed-1-sm.jpg" alt="Работа Татьяны: волосы, поцелованные солнцем"><img src="img/wolfcut-sm.jpg" alt="Работа Татьяны: Wolf Cut с прядями индиго"></div>
+          <div><div class="role">Стилист</div><h3>Татьяна</h3></div>
+          <p>Каре и нейтральное окрашивание, Wolf Cut, карамельный беж и яркие пряди для тех, кто не хочет быть как все.</p>
+          <button class="btn btn-line" data-master="Татьяна">Записаться к Татьяне</button>
+        </article>
+        <article class="person rv">
+          <div class="pics"><img src="img/antonina-work.jpg" alt="Корейская завивка — работа стилиста Антонины" style="object-position:50% 92%"></div>
+          <div><div class="role">Стилист · наставник</div><h3>Антонина</h3></div>
+          <p>Стрижки и завивка. Учит мастеров — ученицы благодарят за терпение, практику и уверенность в работе.</p>
+          <button class="btn btn-line" data-master="Антонина">Записаться к Антонине</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec germany">
+    <div class="wrap g-grid">
+      <div class="g-photo rv">
+        <img src="img/germany-after.jpg" alt="После: объёмные локоны со светлыми бликами — работа стилиста Татьяны">
+        <div class="was"><img src="img/germany-before.jpg" alt="До: тёмные натуральные волосы"><span>До</span></div>
+        <div class="flag"><b>Германия → Шахтинск</b>первое преображение на натуральных волосах</div>
+      </div>
+      <div class="g-text rv">
+        <span class="eyebrow">История гостьи</span>
+        <blockquote>Наша гостья приехала <em>из Германии</em>, нашла нас через Instagram и поисковик — и доверила нам своё первое преображение.</blockquote>
+        <div class="who">Работа стилиста Татьяны</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="reviews">
+    <div class="wrap">
+      <div class="head rv">
+        <div><span class="eyebrow">Нам доверяют</span><h2 class="h2">Слова <em>наших гостей</em></h2></div>
+        <p class="lead">Отзывы, которыми гости поделились с салоном в сообщениях.</p>
+      </div>
+      <div class="revs">
+        <figure class="rev big rv"><div class="stars">★★★★★</div><q>Хочу от всей души поблагодарить Анастасию, салон Кима! Вы настоящая волшебница своего дела! Покрасили волосы просто идеально — цвет получился невероятно красивым, насыщенным и именно таким, как я хотела.</q><cite><b>Гостья салона</b> · окрашивание у Анастасии</cite></figure>
+        <figure class="rev rv"><div class="stars">★★★★★</div><q>Огромная благодарность мастеру с золотыми руками: все 6–8 часов я мотала головой — и всё держится на 100%</q><cite><b>Гостья салона</b> · укладка</cite></figure>
+        <figure class="rev rv"><div class="stars">★★★★★</div><q>Всё сделали маме моей красоту, спасибо вам большое. И вашим девочкам</q><cite><b>Екатерина</b></cite></figure>
+        <figure class="rev rv"><div class="stars">★★★★★</div><q>Благодарна за знания, умения и навыки. Ушла с основной работы — занимаюсь стрижками и не боюсь браться за мужские.</q><cite><b>Ангелина</b> · выпускница обучения</cite></figure>
+        <figure class="rev rv"><div class="stars">★★★★★</div><q>Обязательно приду к вам снова и с удовольствием буду рекомендовать вас своим друзьям и знакомым!</q><cite><b>Гостья салона</b></cite></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="academy" style="padding-top:0">
+    <div class="wrap academy-grid">
+      <div class="ac-photos rv">
+        <img class="a1" src="img/diploma-sm.jpg" alt="Вручение диплома ученице в салоне «Кима»">
+        <img class="a2" src="img/student-desk.jpg" alt="Выпускница обучения у стойки салона">
+      </div>
+      <div class="rv">
+        <span class="eyebrow">Обучение</span>
+        <h2 class="h2">Выпускаем <em>мастеров</em></h2>
+        <p class="lead" style="margin-top:18px">Для нас важна не скорость, а желание учиться. Навыки приходят с практикой, уверенность — с опытом.</p>
+        <ul class="ac-list">
+          <li>Базовые женские стрижки <span>практика и диплом</span></li>
+          <li>Мужские стрижки <span>для начинающих мастеров</span></li>
+          <li>Повышение квалификации <span>для практикующих</span></li>
+        </ul>
+        <p class="ac-quote">«Сегодня выпускаю ещё одного мастера. За время обучения было много практики, стараний, новых навыков и роста».</p>
+        <div class="cta" style="margin-top:26px"><button class="btn btn-dark" data-academy>Узнать об обучении</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec booking" id="booking">
+    <div class="wrap">
+      <div class="head rv">
+        <div><span class="eyebrow">Онлайн-запись</span><h2 class="h2">Запишитесь <em>за минуту</em></h2></div>
+        <p class="lead">Выберите услугу, мастера и удобное время — откроется WhatsApp с готовым сообщением. Администратор подтвердит запись.</p>
+      </div>
+      <div class="bk">
+        <div class="form rv">
+          <div class="fl"><span class="lbl">Услуга</span><div class="opts" id="oService"></div></div>
+          <div class="fl"><span class="lbl">Мастер</span><div class="opts" id="oMaster"></div></div>
+          <div class="fl"><span class="lbl">Когда удобно</span><div class="opts" id="oDay"></div></div>
+          <div class="fl"><span class="lbl">Время</span><div class="opts" id="oTime"></div></div>
+          <div class="row2">
+            <div class="fl"><label for="fName">Имя</label><input class="inp" id="fName" autocomplete="given-name" placeholder="Как к вам обращаться"></div>
+            <div class="fl"><label for="fNote">Комментарий</label><input class="inp" id="fNote" placeholder="Длина волос, пожелания"></div>
+          </div>
+        </div>
+        <aside class="summary rv" aria-live="polite">
+          <h3>Ваша запись</h3>
+          <div class="lines" id="sum"></div>
+          <a class="btn btn-wa" id="send" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.7-.1 1.2Z"/></svg>
+            Записаться в WhatsApp</a>
+          <p class="fine">Нажмите — откроется чат с салоном и готовым сообщением. Стоимость и точное время подтвердит администратор.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="contacts" style="padding-top:0">
+    <div class="wrap contact-grid">
+      <div class="c-card rv">
+        <span class="eyebrow">Контакты</span>
+        <h2 class="addr">Абая, 78</h2>
+        <div class="status"><i id="dot"></i><span id="stText">Ежедневно 10:00–19:00</span></div>
+        <div class="hours" id="hours"></div>
+        <div class="links">
+          <a href="#booking">Онлайн-запись <em>WhatsApp</em></a>
+          <a href="https://instagram.com/salon_kima" target="_blank" rel="noopener">@salon_kima <em>Instagram</em></a>
+          <a href="https://2gis.kz/karaganda/firm/70000001114503603" target="_blank" rel="noopener">Маршрут <em>2ГИС</em></a>
+        </div>
+      </div>
+      <div class="c-photo rv">
+        <img src="img/vogue.jpg" alt="Цветы и журнал на стойке салона">
+        <div class="over"><b>Шахтинск, проспект Абая, 78</b>Приходите на консультацию — подберём цвет и технику именно под ваши волосы.</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="big">Кима</div>
+    <div>Салон красоты · Шахтинск · Абая, 78<br>Концепт сайта — VANTA</div>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky"><a class="btn btn-dark" href="#booking">Записаться онлайн</a></div>
+
+<dialog class="lb" id="lb">
+  <button class="x" id="lbx" aria-label="Закрыть">×</button>
+  <img id="lbImg" alt="">
+  <div class="cap"><div><b id="lbT"></b><span id="lbS"></span></div><button class="btn btn-wa" id="lbBook" style="height:44px">Хочу так же</button></div>
+</dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(() => {
+  const root = document.documentElement, $ = id => document.getElementById(id);
+  const still = new URLSearchParams(location.search).has('still');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (still) root.classList.add('still');
+  const G = !!(window.gsap && window.ScrollTrigger) && !still && !reduce;
+  if (G) { root.classList.add('anim'); gsap.registerPlugin(ScrollTrigger); }
+  const WA = '77077803037';
+
+  /* portfolio */
+  const WORKS = [
+    ['beige-waves-1', 'blond', 'Чистый бежевый блонд', 'Без желтизны. Без серости.', 'Бежевый блонд'],
+    ['sunkissed-3', 'light', 'Волосы, поцелованные солнцем', 'Стилист Татьяна', 'Рассветление'],
+    ['bal-long-1', 'light', 'Цвет без компромиссов', 'Стилист Анастасия Байсеитова', 'Рассветление'],
+    ['wolfcut', 'cut', 'Wolf Cut + пряди индиго', 'Стилист Татьяна', 'Стрижка'],
+    ['blond-lob-1', 'blond', 'Деликатное окрашивание', 'Стилист Анастасия Байсеитова', 'Окрашивание'],
+    ['caramel', 'blond', 'Карамельный беж', 'Стилист Татьяна', 'Окрашивание'],
+    ['red-streaks', 'bright', 'Яркий акцент', 'Стилист Татьяна', 'Яркие пряди'],
+    ['beige-long', 'light', 'Baby Blonde Relief', 'Лёгкие солнечные блики', 'Рассветление'],
+    ['perm', 'cut', 'Перманентная укладка', 'Объём и текстура', 'Укладка'],
+    ['beige-waves-2', 'blond', 'Русый в бежевом блонде', 'Без перегруженного холода', 'Бежевый блонд'],
+    ['sign-girl', 'bright', 'Яркие прядки на лето', 'Стилист Татьяна', 'Яркие пряди'],
+    ['blond-lob-3', 'blond', 'Светлое каре', 'Стилист Анастасия Байсеитова', 'Окрашивание'],
+    ['sunkissed-1', 'light', 'Мягкие светлые блики', 'Стилист Татьяна', 'Рассветление'],
+    ['bal-long-2', 'light', 'Максимум заботы', 'Стилист Анастасия Байсеитова', 'Рассветление'],
+    ['beige-waves-3', 'blond', 'Дорогой бежевый', 'Окрашивание', 'Бежевый блонд'],
+    ['blond-lob-2', 'blond', 'Современное окрашивание', 'Стилист Анастасия Байсеитова', 'Окрашивание']
+  ];
+  $('grid').innerHTML = WORKS.map(([f, c, t, s], i) => `<figure class="work" data-c="${c}" data-i="${i}" tabindex="0"><img src="img/${f}-sm.jpg" alt="${t} — ${s}" width="616" height="820"><figcaption><b>${t}</b>${s}</figcaption></figure>`).join('');
+  document.querySelectorAll('.chip').forEach(ch => ch.addEventListener('click', () => {
+    const f = ch.dataset.f;
+    document.querySelectorAll('.chip').forEach(x => x.setAttribute('aria-pressed', x === ch));
+    const items = [...document.querySelectorAll('.work')];
+    items.forEach(w => w.classList.toggle('hide', f !== 'all' && w.dataset.c !== f));
+    if (G) gsap.fromTo(items.filter(w => !w.classList.contains('hide')), { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: .6, stagger: .04, ease: 'power3.out' });
+    ScrollTrigger && ScrollTrigger.refresh && G && ScrollTrigger.refresh();
+  }));
+  const lb = $('lb'); let lbWork = null;
+  const openLb = i => {
+    const [f, , t, s, svc] = WORKS[i]; lbWork = svc;
+    $('lbImg').src = `img/${f}.jpg`; $('lbImg').alt = t; $('lbT').textContent = t; $('lbS').textContent = s;
+    if (lb.showModal) lb.showModal(); else lb.setAttribute('open', '');
+  };
+  $('grid').addEventListener('click', e => { const w = e.target.closest('.work'); if (w) openLb(+w.dataset.i); });
+  $('grid').addEventListener('keydown', e => { const w = e.target.closest('.work'); if (w && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openLb(+w.dataset.i); } });
+  $('lbx').onclick = () => lb.close();
+  lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });
+
+  /* services */
+  const SVC = [
+    ['Окрашивание', 'Рассветление, бежевый и карамельный блонд, мелирование и его коррекция, рельефное окрашивание, тонирование, яркие пряди.', ['Рассветление', 'Бежевый блонд', 'Карамельный беж', 'Мелирование', 'Яркие пряди'], 'beige-waves-2'],
+    ['Стрижки', 'Каре, Wolf Cut, женские, мужские и детские стрижки — форма, которая подчёркивает черты лица.', ['Каре', 'Wolf Cut', 'Мужские', 'Детские'], 'wolfcut'],
+    ['Восстановление', 'Холодное восстановление, SPA-уход и лечение волос. Восстанавливаем волосы, а не маскируем повреждения.', ['Холодное восстановление', 'SPA-уход', 'Лечение волос'], 'bal-long-2'],
+    ['Завивка и укладка', 'Корейская завивка, перманентная и долговременная укладка — объём и текстура, которые держатся.', ['Корейская завивка', 'Перманентная укладка', 'Долговременная укладка'], 'perm']
+  ];
+  $('svc').innerHTML = SVC.map(([t, d, tags, img], i) => `<div class="svc-item rv"><span class="num">0${i + 1}</span><h3>${t}</h3><div class="body"><p>${d}</p><ul>${tags.map(x => `<li>${x}</li>`).join('')}</ul><p class="price" style="margin-top:12px">Стоимость — после консультации</p><button class="book" data-svc="${t}">Записаться на ${t.toLowerCase()} →</button></div><div class="peek"><img src="img/${img}-sm.jpg" alt=""></div></div>`).join('');
+
+  /* booking */
+  const SERVICES = ['Окрашивание', 'Стрижка', 'Восстановление', 'Завивка / укладка', 'Консультация'];
+  const MASTERS = ['Любой мастер', 'Анастасия Байсеитова', 'Татьяна', 'Антонина'];
+  const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Almaty' }));
+  const dayName = d => d.toLocaleDateString('ru-RU', { weekday: 'short', day: 'numeric', month: 'short' });
+  const DAYS = [['Сегодня', now], ['Завтра', new Date(now.getTime() + 864e5)]];
+  for (let i = 2; i < 6; i++) { const d = new Date(now.getTime() + i * 864e5); DAYS.push([dayName(d), d]); }
+  const TIMES = ['Утро 10–12', 'День 12–16', 'Вечер 16–19', 'Любое'];
+  const B = { svc: SERVICES[0], master: MASTERS[0], day: DAYS[1][0], time: TIMES[3] };
+  const opts = (el, list, key) => { $(el).innerHTML = list.map(v => `<button class="opt" data-k="${key}" data-v="${v}" aria-pressed="${B[key] === v}">${v}</button>`).join(''); };
+  const renderOpts = () => { opts('oService', SERVICES, 'svc'); opts('oMaster', MASTERS, 'master'); opts('oDay', DAYS.map(d => d[0]), 'day'); opts('oTime', TIMES, 'time'); };
+  renderOpts();
+  const buildMsg = () => {
+    const name = $('fName').value.trim(), note = $('fNote').value.trim();
+    return ['Здравствуйте! Хочу записаться в салон «Кима» (с сайта):', `• Услуга: ${B.svc}`, `• Мастер: ${B.master}`, `• Когда: ${B.day}, ${B.time}`, name ? `• Имя: ${name}` : null, note ? `• Комментарий: ${note}` : null].filter(Boolean).join('\n');
+  };
+  const renderSum = () => {
+    $('sum').innerHTML = [['Услуга', B.svc], ['Мастер', B.master], ['Когда', `${B.day}, ${B.time.toLowerCase()}`]].map(([a, b]) => `<div class="line"><span>${a}</span><span>${b}</span></div>`).join('');
+    $('send').href = `https://wa.me/${WA}?text=${encodeURIComponent(buildMsg())}`;
+  };
+  document.querySelector('.form').addEventListener('click', e => {
+    const b = e.target.closest('.opt'); if (!b) return;
+    B[b.dataset.k] = b.dataset.v;
+    b.parentElement.querySelectorAll('.opt').forEach(x => x.setAttribute('aria-pressed', x === b));
+    renderSum();
+    if (G) gsap.fromTo('#sum .line', { opacity: .3 }, { opacity: 1, duration: .4, stagger: .05 });
+  });
+  $('fName').oninput = renderSum; $('fNote').oninput = renderSum;
+  renderSum();
+  const goBooking = () => { const t = $('booking'); if (window.__lenis) window.__lenis.scrollTo(t, { offset: -70 }); else t.scrollIntoView({ behavior: 'smooth' }); };
+  const setAndGo = (k, v) => { if (k === 'svc' && !SERVICES.includes(v)) v = v.startsWith('Стриж') ? 'Стрижка' : v.startsWith('Завив') ? 'Завивка / укладка' : v; B[k] = v; renderOpts(); renderSum(); goBooking(); };
+  document.querySelectorAll('[data-master]').forEach(b => b.onclick = () => setAndGo('master', b.dataset.master));
+  document.addEventListener('click', e => { const b = e.target.closest('[data-svc]'); if (b) setAndGo('svc', b.dataset.svc); });
+  $('lbBook').onclick = () => { lb.close(); setAndGo('svc', lbWork === 'Стрижка' ? 'Стрижка' : lbWork === 'Укладка' ? 'Завивка / укладка' : 'Окрашивание'); };
+  $('send').addEventListener('click', e => {
+    e.preventDefault(); renderSum();
+    const url = $('send').href;
+    if (matchMedia('(pointer: coarse)').matches) location.href = url; else window.open(url, '_blank', 'noopener');
+  });
+  document.querySelector('[data-academy]').onclick = () => {
+    const url = `https://wa.me/${WA}?text=${encodeURIComponent('Здравствуйте! Интересует обучение в салоне «Кима». Расскажите, пожалуйста, о курсах (с сайта).')}`;
+    if (matchMedia('(pointer: coarse)').matches) location.href = url; else window.open(url, '_blank', 'noopener');
+  };
+
+  /* hours & status */
+  const h = now.getHours() + now.getMinutes() / 60, open = h >= 10 && h < 19;
+  $('dot').classList.toggle('on', open);
+  $('stText').textContent = open ? 'Сейчас открыто · до 19:00' : 'Сейчас закрыто · откроемся в 10:00';
+  const WD = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'], td = (now.getDay() + 6) % 7;
+  $('hours').innerHTML = WD.map((d, i) => `<div class="${i === td ? 'today' : ''}"><span>${d}</span><span>10:00 — 19:00</span></div>`).join('');
+
+  /* before / after */
+  const ba = $('ba'), rng = ba.querySelector('input');
+  const setX = v => ba.style.setProperty('--x', v + '%');
+  rng.addEventListener('input', () => setX(rng.value));
+
+  /* header & sticky */
+  const hdr = $('hdr'), sticky = $('sticky');
+  const onScroll = () => { hdr.classList.toggle('solid', scrollY > 30); sticky.classList.toggle('show', scrollY > innerHeight * .8 && scrollY < document.body.scrollHeight - innerHeight * 1.6); };
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  if (!G) return;
+
+  if (window.Lenis) {
+    const lenis = new Lenis({ lerp: .1 }); window.__lenis = lenis;
+    lenis.on('scroll', ScrollTrigger.update); gsap.ticker.add(t => lenis.raf(t * 1000)); gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => { const id = a.getAttribute('href'); if (id.length > 1) { e.preventDefault(); lenis.scrollTo(id, { offset: -70, duration: 1.3 }); } }));
+  }
+
+  /* intro */
+  const arch = document.querySelector('#intro svg path');
+  const paths = document.querySelectorAll('#intro svg path');
+  paths.forEach(p => { const L = p.getTotalLength(); p.style.strokeDasharray = L; p.style.strokeDashoffset = L; });
+  gsap.set('#intro .name span', { yPercent: 110 }); gsap.set('#intro .sub', { autoAlpha: 0 });
+  gsap.set('.h1 .ln>span', { yPercent: 110 }); gsap.set('.h-in', { autoAlpha: 0, y: 26 });
+  gsap.set('.h-art .arch', { clipPath: 'inset(100% 0% 0% 0% round 999px 999px 20px 20px)' });
+  gsap.set('.h-art .bubble, .h-art .seal', { scale: 0 }); gsap.set('.h-art .arch-outline', { autoAlpha: 0 });
+  const tl = gsap.timeline();
+  tl.to(paths, { strokeDashoffset: 0, duration: 1.3, stagger: .15, ease: 'power2.inOut' }, 0)
+    .to('#intro .name span', { yPercent: 0, duration: 1, ease: 'expo.out' }, .6)
+    .to('#intro .sub', { autoAlpha: 1, duration: .8 }, .9)
+    .to('#intro .mark', { autoAlpha: 0, y: -20, duration: .5, ease: 'power2.in' }, 1.9)
+    .to('#intro', { clipPath: 'inset(0% 0% 100% 0%)', duration: 1, ease: 'expo.inOut' }, 2.2)
+    .set('#intro', { display: 'none' })
+    .to('.h-art .arch', { clipPath: 'inset(0% 0% 0% 0% round 999px 999px 20px 20px)', duration: 1.4, ease: 'expo.out' }, 2.5)
+    .to('.h1 .ln>span', { yPercent: 0, duration: 1.2, stagger: .1, ease: 'expo.out' }, 2.6)
+    .to('.h-in', { autoAlpha: 1, y: 0, duration: .9, stagger: .08, ease: 'power3.out' }, 2.9)
+    .to('.h-art .arch-outline', { autoAlpha: 1, duration: 1 }, 3.1)
+    .to('.h-art .bubble', { scale: 1, duration: .9, ease: 'back.out(1.8)' }, 3.2)
+    .to('.h-art .seal', { scale: 1, duration: .9, ease: 'back.out(1.8)' }, 3.35);
+  $('intro').addEventListener('click', () => tl.progress(1));
+
+  gsap.to('.h-art .arch img', { yPercent: 10, scale: 1.08, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+  gsap.to('.h-art .bubble', { y: -60, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+
+  gsap.utils.toArray('.rv').forEach(el => gsap.to(el, { opacity: 1, y: 0, duration: 1.1, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 88%' } }));
+  gsap.from('.work', { opacity: 0, y: 40, duration: .9, stagger: .05, ease: 'power3.out', scrollTrigger: { trigger: '#grid', start: 'top 85%' } });
+
+  /* before/after teaser sweep */
+  ScrollTrigger.create({ trigger: '#ba', start: 'top 70%', once: true, onEnter: () => {
+    const o = { v: 50 };
+    gsap.timeline().to(o, { v: 82, duration: .9, ease: 'power2.inOut', onUpdate: () => { setX(o.v); rng.value = o.v; } })
+      .to(o, { v: 18, duration: 1.2, ease: 'power2.inOut', onUpdate: () => { setX(o.v); rng.value = o.v; } })
+      .to(o, { v: 50, duration: .8, ease: 'power2.inOut', onUpdate: () => { setX(o.v); rng.value = o.v; } });
+  } });
+  addEventListener('load', () => ScrollTrigger.refresh());
+})();
+</script>
+</body>
+</html>
