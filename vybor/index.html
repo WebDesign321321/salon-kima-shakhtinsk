@@ -69,7 +69,7 @@ textarea{font:inherit}
 .phone .site,.phone .z{zoom:var(--z,1)}
 
 /* карусель вариантов */
-.car{--ph:clamp(320px,calc(100svh - 420px),560px);display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:16px;padding:18px 16px 8px;margin:4px -16px 0;scrollbar-width:none}
+.car{--ph:clamp(250px,calc(100svh - 420px),560px);display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:16px;padding:18px 16px 8px;margin:4px -16px 0;scrollbar-width:none}
 .car::-webkit-scrollbar{display:none}
 .card{position:relative;flex:none;scroll-snap-align:center;width:calc(var(--ph) * .4787 + 26px);min-width:218px;display:flex;flex-direction:column;align-items:center;gap:10px;padding:13px 12px 12px;border-radius:24px;background:var(--paper);border:1px solid var(--line);transition:border-color .25s,box-shadow .25s}
 .card[aria-selected="true"]{border-color:var(--ink);box-shadow:0 0 0 1px var(--ink),0 24px 40px -28px rgba(34,26,21,.5)}
@@ -146,6 +146,7 @@ textarea{font:inherit}
 .m-side .btn.ghost{color:#fff;border-color:rgba(255,255,255,.35)}
 .m-side .btn:not(.ghost){background:#fff;color:var(--ink)}
 
+@media(max-width:640px) and (max-height:720px){.head .sub{display:none}.scr{padding-top:76px}.car{--ph:clamp(250px,calc(100svh - 362px),560px)}}
 @media(min-width:900px){
   .scr{padding:92px 40px 130px}
   .intro{grid-template-columns:1fr 1fr;min-height:calc(100svh - 230px)}
@@ -447,7 +448,7 @@ textarea{font:inherit}
 .site .match .res .b2{grid-column:1/-1}
 .site .school{display:grid;grid-template-columns:86px 1fr;gap:10px;align-items:center}
 .site .school .ph{aspect-ratio:3/4}
-.site .certc{position:relative;border-radius:var(--rad);padding:16px;overflow:hidden;background:linear-gradient(135deg,var(--acc),color-mix(in srgb,var(--acc) 40%,#fff));color:#1d1512;margin-bottom:8px}
+.site .certc{position:relative;border-radius:var(--rad);padding:16px;overflow:hidden;background:var(--acc);background:linear-gradient(135deg,var(--acc),color-mix(in srgb,var(--acc) 40%,#fff));color:#1d1512;margin-bottom:8px}
 .site .certc b{display:block;font-family:var(--hf);font-weight:var(--hw);text-transform:var(--ht,none);font-size:calc(18px * var(--hs));line-height:1.05}
 .site .certc small{display:block;margin-top:4px;opacity:.75}
 .site .certc::after{content:"";position:absolute;right:-26px;top:-26px;width:96px;height:96px;border-radius:50%;border:1px solid rgba(255,255,255,.6)}
@@ -564,7 +565,13 @@ textarea{font:inherit}
   const I_R = '<svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>';
   const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
   const plural = (n, a, b, c) => { const m = n % 10, h = n % 100; return m === 1 && h !== 11 ? a : m >= 2 && m <= 4 && (h < 12 || h > 14) ? b : c; };
-  const almaty = () => new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Almaty' }));
+  const almaty = () => {
+    try {
+      const p = Object.fromEntries(new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Almaty', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' }).formatToParts(new Date()).map(x => [x.type, x.value]));
+      const d = new Date(+p.year, +p.month - 1, +p.day, +p.hour % 24, +p.minute);
+      return isNaN(d) ? new Date() : d;
+    } catch (e) { return new Date(); }
+  };
 
   /* ---------- варианты ---------- */
   const STYLES = [
@@ -793,7 +800,7 @@ textarea{font:inherit}
   const cfg = over => ({ style: S.style, ...Object.fromEntries(KEYS.map(k => [k, S[k]])), extras: S.extras, ...over });
   const styleCfg = id => { const p = preset(id); return { style: id, ...Object.fromEntries(KEYS.map(k => [k, S.touched[k] ? S[k] : p[k]])), extras: S.extras }; };
   const optName = (s, id) => (s.opts.find(o => o[0] === id) || ['', id])[1];
-  let cur = 0, fanT = null;
+  let cur = 0, fanT = null, depth = 0;
 
   /* ---------- экраны ---------- */
   function introHTML() {
@@ -859,8 +866,12 @@ textarea{font:inherit}
     }
     $('#bar').innerHTML = `<div class="bar-in">${h}</div>`;
   }
-  function go(n) {
+  function go(n, mode = 'push') {
     cur = n; clearInterval(fanT);
+    try {
+      if (mode === 'push') { depth++; history.pushState({ s: n, d: depth }, ''); }
+      else if (mode === 'replace') history.replaceState({ s: n, d: depth }, '');
+    } catch (e) {}
     const app = $('#app');
     app.innerHTML = `<section class="scr">${n === 0 ? introHTML() : n === FIN ? finalHTML() : STEPS[n - 1].toggles ? extrasHTML(n) : stepHTML(n)}</section>`;
     window.scrollTo(0, 0);
@@ -899,22 +910,31 @@ textarea{font:inherit}
     }, 2600);
   }
   function next() { if (S.edit) { S.edit = false; return go(FIN); } go(Math.min(FIN, cur + 1)); }
-  function back() { if (S.edit) { S.edit = false; return go(FIN); } go(Math.max(0, cur - 1)); }
+  function back() { if (depth > 0) return history.back(); S.edit = false; go(Math.max(0, cur - 1), 'replace'); }
+  addEventListener('popstate', e => {
+    const st = e.state && typeof e.state.s === 'number' ? e.state : { s: 0, d: 0 };
+    const m = document.querySelector('.modal'); if (m) m.__close(true);
+    depth = st.d || 0;
+    if (st.s !== cur) { S.edit = false; go(st.s, 'none'); }
+  });
 
   function openModal(c, name, desc, pickId, loop) {
     const m = document.createElement('div'); m.className = 'modal';
     const cls = c.splash !== 'none' ? (loop ? 'play' : 'play once') : '';
     m.innerHTML = `<div class="m-in">${phoneHTML(c, { cls, splash: true })}<div class="m-side"><div class="nm"><b>${name}</b><span>${desc}</span></div>${pickId ? '<button class="btn" data-mpick>Выбрать этот вариант</button>' : ''}<button class="btn ghost" data-mclose>Закрыть</button></div></div>`;
     document.body.appendChild(m);
+    document.documentElement.style.overflow = 'hidden';
+    try { depth++; history.pushState({ s: cur, d: depth, m: 1 }, ''); } catch (e) {}
     prep(m);
     const s = cur > 0 && cur < FIN ? STEPS[cur - 1] : null;
     if (s && s.focus) requestAnimationFrame(() => focusSec(m.querySelector('.phone'), s.focus));
-    const close = () => { m.remove(); document.removeEventListener('keydown', onKey); };
+    const close = fromPop => { if (!m.isConnected) return; m.remove(); document.documentElement.style.overflow = ''; document.removeEventListener('keydown', onKey); if (!fromPop) history.back(); };
+    m.__close = close;
     const onKey = e => { if (e.key === 'Escape') close(); };
     document.addEventListener('keydown', onKey);
     m.addEventListener('click', e => {
       if (e.target === m || e.target.closest('[data-mclose]')) return close();
-      if (e.target.closest('[data-mpick]')) { close(); choose(pickId); }
+      if (e.target.closest('[data-mpick]')) { choose(pickId); close(); }
     });
   }
   function choose(id) {
@@ -976,7 +996,7 @@ textarea{font:inherit}
     }
     const ed = t.closest('[data-edit]'); if (ed) { S.edit = true; return go(+ed.dataset.edit); }
     if (t.closest('[data-replay]')) { const p = $('.fin-ph .phone'); p.classList.remove('play'); void p.offsetWidth; p.classList.add('play'); return; }
-    if (t.closest('[data-restart]')) { try { localStorage.removeItem(KEY); } catch (err) {} S = fresh(); return go(0); }
+    if (t.closest('[data-restart]')) { try { localStorage.removeItem(KEY); } catch (err) {} S = fresh(); return go(0, 'replace'); }
   });
   $('#app').addEventListener('input', e => { if (e.target.id === 'wish') { S.wish = e.target.value; save(); } });
 
@@ -1006,7 +1026,7 @@ textarea{font:inherit}
     }
   });
   let rz;
-  addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(() => prep(document), 150); });
+  addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(() => { prep(document); refocus(cur); }, 150); });
 
   window.__kima = { get S() { return S; }, buildMsg, go };
 
@@ -1015,8 +1035,13 @@ textarea{font:inherit}
     if (st0 && PRESET[st0]) { S.style = st0; Object.assign(S, preset(st0)); }
     KEYS.forEach(k => { if (P.get(k)) { S[k] = P.get(k); S.touched[k] = true; } });
     if (P.has('all')) EXTRAS.forEach(([k]) => { S.extras[k] = true; });
-    go(+P.get('go'));
-  } else { load(); go(0); }
+    go(+P.get('go'), 'replace');
+  } else {
+    load();
+    const hs = history.state;
+    if (hs && typeof hs.s === 'number' && hs.s >= 0 && hs.s <= FIN) { depth = hs.d || 0; go(hs.m ? hs.s : hs.s, 'none'); }
+    else go(0, 'replace');
+  }
 })();
 </script>
 </body>
