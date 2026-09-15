@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex">
 <title>Какой сайт нужен салону «Кима»</title>
-<meta name="description" content="Тест: 5 разных дизайнов, 3 вида записи и 10 функций — всё на фото салона, всё можно потрогать.">
+<meta name="description" content="Выберите дизайн, запись и функции для сайта салона и отправьте выбор в WhatsApp.">
 <meta name="theme-color" content="#F7F2EA">
-<meta property="og:title" content="Какой сайт нужен салону «Кима»?">
-<meta property="og:description" content="Выберите дизайн, запись и функции — и сразу увидите свой сайт на своих фото.">
+<meta property="og:title" content="Какой сайт нужен салону «Кима»">
+<meta property="og:description" content="Варианты дизайна, записи и функций на фото ваших работ.">
 <meta property="og:image" content="https://webdesign321321.github.io/salon-kima-shakhtinsk/og.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='26' fill='%232B211B'/%3E%3Ctext x='50' y='68' font-family='Georgia' font-size='58' font-style='italic' fill='%23D6B57C' text-anchor='middle'%3EК%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,9 +31,8 @@ textarea{font:inherit}
 
 /* ===== оболочка теста ===== */
 .bar{position:fixed;left:0;right:0;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;background:linear-gradient(var(--ivory) 72%,rgba(247,242,234,0))}
-.brand{display:flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--cocoa)}
+.brand{display:flex;align-items:baseline;gap:10px;font-size:14px;color:var(--cocoa)}
 .brand b{font-family:var(--serif);font-style:italic;font-weight:500;font-size:22px;letter-spacing:0;text-transform:none;color:var(--espresso)}
-.brand i{width:18px;height:1px;background:var(--gold)}
 .back{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:background .25s,opacity .25s}
 .back svg{width:18px;height:18px}
 .back.off{opacity:0;pointer-events:none}
@@ -46,10 +45,9 @@ textarea{font:inherit}
 .app{position:relative;z-index:2;min-height:100svh}
 .scr{min-height:100svh;padding:84px 18px 32px;display:flex;flex-direction:column}
 .wrap{width:100%;max-width:1180px;margin-inline:auto}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600}
-.eyebrow::before{content:"";width:24px;height:1px;background:var(--gold)}
+.eyebrow{display:inline-block;font-size:14px;color:var(--cocoa);font-weight:500}
 .h1{font-family:var(--serif);font-weight:400;font-size:clamp(44px,12vw,96px);line-height:.98;letter-spacing:-.02em;margin:18px 0 0}
-.h1 em,.h2 em{font-style:italic;color:var(--gold)}
+.h1 em,.h2 em{font-style:normal;color:inherit}
 .h2{font-family:var(--serif);font-weight:400;font-size:clamp(26px,6.6vw,52px);line-height:1.05;letter-spacing:-.015em;margin:10px 0 0}
 .sub{font-size:16px;line-height:1.55;color:var(--cocoa);max-width:560px;margin:10px 0 0}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:0 28px;border-radius:999px;background:var(--espresso);color:var(--ivory);font-weight:600;font-size:16px;transition:transform .25s var(--ease),opacity .25s;text-align:center}
@@ -69,8 +67,6 @@ textarea{font:inherit}
 .fan .f1{left:0;top:12%;transform:rotate(-8deg)}
 .fan .f2{left:23%;top:0;z-index:2}
 .fan .f3{right:0;top:14%;transform:rotate(8deg)}
-.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
-.pills span{padding:8px 14px;border:1px solid var(--line);border-radius:999px;font-size:13px;color:var(--cocoa);background:rgba(255,253,249,.6)}
 
 /* телефон */
 /* ширина считается из высоты явно: у aspect-ratio ширина росла из-за неразрывных строк и лент внутри мини-сайтов */
@@ -112,7 +108,6 @@ textarea{font:inherit}
 .bopt[aria-pressed="true"] .ic{background:rgba(214,181,124,.2);color:var(--gold2)}
 .bopt[aria-pressed="true"]::after{background:var(--gold2);border-color:var(--gold2);box-shadow:inset 0 0 0 5px var(--espresso)}
 .tip{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--cocoa);background:var(--cream);border-radius:12px;padding:10px 12px;margin-top:8px}
-.tip i{font-style:normal;font-size:16px}
 .feats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:6px}
 .ft{position:relative;display:flex;flex-direction:column;gap:2px;text-align:left;padding:12px 12px 12px;background:var(--white);border:1px solid var(--line);border-radius:16px;min-width:0;transition:background .3s,color .3s,border-color .3s}
 .ft b{font-size:14px;line-height:1.2;padding-right:22px}
@@ -125,17 +120,6 @@ textarea{font:inherit}
 /* итог */
 .fin{display:grid;gap:22px;flex:1}
 .fin>*{min-width:0}
-.pack{position:relative;background:var(--espresso);color:var(--ivory);border-radius:26px;padding:22px 20px;overflow:hidden}
-.pack::after{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(214,181,124,.35)}
-.pack .lbl{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2)}
-.pack h3{font-family:var(--serif);font-weight:400;font-size:clamp(28px,7vw,44px);line-height:1.02;margin:8px 0 8px}
-.pack h3 em{color:var(--gold2)}
-.pack p{margin:0;color:rgba(247,242,234,.78);font-size:15px;line-height:1.5}
-.meters{display:grid;gap:10px;margin-top:16px}
-.meter{display:grid;grid-template-columns:92px 1fr 40px;gap:12px;align-items:center;font-size:14px}
-.meter .tk{height:6px;border-radius:9px;background:rgba(247,242,234,.14);overflow:hidden}
-.meter .fl{height:100%;width:0;border-radius:9px;background:var(--gold2);transition:width 1.1s var(--ease)}
-.meter b{text-align:right;font-weight:600}
 .sum{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:14px 18px}
 .sum .r{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
 .sum .r:last-child{border-bottom:0}
@@ -202,9 +186,8 @@ textarea{font:inherit}
 .site .ba .hd{position:absolute;top:0;bottom:0;left:var(--x);width:2px;margin-left:-1px;background:#fff;pointer-events:none}
 .site .ba .hd::after{content:"⟷";position:absolute;top:50%;left:50%;width:28px;height:28px;margin:-14px 0 0 -14px;border-radius:50%;background:#fff;color:#2B211B;display:grid;place-items:center;font-size:13px;box-shadow:0 4px 10px rgba(0,0,0,.25)}
 .site .ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;margin:0;cursor:ew-resize}
-.site .ba .t{position:absolute;bottom:8px;padding:3px 8px;border-radius:99px;background:rgba(0,0,0,.55);color:#fff;font-size:9px;pointer-events:none}
+.site .ba .t,.site .shade .t{position:absolute;bottom:8px;padding:3px 8px;border-radius:99px;background:rgba(0,0,0,.55);color:#fff;font-size:9px;pointer-events:none}
 .site .shade{position:relative;aspect-ratio:4/5;border-radius:var(--rad);overflow:hidden}
-.site .shade .tint{position:absolute;inset:0;background:var(--tint,transparent);mix-blend-mode:color;opacity:.62;transition:background .4s}
 .site .sws{display:flex;gap:8px;margin:10px 0 0;flex-wrap:wrap}
 .site .sw{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:8.5px;cursor:pointer}
 .site .sw i{width:28px;height:28px;border-radius:50%;border:2px solid var(--bg);box-shadow:0 0 0 1px var(--ln)}
@@ -240,6 +223,21 @@ textarea{font:inherit}
 .site .fabw{position:sticky;bottom:12px;height:0;z-index:9;display:flex;justify-content:flex-end;padding-right:12px}
 .site .fab{width:42px;height:42px;margin-top:-54px;border-radius:50%;background:#1FA855;color:#fff;display:grid;place-items:center;box-shadow:0 8px 18px -6px rgba(0,0,0,.45)}
 .site .fab svg{width:22px;height:22px}
+.site .pr div{display:grid;grid-template-columns:1fr auto;gap:8px;padding:9px 0;border-bottom:1px solid var(--ln)}
+.site .pr b{white-space:nowrap;color:var(--mut)}
+.site .faq details{border-bottom:1px solid var(--ln);padding:9px 0}
+.site .faq summary{display:flex;justify-content:space-between;gap:8px;font-weight:700;cursor:pointer;list-style:none}
+.site .faq summary::-webkit-details-marker{display:none}
+.site .faq summary::after{content:"+";color:var(--acc);font-weight:700}
+.site .faq details[open] summary::after{content:"−"}
+.site .faq p{margin:6px 0 0;color:var(--mut)}
+.site .match .q{margin:0 0 6px;font-weight:700}
+.site .match .res{display:grid;grid-template-columns:70px 1fr;gap:10px;align-items:center;margin-top:10px}
+.site .match .res>div{min-width:0}
+.site .match .res b{display:block}
+.site .match .copts .chip{text-align:left}
+.site .match .res .ph{aspect-ratio:3/4;border-radius:10px;overflow:hidden}
+.d-classic .st .kk,.d-pop .st .kk{display:none}
 /* запись */
 .site .days{display:flex;gap:5px;overflow-x:auto;scrollbar-width:none;margin:5px 0 10px}
 .site .days::-webkit-scrollbar{display:none}
@@ -303,7 +301,7 @@ textarea{font:inherit}
 .d-pop .mq{background:#1B0F1E;color:#FFE600;overflow:hidden;white-space:nowrap;font-family:var(--h);font-weight:800;font-size:9px;padding:6px 0;margin-top:26px}
 .d-pop .mq span{display:inline-block;animation:mq 8s linear infinite;padding-left:10px}
 @keyframes mq{to{transform:translateX(-50%)}}
-.d-pop .nav{padding-top:10px}
+.d-pop .nav{position:relative;padding-top:10px}
 .d-pop .nav .lg{font-family:var(--h);font-weight:900;text-transform:uppercase;font-size:14px;background:#FFE600;padding:3px 8px;border:2px solid #1B0F1E;border-radius:8px}
 .d-pop .b2,.d-pop .chip.on,.d-pop .slot.on,.d-pop .day.on{border:2px solid #1B0F1E;box-shadow:2px 2px 0 #1B0F1E}
 .d-pop .cardx,.d-pop .rv,.d-pop .ba,.d-pop .shade{border:2px solid #1B0F1E;box-shadow:4px 4px 0 #1B0F1E}
@@ -400,7 +398,7 @@ textarea{font:inherit}
 
 <header class="bar">
   <button class="back off" id="back" aria-label="Назад"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
-  <div class="brand"><b>Кима</b><i></i><span>сайт под вас</span></div>
+  <div class="brand"><b>Кима</b><span>выбор сайта</span></div>
   <div class="ring" aria-hidden="true"><svg viewBox="0 0 46 46"><circle class="tr" cx="23" cy="23" r="20"/><circle class="pg" id="ringPg" cx="23" cy="23" r="20"/></svg><span id="ringTx">0/3</span></div>
 </header>
 <main class="app" id="app"></main>
@@ -421,36 +419,42 @@ textarea{font:inherit}
 
   /* ---------- варианты ---------- */
   const DESIGNS = [
-    ['classic', 'Классика', 'Светлый и тёплый, арка с фото — спокойная роскошь'],
-    ['journal', 'Журнал', 'Тёмный, как глянец: фото на весь экран, крупные номера'],
-    ['pop', 'Поп', 'Ярко-розовый, наклейки, смелые буквы — заметно и молодо'],
-    ['minimal', 'Минимализм', 'Белый и строгий: фото вплотную, много воздуха'],
-    ['app', 'Приложение', 'Как приложение: сторис мастеров и меню внизу']
+    ['classic', 'Светлый', 'Бежевые тона, фото в арке, классический шрифт'],
+    ['journal', 'Тёмный', 'Чёрный фон, фото на весь экран, крупное название'],
+    ['pop', 'Яркий', 'Розовый фон, крупные буквы, фото как наклейки'],
+    ['minimal', 'Минимализм', 'Белый фон, строгий шрифт, много фото'],
+    ['app', 'Как приложение', 'Сторис мастеров, карточки и меню внизу']
   ];
   const BOOK = [
-    ['calendar', 'Календарь', 'клиент выбирает день и время', '<svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>'],
-    ['form', 'Форма → WhatsApp', 'услуга, мастер и время одним сообщением', '<svg viewBox="0 0 24 24"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7L4 20Z"/></svg>'],
-    ['chat', 'Чат-помощник', 'бот задаёт 3 вопроса и собирает запись', '<svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5Z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg>']
+    ['calendar', 'Онлайн-календарь', 'клиент сам выбирает мастера, день и свободное время', '<svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>'],
+    ['form', 'Заявка в WhatsApp', 'клиент отмечает услугу и мастера, вам приходит сообщение', '<svg viewBox="0 0 24 24"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7L4 20Z"/></svg>'],
+    ['chat', 'Чат-помощник', 'бот задаёт 3 вопроса и передаёт запись администратору', '<svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5Z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg>']
   ];
   const FEATS = [
-    ['ba', 'До и после', 'ползунок: было → стало'],
-    ['shade', 'Примерка оттенка', 'нажал цвет — видно на фото'],
-    ['masters', 'Мастера', 'работы каждого мастера'],
-    ['reviews', 'Отзывы', 'листаются карточками'],
-    ['school', 'Школа', 'курс и заявка на обучение'],
-    ['cert', 'Сертификаты', 'подарок на услугу'],
-    ['insta', 'Лента Instagram', 'свежие работы'],
-    ['map', 'Карта и часы', 'адрес и «открыто сейчас»'],
-    ['lang', 'Русский + қазақша', 'переключатель языка'],
-    ['fab', 'Кнопка WhatsApp', 'всегда на экране']
+    ['ba', 'До и после', 'фото до и после с ползунком'],
+    ['shade', 'Оттенки', 'нажимаете цвет и видите работы в нём'],
+    ['masters', 'Мастера', 'у каждого мастера свои работы'],
+    ['match', 'Подбор мастера', 'клиент выбирает, что хочет, сайт советует мастера'],
+    ['price', 'Прайс', 'список услуг с ценами'],
+    ['reviews', 'Отзывы', 'отзывы гостей карточками'],
+    ['faq', 'Вопросы и ответы', 'ответы на частые вопросы'],
+    ['school', 'Обучение', 'курс и заявка на обучение'],
+    ['cert', 'Сертификаты', 'подарочный сертификат на услугу'],
+    ['insta', 'Instagram', 'последние фото из Instagram'],
+    ['map', 'Карта и часы', 'адрес, маршрут, открыто ли сейчас'],
+    ['lang', 'Казахский язык', 'переключатель РУ и ҚАЗ'],
+    ['fab', 'Кнопка WhatsApp', 'кнопка всегда видна на экране']
   ];
+  const SHADES = [['Бежевый блонд', '#d8bf9c', 'beige-long-sm.jpg'], ['Блонд', '#e8d6ad', 'blond-lob-1-sm.jpg'], ['Карамель', '#a8663a', 'caramel-sm.jpg'], ['Солнечные', '#c98f4e', 'sunkissed-1-sm.jpg'], ['Яркие пряди', '#b83a4b', 'red-streaks-sm.jpg']];
+  const MATCH = [['Блонд или сложное окрашивание', 'Анастасия', 'Блонд, рассветление, сложное окрашивание', 'blond-lob-2-sm.jpg'], ['Стрижку или яркие пряди', 'Татьяна', 'Стрижки, яркие пряди, карамельный беж', 'wolfcut-sm.jpg'], ['Уход и восстановление', 'Антонина', 'Уход, укладки, обучение', 'antonina-work.jpg']];
+  const PRICE = ['Окрашивание и тонирование', 'Рассветление, блонд', 'Стрижка', 'Корейская завивка', 'Перманентная укладка', 'Холодное восстановление', 'SPA-уход'];
   const DL = Object.fromEntries(DESIGNS.map(d => [d[0], d[1]]));
   const BLb = Object.fromEntries(BOOK.map(d => [d[0], d[1]]));
   const FL = Object.fromEntries(FEATS.map(d => [d[0], d[1]]));
 
-  const DEF = () => ({ design: 'classic', book: 'calendar', f: { ba: true, shade: false, masters: true, reviews: true, school: false, cert: false, insta: false, map: true, lang: false, fab: true }, wish: '', back: null });
+  const DEF = () => ({ design: 'classic', book: 'calendar', f: { ba: true, shade: false, masters: true, match: false, price: true, reviews: true, faq: false, school: false, cert: false, insta: false, map: true, lang: false, fab: true }, wish: '', back: null });
   const S = DEF();
-  const KEY = 'kima-vybor-3';
+  const KEY = 'kima-vybor-4';
   const load = () => { try { const d = JSON.parse(localStorage.getItem(KEY) || 'null'); if (d) Object.assign(S, d, { f: Object.assign(DEF().f, d.f || {}) }); } catch (e) {} };
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} };
 
@@ -462,13 +466,13 @@ textarea{font:inherit}
     const lng = f.lang ? `<span class="lng"><button class="on" data-act="lang" data-l="ru">РУ</button><button data-act="lang" data-l="kz">ҚАЗ</button></span>` : '';
     if (d === 'app') return `<div class="nav"><span class="lg"><i>К</i>${T('Салон «Кима»', '«Кима» салоны')}</span><span class="nr">${lng}<span class="burger"></span></span></div>`;
     if (d === 'minimal') return `<div class="nav"><span class="lg">Кима</span><span class="nr">${lng}<span class="txt">${T('Запись', 'Жазылу')}</span></span></div>`;
-    if (d === 'journal') return `<div class="nav"><span class="lg">Kima — salon</span><span class="nr">${lng}<span class="burger"></span></span></div>`;
+    if (d === 'journal') return `<div class="nav"><span class="lg">Kima salon</span><span class="nr">${lng}<span class="burger"></span></span></div>`;
     return `<div class="nav"><span class="lg">Кима</span><span class="nr">${lng}<span class="burger"></span></span></div>`;
   }
   function hero(d) {
     if (d === 'classic') return `<div class="hero"><div class="k">Салон красоты · Шахтинск · 10 лет</div><h1>${T('Цвет, который вам идёт', 'Сізге жарасатын түс')}</h1><p class="muted" style="margin:0 0 12px">Окрашивание, стрижки и уход. Мастера Анастасия, Татьяна и Антонина.</p><span class="b2">${T('Записаться', 'Жазылу')}</span><div class="arch"><img src="${img('sunkissed-2-sm.jpg')}" alt=""></div></div>`;
     if (d === 'journal') return `<div class="hero"><img src="${img('beige-long-sm.jpg')}" alt=""><span class="issue">Шахтинск · 10 лет</span><div class="ov"><h1>Кима</h1><p>${T('Цвет, который вам идёт', 'Сізге жарасатын түс')}</p><span class="b2" style="align-self:flex-start">${T('Записаться', 'Жазылу')}</span></div></div>`;
-    if (d === 'pop') return `<div class="mq"><span>ОКРАШИВАНИЕ ✦ СТРИЖКИ ✦ УХОД ✦ ОБУЧЕНИЕ ✦ ОКРАШИВАНИЕ ✦ СТРИЖКИ ✦ УХОД ✦ ОБУЧЕНИЕ ✦</span></div>${''}`;
+    if (d === 'pop') return `<div class="mq"><span>ОКРАШИВАНИЕ / СТРИЖКИ / УХОД / ОБУЧЕНИЕ / ОКРАШИВАНИЕ / СТРИЖКИ / УХОД / ОБУЧЕНИЕ /</span></div>${''}`;
     if (d === 'minimal') return `<div class="hero"><div class="duo">${I('blond-lob-2-sm.jpg')}${I('wolfcut-sm.jpg')}</div><div class="tx"><h1>${T('Салон красоты Кима', 'Кима сұлулық салоны')}</h1><div class="row3"><span>Город<b>Шахтинск</b></span><span>Опыт<b>10 лет</b></span><span>Адрес<b>Абая, 78</b></span></div><span class="b2">${T('Записаться', 'Жазылу')}</span></div></div>`;
     return `<div class="hello"><h1>${T('Красота рядом', 'Сұлулық жаныңызда')}</h1><p>Окрашивание, стрижки, уход · Шахтинск</p></div>
       <div class="stories">${[['Анастасия', 'blond-lob-2-sm.jpg'], ['Татьяна', 'sunkissed-1-sm.jpg'], ['Антонина', 'antonina-work.jpg'], ['Работы', 'caramel-sm.jpg'], ['Школа', 'diploma-sm.jpg']].map(([n, p]) => `<span class="story"><div><img src="${img(p)}" alt=""></div>${n}</span>`).join('')}</div>
@@ -476,61 +480,69 @@ textarea{font:inherit}
       <div class="cats"><span>Все</span><span>Окрашивание</span><span>Стрижки</span><span>Уход</span></div>`;
   }
   function popHero() {
-    return `${nav('pop', S._f)}<div class="hero"><h1>${T('Цвет, который', 'Сізге')} <mark>${T('вам идёт', 'жарасатын түс')}</mark></h1><span class="b2">${T('Записаться', 'Жазылу')} →</span><div class="stack"><span class="sticker">10<br>ЛЕТ</span><div class="p p1">${I('red-streaks-sm.jpg')}</div><div class="p p2">${I('sunkissed-3-sm.jpg')}</div></div></div>`;
+    return `${nav('pop', S._f)}<div class="hero"><h1>${T('Цвет, который', 'Сізге')} <mark>${T('вам идёт', 'жарасатын түс')}</mark></h1><span class="b2">${T('Записаться', 'Жазылу')}</span><div class="stack"><span class="sticker">10<br>ЛЕТ</span><div class="p p1">${I('red-streaks-sm.jpg')}</div><div class="p p2">${I('sunkissed-3-sm.jpg')}</div></div></div>`;
   }
   function works(d) {
     const ph = ['blond-lob-1-sm.jpg', 'wolfcut-sm.jpg', 'bal-long-1-sm.jpg', 'caramel-sm.jpg', 'beige-waves-1-sm.jpg', 'red-streaks-sm.jpg'];
     if (d === 'journal') return `<div class="sec">${st('01', 'Портфолио', 'Работы')}<div class="hs">${[['blond-lob-1-sm.jpg', 'Блонд'], ['bal-long-1-sm.jpg', 'Балаяж'], ['wolfcut-sm.jpg', 'Wolf cut'], ['caramel-sm.jpg', 'Карамель']].map(([p, c], i) => `<figure>${I(p)}<figcaption><span>${c}</span><span>0${i + 1}</span></figcaption></figure>`).join('')}</div></div>`;
     if (d === 'minimal') return `<div class="sec">${st('', 'Работы', 'Портфолио <em>/ 06</em>')}<div class="grid">${ph.map((p, i) => `<div><img src="${img(p)}" alt=""><span>0${i + 1}</span></div>`).join('')}</div></div>`;
     if (d === 'app') return `<div class="sec">${st('', '', 'Популярные работы')}<div class="grid">${[['blond-lob-1-sm.jpg', 'Блонд'], ['wolfcut-sm.jpg', 'Wolf cut'], ['caramel-sm.jpg', 'Карамель'], ['bal-long-1-sm.jpg', 'Балаяж']].map(([p, c]) => `<div class="w">${I(p)}<span>${c}</span></div>`).join('')}</div></div>`;
-    if (d === 'pop') return `<div class="sec">${st('', 'Портфолио', 'Наши <em>работы</em>')}<div class="grid">${ph.slice(0, 4).map(I).join('')}</div></div>`;
-    return `<div class="sec">${st('', 'Портфолио', 'Наши <em>работы</em>')}<div class="grid">${ph.slice(0, 4).map(I).join('')}</div></div>`;
+    if (d === 'pop') return `<div class="sec">${st('', 'Портфолио', 'Наши работы')}<div class="grid">${ph.slice(0, 4).map(I).join('')}</div></div>`;
+    return `<div class="sec">${st('', 'Портфолио', 'Наши работы')}<div class="grid">${ph.slice(0, 4).map(I).join('')}</div></div>`;
   }
   function services(d) {
     const L = ['Окрашивание и рассветление', 'Стрижки', 'Уходы и восстановление', 'Корейская завивка'];
     const n = d === 'journal' ? '02' : '';
     if (d === 'minimal') return `<div class="sec">${st('', 'Услуги', 'Что мы делаем')}<div class="svc">${L.map((s, i) => `<div><span>0${i + 1}</span>${s}<i>по консультации</i></div>`).join('')}</div></div>`;
     if (d === 'app') return `<div class="sec">${st('', '', 'Услуги')}<div class="svc">${L.map(s => `<div>${s}<span>›</span></div>`).join('')}</div></div>`;
-    if (d === 'pop') return `<div class="sec">${st('', 'Услуги', 'Что <em>делаем</em>')}<div class="svc">${L.map(s => `<div>${s}</div>`).join('')}</div></div>`;
-    return `<div class="sec">${st(n, 'Услуги', 'Что мы <em>делаем</em>')}<div class="svc">${L.map(s => `<div>${s}${d === 'classic' ? '<span>по консультации</span>' : ''}</div>`).join('')}</div></div>`;
+    if (d === 'pop') return `<div class="sec">${st('', 'Услуги', 'Что мы делаем')}<div class="svc">${L.map(s => `<div>${s}</div>`).join('')}</div></div>`;
+    return `<div class="sec">${st(n, 'Услуги', 'Что мы делаем')}<div class="svc">${L.map(s => `<div>${s}${d === 'classic' ? '<span>по консультации</span>' : ''}</div>`).join('')}</div></div>`;
   }
   let num = 2;
   const nn = () => String(++num).padStart(2, '0');
   function feature(k, d) {
     switch (k) {
-      case 'ba': return `<div class="sec" data-sec="ba">${st(nn(), 'До и после', 'Было — <em>стало</em>')}<div class="ba"><img src="${img('ba-before.jpg')}" alt=""><div class="af"><img src="${img('ba-after.jpg')}" alt=""></div><i class="hd"></i><span class="t" style="left:8px">до</span><span class="t" style="right:8px">после</span><input type="range" min="4" max="96" value="50" aria-label="До и после"></div><p class="note">← потяните → · Чёрная база → бежевый блонд, Анастасия</p></div>`;
-      case 'shade': return `<div class="sec" data-sec="shade">${st(nn(), 'Примерка', 'Какой <em>оттенок</em> вам?')}<div class="shade"><img src="${img('beige-long-sm.jpg')}" alt=""><i class="tint"></i></div><div class="sws">${[['Как есть', 'transparent', '#d9cfc4'], ['Бежевый', '#c9a27a', '#c9a27a'], ['Карамель', '#a8663a', '#a8663a'], ['Шоколад', '#4a2c1e', '#4a2c1e'], ['Медный', '#b5542a', '#b5542a']].map(([n, c, v], i) => `<span class="sw${i ? '' : ' on'}" data-act="shade" data-c="${c}"><i style="background:${v}"></i>${n}</span>`).join('')}</div><p class="note">Примерка — ориентир. Точный оттенок подберёт мастер.</p></div>`;
-      case 'masters': return `<div class="sec" data-sec="masters">${st(nn(), 'Команда', 'Наши <em>мастера</em>')}<div class="tabs">${['Анастасия', 'Татьяна', 'Антонина'].map((m, i) => `<button class="chip${i ? '' : ' on'}" data-act="master" data-i="${i}">${m}</button>`).join('')}</div>
+      case 'ba': return `<div class="sec" data-sec="ba">${st(nn(), 'Результат', 'До и после')}<div class="ba"><img src="${img('ba-before.jpg')}" alt=""><div class="af"><img src="${img('ba-after.jpg')}" alt=""></div><i class="hd"></i><span class="t" style="left:8px">до</span><span class="t" style="right:8px">после</span><input type="range" min="4" max="96" value="50" aria-label="До и после"></div><p class="note">Потяните ползунок. Чёрная база в бежевый блонд, Анастасия</p></div>`;
+      case 'shade': return `<div class="sec" data-sec="shade">${st(nn(), 'Оттенки', 'Какой цвет вам нравится?')}<div class="shade"><img src="${img(SHADES[0][2])}" alt=""><span class="t" data-cap style="left:8px">${SHADES[0][0]}</span></div><div class="sws">${SHADES.map(([n, c, p], i) => `<span class="sw${i ? '' : ' on'}" data-act="shade" data-n="${n}" data-p="${p}"><i style="background:${c}"></i>${n}</span>`).join('')}</div><p class="note">На фото работы салона в этом оттенке</p></div>`;
+      case 'masters': return `<div class="sec" data-sec="masters">${st(nn(), 'Команда', 'Наши мастера')}<div class="tabs">${['Анастасия', 'Татьяна', 'Антонина'].map((m, i) => `<button class="chip${i ? '' : ' on'}" data-act="master" data-i="${i}">${m}</button>`).join('')}</div>
         <div class="mw on" data-mi="0">${['blond-lob-2-sm.jpg', 'bal-long-2-sm.jpg', 'blond-lob-3-sm.jpg'].map(I).join('')}<p class="muted">Блонд, сложное окрашивание, рассветление</p></div>
         <div class="mw" data-mi="1">${['sunkissed-1-sm.jpg', 'wolfcut-sm.jpg', 'caramel-sm.jpg'].map(I).join('')}<p class="muted">Стрижки, яркие пряди, карамельный беж</p></div>
         <div class="mw" data-mi="2"><div style="grid-column:1/3;aspect-ratio:3/4"><img src="${img('antonina-work.jpg')}" alt="" style="object-position:50% 90%"></div><p class="muted">Уход, укладки, обучение</p></div></div>`;
-      case 'reviews': return `<div class="sec" data-sec="reviews">${st(nn(), 'Отзывы', 'Говорят <em>гости</em>')}<div class="rrow">
-        <div class="rv"><div class="s">★★★★★</div><q>Вы настоящая волшебница своего дела! Цвет получился невероятно красивым, насыщенным и именно таким, как я хотела.</q><span>об Анастасии · 25.06.2026</span></div>
-        <div class="rv"><div class="s">★★★★★</div><q>Все 6–8 часов я мотала головой и всё держится на 100%</q><span>гостья · 21.06.2026</span></div>
-        <div class="rv"><div class="s">★★★★★</div><q>Всё сделали маме моей красоту, спасибо вам большое. И вашим девочкам</q><span>Екатерина · 14.03.2026</span></div></div></div>`;
-      case 'school': return `<div class="sec" data-sec="school">${st(nn(), 'Школа', 'Учим <em>мастеров</em>')}<div class="cardx school"><div class="ph"><img src="${img('diploma-sm.jpg')}" alt=""></div><div><b style="font-size:12px">Курс «Базовые женские стрижки»</b><p class="muted" style="margin:4px 0 8px">«Ушла с основной работы — занимаюсь стрижками» — Ангелина, ученица</p><span class="b2" data-act="done">Оставить заявку</span></div></div><div class="done">Заявка на курс отправлена в WhatsApp салона (демо)</div></div>`;
-      case 'cert': return `<div class="sec" data-sec="cert">${st(nn(), 'Подарок', 'Подарочный <em>сертификат</em>')}<div class="cert"><b data-cert>На окрашивание</b><small>Салон «Кима» · Шахтинск</small></div><div class="chips">${['Окрашивание', 'Стрижку', 'Уход'].map((s, i) => `<button class="chip${i ? '' : ' on'}" data-act="cert" data-v="${s}">${s}</button>`).join('')}</div><span class="b2" data-act="done">Подарить</span><div class="done">Сертификат оформлен (демо)</div></div>`;
-      case 'insta': return `<div class="sec" data-sec="insta">${st(nn(), 'Instagram', 'Свежие <em>работы</em>')}<div class="ig">${['wolfcut-sm.jpg', 'beige-waves-3-sm.jpg', 'blond-lob-3-sm.jpg', 'bal-long-2-sm.jpg', 'sunkissed-1-sm.jpg', 'perm-sm.jpg'].map(I).join('')}</div><span class="b2">@salon_kima</span></div>`;
-      case 'map': return `<div class="sec" data-sec="map">${st(nn(), 'Контакты', 'Как <em>добраться</em>')}<span class="open" data-open><i></i>—</span><div class="map"></div><div class="kv"><div><span>Адрес</span><b>пр. Абая Кунанбаева, 78</b></div><div><span>Часы</span><b>ежедневно 10:00–19:00</b></div></div><span class="b2" style="margin-top:10px">Маршрут в 2ГИС</span></div>`;
+      case 'match': return `<div class="sec" data-sec="match">${st(nn(), 'Подбор', 'Какой мастер вам подойдёт?')}<div class="cardx match"><p class="q">Что хотите сделать?</p><div class="copts">${MATCH.map(([o], i) => `<button class="chip" data-act="match" data-i="${i}">${o}</button>`).join('')}</div><div class="res" hidden></div></div></div>`;
+      case 'price': return `<div class="sec" data-sec="price">${st(nn(), 'Прайс', 'Услуги и цены')}<div class="pr">${PRICE.map(p => `<div><span>${p}</span><b>от ··· ₸</b></div>`).join('')}</div><p class="note">Здесь будут ваши цены</p></div>`;
+      case 'reviews': return `<div class="sec" data-sec="reviews">${st(nn(), 'Отзывы', 'Что говорят гости')}<div class="rrow">
+        <div class="rv"><div class="s">★★★★★</div><q>Вы настоящая волшебница своего дела! Цвет получился невероятно красивым, насыщенным и именно таким, как я хотела.</q><span>об Анастасии, 25.06.2026</span></div>
+        <div class="rv"><div class="s">★★★★★</div><q>Все 6–8 часов я мотала головой и всё держится на 100%</q><span>гостья, 21.06.2026</span></div>
+        <div class="rv"><div class="s">★★★★★</div><q>Всё сделали маме моей красоту, спасибо вам большое. И вашим девочкам</q><span>Екатерина, 14.03.2026</span></div></div></div>`;
+      case 'faq': return `<div class="sec" data-sec="faq">${st(nn(), 'Вопросы', 'Частые вопросы')}<div class="faq">
+        <details open><summary>Можно ли из чёрного в блонд?</summary><p>Да, у Анастасии есть такая работа: чёрная база в бежевый блонд. Мастер посмотрит волосы и скажет, сколько нужно визитов.</p></details>
+        <details><summary>Сколько длится окрашивание?</summary><p>Зависит от длины и техники. Точное время мастер скажет при записи.</p></details>
+        <details><summary>Как записаться?</summary><p>Онлайн на сайте или в WhatsApp. Салон работает каждый день с 10:00 до 19:00.</p></details>
+        <details><summary>Где вы находитесь?</summary><p>Шахтинск, пр. Абая Кунанбаева, 78.</p></details></div></div>`;
+      case 'school': return `<div class="sec" data-sec="school">${st(nn(), 'Обучение', 'Учим мастеров')}<div class="cardx school"><div class="ph"><img src="${img('diploma-sm.jpg')}" alt=""></div><div><b style="font-size:12px">Курс «Базовые женские стрижки»</b><p class="muted" style="margin:4px 0 8px">«Ушла с основной работы — занимаюсь стрижками». Ангелина, ученица</p><span class="b2" data-act="done">Оставить заявку</span></div></div><div class="done">Заявка на курс отправлена (демо)</div></div>`;
+      case 'cert': return `<div class="sec" data-sec="cert">${st(nn(), 'Подарок', 'Подарочный сертификат')}<div class="cert"><b data-cert>На окрашивание</b><small>Салон «Кима», Шахтинск</small></div><div class="chips">${['Окрашивание', 'Стрижку', 'Уход'].map((s, i) => `<button class="chip${i ? '' : ' on'}" data-act="cert" data-v="${s}">${s}</button>`).join('')}</div><span class="b2" data-act="done">Подарить</span><div class="done">Сертификат оформлен (демо)</div></div>`;
+      case 'insta': return `<div class="sec" data-sec="insta">${st(nn(), 'Instagram', 'Новые работы')}<div class="ig">${['wolfcut-sm.jpg', 'beige-waves-3-sm.jpg', 'blond-lob-3-sm.jpg', 'bal-long-2-sm.jpg', 'sunkissed-1-sm.jpg', 'perm-sm.jpg'].map(I).join('')}</div><span class="b2">@salon_kima</span></div>`;
+      case 'map': return `<div class="sec" data-sec="map">${st(nn(), 'Контакты', 'Как нас найти')}<span class="open" data-open><i></i></span><div class="map"></div><div class="kv"><div><span>Адрес</span><b>пр. Абая Кунанбаева, 78</b></div><div><span>Часы</span><b>ежедневно 10:00–19:00</b></div></div><span class="b2" style="margin-top:10px">Маршрут в 2ГИС</span></div>`;
     }
     return '';
   }
   function booking(b, d) {
-    const head = st(nn(), 'Запись', `${T('Запишитесь', 'Жазылыңыз')} <em>онлайн</em>`);
+    const head = st(nn(), 'Запись', T('Онлайн-запись', 'Онлайн жазылу'));
+    const chips = (arr, on) => `<div class="chips">${arr.map((s, i) => `<span class="chip${i === on ? ' on' : ''}" data-act="pick">${s}</span>`).join('')}</div>`;
     if (b === 'calendar') {
       const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Almaty' }));
       const W = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
       const days = Array.from({ length: 7 }, (_, i) => { const x = new Date(now); x.setDate(now.getDate() + i); return `<span class="day${i ? '' : ' on'}" data-act="pick">${i ? W[x.getDay()] : 'Сег'}<b>${x.getDate()}</b></span>`; }).join('');
       const slots = ['10:00', '11:30', '13:00', '14:30', '16:00', '17:30'].map((t, i) => `<span class="slot${i === 2 ? ' on' : ''}" data-act="pick">${t}</span>`).join('');
-      return `<div class="sec" data-sec="booking">${head}<div class="cardx"><div class="lb">Услуга</div><div class="chips">${['Окрашивание', 'Стрижка', 'Уход'].map((s, i) => `<span class="chip${i ? '' : ' on'}" data-act="pick">${s}</span>`).join('')}</div><div class="lb">День</div><div class="days">${days}</div><div class="lb">Время</div><div class="slots">${slots}</div><span class="b2 full" data-act="done">Записаться</span><div class="done">Готово! Запись пришла администратору (демо)</div><p class="note">Время — пример. Настроим под ваше расписание.</p></div></div>`;
+      return `<div class="sec" data-sec="booking">${head}<div class="cardx"><div class="lb">Услуга</div>${chips(['Окрашивание', 'Стрижка', 'Уход'], 0)}<div class="lb">Мастер</div>${chips(['Анастасия', 'Татьяна', 'Антонина'], 0)}<div class="lb">День</div><div class="days">${days}</div><div class="lb">Время</div><div class="slots">${slots}</div><span class="b2 full" data-act="done">Записаться</span><div class="done">Запись отправлена администратору (демо)</div><p class="note">Время для примера, подключим ваше расписание.</p></div></div>`;
     }
-    if (b === 'form') return `<div class="sec" data-sec="booking">${head}<div class="cardx"><div class="lb">Услуга</div><div class="chips">${['Окрашивание', 'Стрижка', 'Уход'].map((s, i) => `<span class="chip${i ? '' : ' on'}" data-act="pick">${s}</span>`).join('')}</div><div class="lb">Мастер</div><div class="chips">${['Анастасия', 'Татьяна', 'Антонина', 'Любой'].map((s, i) => `<span class="chip${i === 3 ? ' on' : ''}" data-act="pick">${s}</span>`).join('')}</div><div class="lb">Когда</div><div class="chips">${['Сегодня', 'Завтра', 'На выходных'].map((s, i) => `<span class="chip${i === 1 ? ' on' : ''}" data-act="pick">${s}</span>`).join('')}</div><span class="b2 wa full" data-act="done">${waI}${T('Записаться в WhatsApp', 'WhatsApp арқылы жазылу')}</span><div class="done">Откроется WhatsApp салона с готовой записью (демо)</div></div></div>`;
+    if (b === 'form') return `<div class="sec" data-sec="booking">${head}<div class="cardx"><div class="lb">Услуга</div>${chips(['Окрашивание', 'Стрижка', 'Уход'], 0)}<div class="lb">Мастер</div>${chips(['Анастасия', 'Татьяна', 'Антонина', 'Любой'], 3)}<div class="lb">Когда</div>${chips(['Сегодня', 'Завтра', 'На выходных'], 1)}<span class="b2 wa full" data-act="done">${waI}${T('Записаться в WhatsApp', 'WhatsApp арқылы жазылу')}</span><div class="done">Откроется WhatsApp салона с готовым сообщением (демо)</div></div></div>`;
     return `<div class="sec" data-sec="booking">${head}<div class="cardx chat" data-step="0"><div class="msgs"><div class="bot">Здравствуйте! Что хотите сделать?</div></div><div class="copts">${['Окрашивание', 'Стрижка', 'Уход'].map(s => `<button class="chip" data-act="chat">${s}</button>`).join('')}</div></div></div>`;
   }
   const CHAT = [
     ['К какому мастеру записать?', ['Анастасия', 'Татьяна', 'Антонина', 'Любой']],
     ['Когда вам удобно?', ['Сегодня', 'Завтра', 'На выходных']],
-    ['Отлично! Передаю запись администратору — он подтвердит время в WhatsApp.', []]
+    ['Спасибо! Передаю запись администратору, он подтвердит время в WhatsApp.', []]
   ];
   function footer(d) {
     if (d === 'journal') return `<div class="ftr"><b>Кима</b><span>Салон красоты · Шахтинск</span></div>`;
@@ -541,11 +553,11 @@ textarea{font:inherit}
   }
 
   function renderSite(d, b, f) {
-    num = d === 'journal' ? 2 : 0; S._f = f;
-    const order = ['ba', 'shade', 'masters', 'reviews', 'school', 'cert', 'insta'];
+    num = d === 'journal' ? (f.price ? 1 : 2) : 0; S._f = f;
+    const order = ['ba', 'shade', 'masters', 'match', 'price', 'reviews', 'faq', 'school', 'cert', 'insta'];
     const feats = order.filter(k => f[k]).map(k => feature(k, d)).join('');
     const top = d === 'pop' ? hero('pop') + popHero() : nav(d, f) + hero(d);
-    const body = `${top}${works(d)}${services(d)}${feats}${booking(b, d)}${f.map ? feature('map', d) : ''}${footer(d)}`;
+    const body = `${top}${works(d)}${f.price ? '' : services(d)}${feats}${booking(b, d)}${f.map ? feature('map', d) : ''}${footer(d)}`;
     const fab = f.fab ? `<div class="fabw"><span class="fab">${waI}</span></div>` : '';
     const tab = d === 'app' ? `<div class="tabbar"><span class="on"><i></i>Главная</span><span><i></i>Работы</span><span><i></i>Запись</span><span><i></i>Контакты</span></div>` : '';
     return `<div class="site d-${d}">${body}${fab}${tab}</div>`;
@@ -553,7 +565,7 @@ textarea{font:inherit}
   function paint(sc, d, b, f, focus) {
     sc.innerHTML = renderSite(d, b, f);
     const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Almaty' })), h = now.getHours() + now.getMinutes() / 60, open = h >= 10 && h < 19;
-    sc.querySelectorAll('[data-open]').forEach(o => { o.classList.toggle('on', open); o.innerHTML = `<i></i>${open ? 'Сейчас открыто · до 19:00' : 'Сейчас закрыто · откроемся в 10:00'}`; });
+    sc.querySelectorAll('[data-open]').forEach(o => { o.classList.toggle('on', open); o.innerHTML = `<i></i>${open ? 'Сейчас открыто, до 19:00' : 'Сейчас закрыто, откроемся в 10:00'}`; });
     if (focus) {
       const el = sc.querySelector(`[data-sec="${focus}"]`);
       if (el) { const top = Math.max(0, el.offsetTop - 50); if (G) gsap.to(sc, { scrollTop: top, duration: .7, ease: 'power2.inOut' }); else sc.scrollTop = top; }
@@ -568,7 +580,8 @@ textarea{font:inherit}
     const act = a.dataset.act;
     if (act === 'pick') { const grp = a.parentElement; grp.querySelectorAll('[data-act="pick"]').forEach(x => x.classList.toggle('on', x === a)); }
     if (act === 'done') { const box = a.closest('.sec'); const dn = box.querySelector('.done'); if (dn) { dn.classList.add('show'); if (G) gsap.from(dn, { y: 8, opacity: 0, duration: .4 }); } }
-    if (act === 'shade') { const sec = a.closest('.sec'); sec.querySelector('.tint').style.setProperty('--tint', a.dataset.c); sec.querySelectorAll('.sw').forEach(x => x.classList.toggle('on', x === a)); }
+    if (act === 'shade') { const sec = a.closest('.sec'); sec.querySelector('.shade img').src = img(a.dataset.p); sec.querySelector('[data-cap]').textContent = a.dataset.n; sec.querySelectorAll('.sw').forEach(x => x.classList.toggle('on', x === a)); }
+    if (act === 'match') { const box = a.closest('.match'), m = MATCH[+a.dataset.i], res = box.querySelector('.res'); box.querySelectorAll('[data-act="match"]').forEach(x => x.classList.toggle('on', x === a)); res.hidden = false; res.innerHTML = `<div class="ph"><img src="${img(m[3])}" alt=""></div><div><b style="font-size:12px">Вам подойдёт ${m[1]}</b><p class="muted" style="margin:3px 0 8px">${m[2]}</p><span class="b2">Записаться к мастеру</span></div>`; if (G) gsap.from(res, { y: 8, opacity: 0, duration: .4 }); }
     if (act === 'master') { const sec = a.closest('.sec'); sec.querySelectorAll('[data-act="master"]').forEach(x => x.classList.toggle('on', x === a)); sec.querySelectorAll('.mw').forEach(m => m.classList.toggle('on', m.dataset.mi === a.dataset.i)); }
     if (act === 'cert') { const sec = a.closest('.sec'); sec.querySelector('[data-cert]').textContent = 'На ' + a.dataset.v.toLowerCase(); sec.querySelectorAll('[data-act="cert"]').forEach(x => x.classList.toggle('on', x === a)); }
     if (act === 'lang') { site.querySelectorAll('[data-act="lang"]').forEach(x => x.classList.toggle('on', x.dataset.l === a.dataset.l)); site.querySelectorAll('[data-ru]').forEach(t => t.innerHTML = t.dataset[a.dataset.l]); }
@@ -588,51 +601,36 @@ textarea{font:inherit}
   let cur = 0;
   function screenHTML(n) {
     if (n === 0) return `<div class="wrap intro-grid">
-      <div><span class="eyebrow">Салон «Кима» × VANTA</span>
-        <h1 class="h1">Какой сайт нужен <em>вашему</em> салону?</h1>
-        <p class="sub">5 совершенно разных дизайнов, 3 вида записи и 10 функций — всё на ваших фото, всё можно нажимать.</p>
-        <div class="pills"><span>5 дизайнов</span><span>3 вида записи</span><span>10 функций</span></div>
-        <div class="foot"><button class="btn big" data-next>Пройти тест <span aria-hidden="true">→</span></button><span class="hint">3 шага · около 3 минут</span></div></div>
+      <div><span class="eyebrow">Для салона «Кима»</span>
+        <h1 class="h1">Какой сайт нужен вашему салону?</h1>
+        <p class="sub">Здесь ${DESIGNS.length} вариантов дизайна, ${BOOK.length} способа записи и ${FEATS.length} функций. Всё на фото ваших работ, всё можно нажимать. Выберите, что нравится, и отправьте выбор в WhatsApp.</p>
+        <div class="foot"><button class="btn big" data-next>Начать</button><span class="hint">3 шага, около 3 минут</span></div></div>
       <div class="fan"><figure class="f1"><img src="${img('blond-lob-3-sm.jpg')}" alt=""></figure><figure class="f2"><img src="${img('sunkissed-2-sm.jpg')}" alt=""></figure><figure class="f3"><img src="${img('beige-waves-1-sm.jpg')}" alt=""></figure></div></div>`;
-    if (n === 1) return `<div class="wrap"><span class="eyebrow">Шаг 1 из 3</span><h2 class="h2">Выберите <em>дизайн</em></h2><p class="sub">Листайте вбок — это 5 разных сайтов. Каждый можно прокрутить и понажимать.</p>
-      <div class="dcar" id="dcar">${DESIGNS.map(([k, t, s]) => `<div class="dcard" data-d="${k}" aria-selected="${S.design === k}"><div class="phone"><div class="scroll" data-ph="${k}"></div></div><div class="meta"><b>${t}</b><span>${s}</span></div><button class="pick" data-choose="${k}">${S.design === k ? 'Выбран ✓' : 'Выбрать'}</button></div>`).join('')}</div>
+    if (n === 1) return `<div class="wrap"><span class="eyebrow">Шаг 1 из 3</span><h2 class="h2">Выберите дизайн</h2><p class="sub">Листайте вбок. Каждый сайт можно прокрутить и понажимать.</p>
+      <div class="dcar" id="dcar">${DESIGNS.map(([k, t, s]) => `<div class="dcard" data-d="${k}" aria-selected="${S.design === k}"><div class="phone"><div class="scroll" data-ph="${k}"></div></div><div class="meta"><b>${t}</b><span>${s}</span></div><button class="pick" data-choose="${k}">${S.design === k ? 'Выбран' : 'Выбрать'}</button></div>`).join('')}</div>
       <div class="dots" id="dots">${DESIGNS.map((_, i) => `<i class="${i ? '' : 'on'}"></i>`).join('')}</div>
-      <div class="foot"><button class="btn" data-next>Дальше: запись →</button><span class="hint">выбран: <b id="dsel">${DL[S.design]}</b></span></div></div>`;
-    if (n === 2) return `<div class="wrap bld"><div class="q-head"><span class="eyebrow">Шаг 2 из 3</span><h2 class="h2">Как клиент будет <em>записываться</em>?</h2><p class="sub">Три разные механики — попробуйте каждую прямо в телефоне.</p></div>
+      <div class="foot"><button class="btn" data-next>${S.back ? 'Сохранить' : 'Дальше'}</button><span class="hint">Выбран: <b id="dsel">${DL[S.design]}</b></span></div></div>`;
+    if (n === 2) return `<div class="wrap bld"><div class="q-head"><span class="eyebrow">Шаг 2 из 3</span><h2 class="h2">Как клиенты будут записываться?</h2><p class="sub">Попробуйте каждый вариант прямо в телефоне.</p></div>
       <div class="stage"><div class="phone"><div class="scroll" data-ph="main"></div></div></div>
       <div class="q-ctl"><div class="bopts">${BOOK.map(([k, t, s, ic]) => `<button class="bopt" data-book="${k}" aria-pressed="${S.book === k}"><span class="ic">${ic}</span><span><b>${t}</b><small>${s}</small></span></button>`).join('')}</div>
-      <div class="tip"><i>👆</i>Нажимайте кнопки в телефоне — запись работает</div>
-      <div class="foot"><button class="btn" data-next>${S.back ? 'Готово → к итогу' : 'Дальше: функции →'}</button></div></div></div>`;
-    if (n === 3) return `<div class="wrap bld"><div class="q-head"><span class="eyebrow">Шаг 3 из 3</span><h2 class="h2">Какие <em>функции</em> добавить?</h2><p class="sub">Нажмите функцию — телефон покажет её, и её можно попробовать.</p></div>
+      <div class="tip">Кнопки в телефоне нажимаются, можно попробовать записаться</div>
+      <div class="foot"><button class="btn" data-next>${S.back ? 'Сохранить' : 'Дальше'}</button></div></div></div>`;
+    if (n === 3) return `<div class="wrap bld"><div class="q-head"><span class="eyebrow">Шаг 3 из 3</span><h2 class="h2">Что добавить на сайт?</h2><p class="sub">Самое нужное уже отмечено, так делают большинство салонов. Уберите лишнее или добавьте своё.</p></div>
       <div class="stage"><div class="phone"><div class="scroll" data-ph="main"></div></div></div>
       <div class="q-ctl"><div class="feats">${FEATS.map(([k, t, s]) => `<button class="ft" data-feat="${k}" aria-pressed="${!!S.f[k]}"><b>${t}</b><small>${s}</small></button>`).join('')}</div>
-      <div class="foot"><button class="btn" data-next>${S.back ? 'Готово → к итогу' : 'Показать мой сайт →'}</button></div></div></div>`;
-    const r = result();
-    const fl = FEATS.filter(([k]) => S.f[k]).map(([, l]) => l).join(', ') || '—';
+      <div class="foot"><button class="btn" data-next>${S.back ? 'Сохранить' : 'Посмотреть свой сайт'}</button></div></div></div>`;
+    const fl = FEATS.filter(([k]) => S.f[k]).map(([, l]) => l).join(', ') || 'ничего не выбрано';
     const row = (dt, dd, step) => `<div class="r"><div><dt>${dt}</dt><dd>${dd}</dd></div><button class="ed" data-edit="${step}">Изменить</button></div>`;
     return `<div class="wrap fin">
-      <div style="display:flex;flex-direction:column;align-items:center;gap:10px"><div class="phone"><div class="scroll" data-ph="main"></div></div><span class="hint">Это ваш сайт — прокрутите и понажимайте</span></div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:10px"><div class="phone"><div class="scroll" data-ph="main"></div></div><span class="hint">Так будет выглядеть ваш сайт</span></div>
       <div style="display:grid;gap:14px;align-content:start">
-        <div><span class="eyebrow">Результат теста</span><h2 class="h2">Ваш сайт <em>готов</em> к обсуждению</h2></div>
-        <div class="pack"><span class="lbl">Вам подходит</span><h3>${r.title}</h3><p>${r.text}</p><div class="meters">${[['rec', 'Запись'], ['port', 'Портфолио'], ['edu', 'Обучение']].map(([k, l]) => `<div class="meter"><span>${l}</span><div class="tk"><div class="fl" data-w="${r.pct[k]}"></div></div><b>${r.pct[k]}%</b></div>`).join('')}</div></div>
+        <div><span class="eyebrow">Готово</span><h2 class="h2">Ваш выбор</h2></div>
         <div class="sum"><dl style="margin:0">${row('Дизайн', DL[S.design], 1)}${row('Запись', BLb[S.book], 2)}${row('Функции', fl, 3)}</dl></div>
-        <textarea class="wish" id="wish" placeholder="Пожелания: что добавить или убрать, какие фото поставить…">${S.wish || ''}</textarea>
-        <button class="btn wa" id="send">${waI}Отправить выбор в VANTA</button>
-        <p class="hint" style="margin:0">Откроется WhatsApp с готовым сообщением — мы подготовим сайт по вашему выбору.</p>
+        <textarea class="wish" id="wish" placeholder="Пожелания: что добавить или убрать, какие фото поставить">${S.wish || ''}</textarea>
+        <button class="btn wa" id="send">${waI}Отправить выбор в WhatsApp</button>
+        <p class="hint" style="margin:0">Откроется WhatsApp с готовым сообщением, останется нажать «Отправить».</p>
         <button class="btn ghost" data-restart>Пройти заново</button>
       </div></div>`;
-  }
-
-  function result() {
-    const f = S.f, sc = { rec: 0, port: 0, edu: 0 };
-    sc.rec += { calendar: 4, form: 3, chat: 4 }[S.book]; if (f.fab) sc.rec += 1; if (f.map) sc.rec += 1;
-    ['ba', 'shade'].forEach(k => { if (f[k]) sc.port += 2; }); ['masters', 'insta', 'reviews'].forEach(k => { if (f[k]) sc.port += 1; }); if (['journal', 'minimal'].includes(S.design)) sc.port += 1;
-    if (f.school) sc.edu += 4; if (f.cert) sc.edu += 1;
-    const max = { rec: 6, port: 8, edu: 5 }, p = {};
-    Object.keys(sc).forEach(k => p[k] = Math.max(8, Math.min(100, Math.round(sc[k] / max[k] * 100))));
-    let key = p.rec >= p.port ? 'rec' : 'port'; if (f.school && p.edu >= Math.max(p.rec, p.port) - 10) key = 'edu';
-    const PACK = { rec: ['Сайт с <em>онлайн-записью</em>', 'Главное — клиент сам записывается, а вам приходит готовая запись без переписки.'], port: ['Премиум-<em>портфолио</em>', 'Главное — показать уровень ваших работ так, чтобы новый клиент захотел именно к вам.'], edu: ['Салон <em>+ школа</em>', 'Два направления на одном сайте: запись клиентов и обучение мастеров с заявкой.'] };
-    return { title: PACK[key][0], text: PACK[key][1], pct: p };
   }
 
   function progress(n) {
@@ -651,15 +649,15 @@ textarea{font:inherit}
   function bind(el, n) {
     el.querySelectorAll('[data-next]').forEach(b => b.onclick = next);
     const main = el.querySelector('[data-ph="main"]');
-    if (n === 0 && G) { gsap.from(el.querySelectorAll('.fan figure'), { y: 80, opacity: 0, duration: 1, stagger: .12, ease: 'expo.out' }); gsap.from(el.querySelectorAll('.h1,.sub,.pills,.foot'), { y: 24, opacity: 0, duration: .8, stagger: .08, ease: 'power3.out' }); }
+    if (n === 0 && G) { gsap.from(el.querySelectorAll('.fan figure'), { y: 80, opacity: 0, duration: 1, stagger: .12, ease: 'expo.out' }); gsap.from(el.querySelectorAll('.h1,.sub,.foot'), { y: 24, opacity: 0, duration: .8, stagger: .08, ease: 'power3.out' }); }
     if (n === 1) {
-      const demoF = { ba: true, shade: false, masters: true, reviews: true, school: false, cert: false, insta: false, map: true, lang: false, fab: true };
+      const demoF = { ba: true, shade: false, masters: true, match: false, price: false, reviews: true, faq: false, school: false, cert: false, insta: false, map: true, lang: false, fab: true };
       DESIGNS.forEach(([k]) => paint(el.querySelector(`[data-ph="${k}"]`), k, 'form', demoF, null));
       const car = el.querySelector('#dcar'), dots = [...el.querySelectorAll('#dots i')];
       car.addEventListener('scroll', () => { const cards = [...car.children]; const mid = car.scrollLeft + car.clientWidth / 2; let best = 0, bd = 1e9; cards.forEach((c, i) => { const d = Math.abs(c.offsetLeft + c.offsetWidth / 2 - mid); if (d < bd) { bd = d; best = i; } }); dots.forEach((d, i) => d.classList.toggle('on', i === best)); }, { passive: true });
       el.querySelectorAll('[data-choose]').forEach(b => b.onclick = () => {
         S.design = b.dataset.choose; save();
-        el.querySelectorAll('.dcard').forEach(c => { const on = c.dataset.d === S.design; c.setAttribute('aria-selected', on); c.querySelector('.pick').textContent = on ? 'Выбран ✓' : 'Выбрать'; });
+        el.querySelectorAll('.dcard').forEach(c => { const on = c.dataset.d === S.design; c.setAttribute('aria-selected', on); c.querySelector('.pick').textContent = on ? 'Выбран' : 'Выбрать'; });
         el.querySelector('#dsel').textContent = DL[S.design];
         if (G) gsap.fromTo(b.closest('.dcard').querySelector('.phone'), { scale: .96 }, { scale: 1, duration: .5, ease: 'back.out(3)' });
       });
@@ -680,25 +678,27 @@ textarea{font:inherit}
     }
     if (n === FIN) {
       paint(main, S.design, S.book, S.f, null);
-      requestAnimationFrame(() => el.querySelectorAll('[data-w]').forEach(x => x.style.width = x.dataset.w + '%'));
       el.querySelectorAll('[data-edit]').forEach(b => b.onclick = () => { S.back = true; save(); go(+b.dataset.edit, -1); });
       el.querySelector('#wish').oninput = e => { S.wish = e.target.value; save(); };
       el.querySelector('#send').onclick = send;
       el.querySelector('[data-restart]').onclick = () => { try { localStorage.removeItem(KEY); } catch (e) {} location.href = location.pathname; };
-      if (G) gsap.from(el.querySelectorAll('.pack,.sum,.wish,#send'), { y: 24, opacity: 0, duration: .6, stagger: .08, ease: 'power3.out' });
+      if (G) gsap.from(el.querySelectorAll('.sum,.wish,#send'), { y: 24, opacity: 0, duration: .6, stagger: .08, ease: 'power3.out' });
     }
   }
   function next() { if (S.back && cur >= 1 && cur <= 3) { S.back = null; save(); return go(FIN); } go(Math.min(FIN, cur + 1)); }
   $('#back').onclick = () => { if (S.back && cur >= 1 && cur <= 3) { S.back = null; return go(FIN, -1); } go(Math.max(0, cur - 1), -1); };
 
   function buildMsg() {
-    const r = result(), strip = s => s.replace(/<[^>]+>/g, '');
-    return ['Здравствуйте! Салон «Кима» — результат теста:', `Подходит: ${strip(r.title)} (запись ${r.pct.rec}%, портфолио ${r.pct.port}%, обучение ${r.pct.edu}%)`, '',
-      `• Дизайн: ${DL[S.design]}`, `• Запись: ${BLb[S.book]}`, `• Функции: ${FEATS.filter(([k]) => S.f[k]).map(([, l]) => l).join(', ') || '—'}`,
+    const on = FEATS.filter(([k]) => S.f[k]).map(([, l]) => l), off = FEATS.filter(([k]) => !S.f[k]).map(([, l]) => l);
+    return ['Здравствуйте! Выбор сайта для салона «Кима»', '',
+      `Дизайн: ${DL[S.design]}`,
+      `Запись: ${BLb[S.book]}`, '',
+      'Нужно на сайте:', ...(on.length ? on.map((l, i) => `${i + 1}. ${l}`) : ['ничего не выбрано']), '',
+      `Не нужно: ${off.join(', ') || 'нет'}`,
       S.wish.trim() ? `\nПожелания: ${S.wish.trim()}` : null].filter(x => x !== null).join('\n');
   }
   function send() { const url = `https://wa.me/${VANTA_WA}?text=${encodeURIComponent(buildMsg())}`; if (matchMedia('(pointer: coarse)').matches) location.href = url; else window.open(url, '_blank', 'noopener'); }
-  window.__kima = { S, buildMsg, result, go };
+  window.__kima = { S, buildMsg, go };
 
   if (P.has('go')) { if (P.get('design')) S.design = P.get('design'); if (P.get('book')) S.book = P.get('book'); if (P.get('all')) FEATS.forEach(([k]) => S.f[k] = true); go(+P.get('go')); }
   else { load(); S.back = null; go(0); }
