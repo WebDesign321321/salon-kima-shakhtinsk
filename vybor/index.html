@@ -234,6 +234,7 @@ textarea{font:inherit}
 .site .match .q{margin:0 0 6px;font-weight:700}
 .site .match .res{display:grid;grid-template-columns:70px 1fr;gap:10px;align-items:center;margin-top:10px}
 .site .match .res>div{min-width:0}
+.site .match .res .b2{grid-column:1/-1}
 .site .match .res b{display:block}
 .site .match .copts .chip{text-align:left}
 .site .match .res .ph{aspect-ratio:3/4;border-radius:10px;overflow:hidden}
@@ -581,7 +582,7 @@ textarea{font:inherit}
     if (act === 'pick') { const grp = a.parentElement; grp.querySelectorAll('[data-act="pick"]').forEach(x => x.classList.toggle('on', x === a)); }
     if (act === 'done') { const box = a.closest('.sec'); const dn = box.querySelector('.done'); if (dn) { dn.classList.add('show'); if (G) gsap.from(dn, { y: 8, opacity: 0, duration: .4 }); } }
     if (act === 'shade') { const sec = a.closest('.sec'); sec.querySelector('.shade img').src = img(a.dataset.p); sec.querySelector('[data-cap]').textContent = a.dataset.n; sec.querySelectorAll('.sw').forEach(x => x.classList.toggle('on', x === a)); }
-    if (act === 'match') { const box = a.closest('.match'), m = MATCH[+a.dataset.i], res = box.querySelector('.res'); box.querySelectorAll('[data-act="match"]').forEach(x => x.classList.toggle('on', x === a)); res.hidden = false; res.innerHTML = `<div class="ph"><img src="${img(m[3])}" alt=""></div><div><b style="font-size:12px">Вам подойдёт ${m[1]}</b><p class="muted" style="margin:3px 0 8px">${m[2]}</p><span class="b2">Записаться к мастеру</span></div>`; if (G) gsap.from(res, { y: 8, opacity: 0, duration: .4 }); }
+    if (act === 'match') { const box = a.closest('.match'), m = MATCH[+a.dataset.i], res = box.querySelector('.res'); box.querySelectorAll('[data-act="match"]').forEach(x => x.classList.toggle('on', x === a)); res.hidden = false; res.innerHTML = `<div class="ph"><img src="${img(m[3])}" alt=""></div><div><b style="font-size:12px">Вам подойдёт ${m[1]}</b><p class="muted" style="margin:3px 0 0">${m[2]}</p></div><span class="b2 full">Записаться к мастеру</span>`; if (G) gsap.from(res, { y: 8, opacity: 0, duration: .4 }); }
     if (act === 'master') { const sec = a.closest('.sec'); sec.querySelectorAll('[data-act="master"]').forEach(x => x.classList.toggle('on', x === a)); sec.querySelectorAll('.mw').forEach(m => m.classList.toggle('on', m.dataset.mi === a.dataset.i)); }
     if (act === 'cert') { const sec = a.closest('.sec'); sec.querySelector('[data-cert]').textContent = 'На ' + a.dataset.v.toLowerCase(); sec.querySelectorAll('[data-act="cert"]').forEach(x => x.classList.toggle('on', x === a)); }
     if (act === 'lang') { site.querySelectorAll('[data-act="lang"]').forEach(x => x.classList.toggle('on', x.dataset.l === a.dataset.l)); site.querySelectorAll('[data-ru]').forEach(t => t.innerHTML = t.dataset[a.dataset.l]); }
