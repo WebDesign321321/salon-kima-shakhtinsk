@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex">
 <title>Какой сайт нужен салону «Кима»</title>
-<meta name="description" content="Пройдите тест: выберите дизайн и функции — и сразу увидите свой сайт на своих фото.">
+<meta name="description" content="Тест: 5 разных дизайнов, 3 вида записи и 10 функций — всё на фото салона, всё можно потрогать.">
 <meta name="theme-color" content="#F7F2EA">
 <meta property="og:title" content="Какой сайт нужен салону «Кима»?">
-<meta property="og:description" content="Выберите дизайн и функции — и сразу увидите свой сайт на своих фото.">
+<meta property="og:description" content="Выберите дизайн, запись и функции — и сразу увидите свой сайт на своих фото.">
 <meta property="og:image" content="https://webdesign321321.github.io/salon-kima-shakhtinsk/og.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='26' fill='%232B211B'/%3E%3Ctext x='50' y='68' font-family='Georgia' font-size='58' font-style='italic' fill='%23D6B57C' text-anchor='middle'%3EК%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Golos+Text:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Unbounded:wght@600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Golos+Text:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Unbounded:wght@600;800;900&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --ivory:#F7F2EA; --cream:#EFE6D8; --sand:#E2D3BE; --line:rgba(43,33,27,.14); --espresso:#2B211B; --cocoa:#6B5646; --muted:#8C7A6B;
@@ -28,15 +28,13 @@ img{display:block;max-width:100%}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
 textarea{font:inherit}
 [hidden]{display:none!important}
-.grain{position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
 
-/* top bar */
-.bar{position:fixed;left:0;right:0;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;background:linear-gradient(var(--ivory) 70%,rgba(247,242,234,0))}
+/* ===== оболочка теста ===== */
+.bar{position:fixed;left:0;right:0;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;background:linear-gradient(var(--ivory) 72%,rgba(247,242,234,0))}
 .brand{display:flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--cocoa)}
 .brand b{font-family:var(--serif);font-style:italic;font-weight:500;font-size:22px;letter-spacing:0;text-transform:none;color:var(--espresso)}
 .brand i{width:18px;height:1px;background:var(--gold)}
 .back{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:background .25s,opacity .25s}
-.back:hover{background:var(--white)}
 .back svg{width:18px;height:18px}
 .back.off{opacity:0;pointer-events:none}
 .ring{position:relative;width:46px;height:46px;flex:none}
@@ -45,586 +43,665 @@ textarea{font:inherit}
 .ring .tr{stroke:var(--line)}
 .ring .pg{stroke:var(--gold);stroke-linecap:round;transition:stroke-dashoffset .6s var(--ease)}
 .ring span{position:absolute;inset:0;display:grid;place-items:center;font-size:11px;font-weight:600;color:var(--cocoa)}
-
-/* screens */
 .app{position:relative;z-index:2;min-height:100svh}
-.scr{min-height:100svh;padding:88px 18px 36px;display:none;flex-direction:column}
-.scr.on{display:flex}
-.wrap{width:100%;max-width:1080px;margin-inline:auto}
+.scr{min-height:100svh;padding:84px 18px 32px;display:flex;flex-direction:column}
+.wrap{width:100%;max-width:1180px;margin-inline:auto}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600}
 .eyebrow::before{content:"";width:24px;height:1px;background:var(--gold)}
 .h1{font-family:var(--serif);font-weight:400;font-size:clamp(44px,12vw,96px);line-height:.98;letter-spacing:-.02em;margin:18px 0 0}
 .h1 em,.h2 em{font-style:italic;color:var(--gold)}
-.h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,7.4vw,56px);line-height:1.04;letter-spacing:-.015em;margin:14px 0 0}
-.sub{font-size:17px;line-height:1.55;color:var(--cocoa);max-width:520px;margin:16px 0 0}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:58px;padding:0 30px;border-radius:999px;background:var(--espresso);color:var(--ivory);font-weight:600;font-size:16px;transition:transform .25s var(--ease),background .25s,opacity .25s;text-align:center}
+.h2{font-family:var(--serif);font-weight:400;font-size:clamp(26px,6.6vw,52px);line-height:1.05;letter-spacing:-.015em;margin:10px 0 0}
+.sub{font-size:16px;line-height:1.55;color:var(--cocoa);max-width:560px;margin:10px 0 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;padding:0 28px;border-radius:999px;background:var(--espresso);color:var(--ivory);font-weight:600;font-size:16px;transition:transform .25s var(--ease),opacity .25s;text-align:center}
 .btn:hover{transform:translateY(-2px)}
 .btn:active{transform:scale(.97)}
 .btn svg{width:20px;height:20px;flex:none}
 .btn.big{min-height:64px;padding:0 38px;font-size:18px}
 .btn.wa{background:var(--wa);color:#fff}
 .btn.ghost{background:transparent;color:var(--espresso);border:1px solid var(--line)}
-.foot{margin-top:auto;padding-top:22px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.foot{margin-top:auto;padding-top:20px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 .hint{font-size:13px;color:var(--muted)}
 
-/* intro */
-.intro-grid{display:grid;gap:30px;align-items:center;flex:1}
+.intro-grid{display:grid;gap:28px;align-items:center;flex:1}
 .fan{position:relative;height:clamp(290px,80vw,470px);max-width:450px;width:100%;justify-self:center}
 .fan figure{position:absolute;margin:0;width:54%;aspect-ratio:3/4;border-radius:200px 200px 22px 22px;overflow:hidden;box-shadow:0 30px 60px -28px rgba(43,33,27,.45);border:6px solid var(--white)}
 .fan figure img{width:100%;height:100%;object-fit:cover}
 .fan .f1{left:0;top:12%;transform:rotate(-8deg)}
 .fan .f2{left:23%;top:0;z-index:2}
 .fan .f3{right:0;top:14%;transform:rotate(8deg)}
-.steps-mini{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-.steps-mini span{padding:8px 14px;border:1px solid var(--line);border-radius:999px;font-size:13px;color:var(--cocoa);background:rgba(255,253,249,.6)}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.pills span{padding:8px 14px;border:1px solid var(--line);border-radius:999px;font-size:13px;color:var(--cocoa);background:rgba(255,253,249,.6)}
 
-/* builder */
+/* телефон */
+/* ширина считается из высоты явно: у aspect-ratio ширина росла из-за неразрывных строк и лент внутри мини-сайтов */
+.phone{--ph:clamp(420px,62svh,600px);position:relative;flex:none;min-width:0;height:var(--ph);width:calc(var(--ph) * .4787);border-radius:40px;background:#16110e;padding:9px;box-shadow:0 44px 70px -38px rgba(43,33,27,.6),inset 0 0 0 1.5px #3a302a}
+.phone::before{content:"";position:absolute;left:50%;top:16px;width:66px;height:18px;margin-left:-33px;border-radius:20px;background:#16110e;z-index:9}
+.phone .scroll{position:relative;width:100%;height:100%;border-radius:32px;overflow-y:auto;overflow-x:hidden;scrollbar-width:none;background:#fff;overscroll-behavior:contain}
+.phone .scroll::-webkit-scrollbar{display:none}
+
+/* шаг 1 — карусель дизайнов */
+.dcar{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:18px 18px 8px;margin:6px -18px 0;scrollbar-width:none}
+.dcar::-webkit-scrollbar{display:none}
+.dcard{scroll-snap-align:center;flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:12px;width:min(84vw,330px)}
+.dcard .phone{transition:box-shadow .3s,transform .3s var(--ease)}
+.dcard[aria-selected="true"] .phone{box-shadow:0 0 0 3px var(--ivory),0 0 0 6px var(--gold),0 44px 70px -38px rgba(43,33,27,.6)}
+.dcard .meta{text-align:center;max-width:300px}
+.dcard .meta b{display:block;font-family:var(--serif);font-weight:500;font-size:24px}
+.dcard .meta span{display:block;font-size:13.5px;color:var(--muted);line-height:1.4;margin-top:2px}
+.pick{min-height:46px;padding:0 22px;border-radius:999px;border:1px solid var(--espresso);font-weight:600;font-size:14px;transition:background .3s,color .3s}
+.dcard[aria-selected="true"] .pick{background:var(--espresso);color:var(--ivory)}
+.dots{display:flex;justify-content:center;gap:6px;margin-top:6px}
+.dots i{width:7px;height:7px;border-radius:50%;background:var(--sand);transition:background .3s,width .3s}
+.dots i.on{background:var(--espresso);width:20px;border-radius:9px}
+
+/* шаги 2–3 */
 .bld{display:grid;gap:8px;flex:1;align-content:start}
 .bld>*{min-width:0}
-.bld .h2{font-size:clamp(25px,6.4vw,52px);margin-top:8px}
-.bld .q-head .sub{display:none}
-.stage{position:sticky;top:70px;z-index:6;display:flex;justify-content:center;align-items:flex-start;padding:6px 0 14px;background:linear-gradient(var(--ivory) 90%,rgba(247,242,234,0))}
+.stage{position:sticky;top:66px;z-index:6;display:flex;justify-content:center;padding:6px 0 12px;background:linear-gradient(var(--ivory) 90%,rgba(247,242,234,0))}
+.bld .phone{--ph:clamp(330px,50svh,600px)}
 .q-ctl{display:flex;flex-direction:column}
-.cards{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 18px 10px;margin:4px -18px 0;scrollbar-width:none}
-.cards::-webkit-scrollbar{display:none}
-.card{scroll-snap-align:start;flex:0 0 min(44vw,220px);text-align:left;background:var(--white);border:1px solid var(--line);border-radius:20px;padding:10px;transition:transform .2s var(--ease),border-color .3s,box-shadow .3s}
-.card:active{transform:scale(.97)}
-.card .vis{height:76px;border-radius:12px;overflow:hidden;background:var(--cream);display:grid;place-items:center;position:relative}
-.card .vis svg{width:86%;height:86%}
-.card b{display:block;margin-top:10px;font-weight:600;font-size:15px}
-.card small{display:block;font-size:12.5px;color:var(--muted);margin-top:2px;line-height:1.35}
-.card[aria-pressed="true"]{border-color:var(--espresso);box-shadow:0 0 0 2px var(--espresso),0 18px 40px -24px rgba(43,33,27,.5)}
-.card[aria-pressed="true"] b::after{content:" ✓";color:var(--gold)}
-.sw{display:flex;gap:6px;position:absolute;left:10px;bottom:8px}
-.sw i{width:14px;height:14px;border-radius:50%;border:1px solid rgba(0,0,0,.12)}
-.sample{font-size:34px;line-height:1}
-.grp{margin-top:14px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600}
-.toggles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:8px}
-.tg{position:relative;display:flex;align-items:center;gap:10px;padding:7px 10px 7px 7px;background:var(--white);border:1px solid var(--line);border-radius:16px;text-align:left;min-width:0;min-height:58px;transition:background .3s,color .3s,border-color .3s}
-.tg img,.tg .fi{width:42px;height:42px;border-radius:10px;object-fit:cover;flex:none}
-.tg .fi{display:grid;place-items:center;background:var(--cream);font-weight:700;font-size:11px;color:var(--espresso);transition:background .3s}
-.tg .fi svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-.tg span.l{font-size:13.5px;font-weight:600;line-height:1.2;min-width:0}
-.tg span.l small{display:block;font-weight:500;font-size:11.5px;opacity:.6;margin-top:1px}
-.tg[aria-pressed="true"]{background:var(--espresso);color:var(--ivory);border-color:var(--espresso)}
-.tg[aria-pressed="true"] .fi{background:rgba(214,181,124,.2);color:var(--gold2)}
-.tg[aria-pressed="false"] img{filter:grayscale(1);opacity:.55}
-.seg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:8px;background:var(--cream);padding:5px;border-radius:16px}
-.seg button{min-height:44px;border-radius:12px;font-size:13px;font-weight:600;line-height:1.15;padding:4px 6px;transition:background .3s,color .3s}
-.seg button[aria-pressed="true"]{background:var(--espresso);color:var(--ivory)}
+.bopts{display:grid;gap:10px;margin-top:6px}
+.bopt{display:flex;gap:14px;align-items:center;text-align:left;padding:12px 44px 12px 12px;background:var(--white);border:1px solid var(--line);border-radius:18px;position:relative;transition:background .3s,color .3s,border-color .3s}
+.bopt .ic{width:44px;height:44px;border-radius:12px;background:var(--cream);display:grid;place-items:center;flex:none}
+.bopt .ic svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.bopt b{display:block;font-size:16px}
+.bopt small{display:block;font-size:13px;color:var(--muted);margin-top:2px;line-height:1.35}
+.bopt::after{content:"";position:absolute;right:14px;top:50%;width:20px;height:20px;margin-top:-10px;border-radius:50%;border:1px solid var(--line)}
+.bopt[aria-pressed="true"]{background:var(--espresso);color:var(--ivory);border-color:var(--espresso)}
+.bopt[aria-pressed="true"] small{color:rgba(247,242,234,.65)}
+.bopt[aria-pressed="true"] .ic{background:rgba(214,181,124,.2);color:var(--gold2)}
+.bopt[aria-pressed="true"]::after{background:var(--gold2);border-color:var(--gold2);box-shadow:inset 0 0 0 5px var(--espresso)}
+.tip{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--cocoa);background:var(--cream);border-radius:12px;padding:10px 12px;margin-top:8px}
+.tip i{font-style:normal;font-size:16px}
+.feats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:6px}
+.ft{position:relative;display:flex;flex-direction:column;gap:2px;text-align:left;padding:12px 12px 12px;background:var(--white);border:1px solid var(--line);border-radius:16px;min-width:0;transition:background .3s,color .3s,border-color .3s}
+.ft b{font-size:14px;line-height:1.2;padding-right:22px}
+.ft small{font-size:12px;color:var(--muted);line-height:1.3}
+.ft::after{content:"+";position:absolute;right:10px;top:10px;width:20px;height:20px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-size:14px;line-height:1}
+.ft[aria-pressed="true"]{background:var(--espresso);color:var(--ivory);border-color:var(--espresso)}
+.ft[aria-pressed="true"] small{color:rgba(247,242,234,.6)}
+.ft[aria-pressed="true"]::after{content:"✓";background:var(--gold2);border-color:var(--gold2);color:var(--espresso);font-size:11px}
 
-/* phone + laptop */
-.phone{position:relative;width:clamp(236px,64vw,300px);aspect-ratio:9/18.6;border-radius:44px;background:#1b1512;padding:10px;box-shadow:0 50px 80px -40px rgba(43,33,27,.6),inset 0 0 0 1.5px #3a302a}
-.phone::before{content:"";position:absolute;left:50%;top:18px;width:74px;height:20px;margin-left:-37px;border-radius:20px;background:#1b1512;z-index:3}
-.phone .scroll{position:relative;width:100%;height:100%;border-radius:34px;overflow-y:auto;overflow-x:hidden;scrollbar-width:none;background:#fff}
-.phone .scroll::-webkit-scrollbar{display:none}
-.bld .phone{height:clamp(290px,46svh,460px);width:auto;border-radius:36px;padding:8px}
-.bld .phone .scroll{border-radius:29px}
-.bld .phone::before{top:14px;width:60px;height:16px;margin-left:-30px}
-.laptop{width:100%;max-width:860px;border-radius:18px;background:#1b1512;padding:10px 10px 0;box-shadow:0 50px 80px -40px rgba(43,33,27,.6)}
-.laptop .scr2{position:relative;width:100%;aspect-ratio:16/10;border-radius:10px 10px 0 0;overflow-y:auto;overflow-x:hidden;background:#fff;scrollbar-width:thin}
-.laptop .zoom{width:1200px;transform-origin:0 0}
-.laptop-base{height:16px;background:linear-gradient(#2a221d,#15110e);border-radius:0 0 18px 18px;margin:0 -24px;position:relative}
-.laptop-base::after{content:"";position:absolute;left:50%;top:0;width:120px;height:6px;margin-left:-60px;background:#0c0908;border-radius:0 0 8px 8px}
-.flash{animation:flash .6s var(--ease)}
-@keyframes flash{0%{filter:brightness(1.25) saturate(.8)}100%{filter:none}}
-
-/* ======= preview site themes ======= */
-.site{--bg:#F7F2EA;--fg:#2B211B;--acc:#B08A52;--card:#FFFDF9;--mut:#8C7A6B;--line2:rgba(43,33,27,.12);--h:'Playfair Display',Georgia,serif;--b:'Golos Text',system-ui,sans-serif;--btnbg:#2B211B;--btnfg:#F7F2EA;--up:none;--ls:-.01em;--hw:400;
-  position:relative;background:var(--bg);color:var(--fg);font-family:var(--b);font-size:11px;line-height:1.45;min-height:100%}
-.site.t-lux{--bg:#0F0D0C;--fg:#F2E9DC;--acc:#D2B57E;--card:#1A1715;--mut:#A39584;--line2:rgba(242,233,220,.14);--h:'Cormorant Garamond',Georgia,serif;--btnbg:#D2B57E;--btnfg:#0F0D0C;--hw:500}
-.site.t-bright{--bg:#FFF3F6;--fg:#1D1020;--acc:#E0356B;--card:#FFFFFF;--mut:#7A6470;--line2:rgba(29,16,32,.12);--h:'Unbounded',system-ui,sans-serif;--btnbg:#E0356B;--btnfg:#fff;--up:uppercase;--ls:-.03em;--hw:800}
-.site *{box-sizing:border-box}
-.site .ps{padding:26px 16px;border-bottom:1px solid var(--line2)}
-.site .nav{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:8px;padding:30px 16px 10px;background:var(--bg)}
-.site .nav b{font-family:var(--h);font-weight:var(--hw);font-size:15px;text-transform:var(--up);letter-spacing:var(--ls)}
-.site .nav .nr{display:flex;align-items:center;gap:10px}
-.site .nav i{width:18px;height:8px;border-block:1.5px solid var(--fg)}
-.site .lng{font-size:8.5px;font-weight:600;letter-spacing:.06em;border:1px solid var(--line2);border-radius:99px;padding:3px 7px}
-.site .lng u{text-decoration:none;color:var(--acc)}
-.site h4{font-family:var(--h);font-weight:var(--hw);font-size:22px;line-height:1.02;letter-spacing:var(--ls);text-transform:var(--up);margin:0 0 12px}
-.site h4 em{font-style:italic;color:var(--acc)}
-.site.t-bright h4 em{font-style:normal}
-.site .k{font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);font-weight:600;margin-bottom:8px}
-.site .pbtn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:32px;padding:0 14px;border-radius:999px;background:var(--btnbg);color:var(--btnfg);font-weight:600;font-size:10.5px}
-.site.t-bright .pbtn{border-radius:10px}
-.site img{width:100%;height:100%;object-fit:cover}
-.site .hero-arch .ar{margin:16px auto 0;width:78%;aspect-ratio:3/4;border-radius:200px 200px 16px 16px;overflow:hidden}
-.site .hero-arch h1,.site .hero-full h1,.site .hero-col h1{font-family:var(--h);font-weight:var(--hw);font-size:30px;line-height:.98;letter-spacing:var(--ls);text-transform:var(--up);margin:6px 0 12px}
-.site .hero-arch h1 em,.site .hero-full h1 em,.site .hero-col h1 em{font-style:italic;color:var(--acc)}
-.site.t-bright h1 em{font-style:normal!important}
-.site .hero-full{position:relative;height:430px;padding:0!important;overflow:hidden}
-.site .hero-full img{position:absolute;inset:0}
-.site .hero-full .ov{position:absolute;inset:0;background:linear-gradient(transparent 35%,rgba(0,0,0,.75));display:flex;flex-direction:column;justify-content:flex-end;padding:18px 16px;color:#fff}
-.site .hero-full .ov .k{color:#fff;opacity:.85}
-.site .hero-full .ov h1 em{color:#fff!important;text-decoration:underline;text-decoration-color:var(--acc);text-underline-offset:4px}
-.site .hero-col .cg{display:grid;grid-template-columns:1.2fr 1fr;grid-template-rows:90px 90px;gap:6px;margin-top:14px}
-.site .hero-col .cg div{border-radius:12px;overflow:hidden}
-.site .hero-col .cg div:first-child{grid-row:1/3}
-.site .grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
-.site .grid div{border-radius:10px;overflow:hidden;aspect-ratio:3/4}
-.site .grid div:nth-child(3n+2){aspect-ratio:3/3.4}
-.site .ba{position:relative;aspect-ratio:3/4;border-radius:14px;overflow:hidden}
-.site .ba img{position:absolute;inset:0}
-.site .ba .af{clip-path:inset(0 0 0 50%);animation:sweep 4.2s ease-in-out infinite}
-.site .ba .hd{position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;animation:hand 4.2s ease-in-out infinite}
-.site .ba .hd::after{content:"⟷";position:absolute;top:50%;left:50%;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;background:#fff;color:#2B211B;display:grid;place-items:center;font-size:12px}
-.site .ba .t{position:absolute;bottom:8px;padding:3px 8px;border-radius:99px;background:rgba(0,0,0,.55);color:#fff;font-size:9px}
-@keyframes sweep{0%,100%{clip-path:inset(0 0 0 78%)}50%{clip-path:inset(0 0 0 22%)}}
-@keyframes hand{0%,100%{left:78%}50%{left:22%}}
-.site .row{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin-right:-16px;padding-right:16px}
-.site .row::-webkit-scrollbar{display:none}
-.site .mc{flex:0 0 62%;background:var(--card);border:1px solid var(--line2);border-radius:14px;overflow:hidden}
-.site .mc .ph{aspect-ratio:1;overflow:hidden}
-.site .mc div.t{padding:8px 10px}
-.site .mc b{display:block;font-size:12px}
-.site .mc span{color:var(--mut);font-size:9.5px}
-.site .svc{display:grid;gap:6px}
-.site .svc div{display:flex;justify-content:space-between;gap:8px;align-items:center;background:var(--card);border:1px solid var(--line2);border-radius:10px;padding:10px}
-.site .svc b{font-weight:600}
-.site .svc span{color:var(--acc);font-weight:600;white-space:nowrap;font-size:10px}
-.site .rv{background:var(--card);border:1px solid var(--line2);border-radius:14px;padding:12px;margin-bottom:6px}
-.site .rv q{display:block;font-family:var(--h);font-style:italic;font-size:13px;line-height:1.3;quotes:"«" "»"}
-.site.t-bright .rv q{font-style:normal;font-family:var(--b);font-weight:600;font-size:12px}
-.site .rv span{display:block;margin-top:6px;color:var(--mut);font-size:9px}
-.site .acd{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px}
-.site .acd div{border-radius:10px;overflow:hidden;aspect-ratio:4/5}
-.site .ger{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px}
-.site .ger div{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:3/4}
-.site .ger span{position:absolute;left:6px;top:6px;background:rgba(0,0,0,.55);color:#fff;border-radius:99px;padding:2px 7px;font-size:8.5px}
-.site .cert{position:relative;border-radius:16px;padding:18px 16px;overflow:hidden;background:linear-gradient(135deg,var(--acc),#E9D5B0);color:#2B211B}
-.site.t-bright .cert{background:linear-gradient(135deg,#E0356B,#FF9BB8);color:#fff}
-.site .cert b{display:block;font-family:var(--h);font-weight:var(--hw);font-size:20px;line-height:1.05;text-transform:var(--up);letter-spacing:var(--ls)}
-.site .cert small{display:block;margin:6px 0 12px;opacity:.8}
-.site .cert::after{content:"";position:absolute;right:-24px;top:-24px;width:100px;height:100px;border-radius:50%;border:1px solid rgba(255,255,255,.55)}
-.site .cert .pbtn{background:#2B211B;color:#fff}
-.site .ig{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-bottom:10px}
-.site .ig div{aspect-ratio:1;overflow:hidden}
-.site .bk{background:var(--card);border:1px solid var(--line2);border-radius:16px;padding:14px}
-.site .chips{display:flex;flex-wrap:wrap;gap:5px;margin:4px 0 10px}
-.site .chips i{font-style:normal;padding:5px 9px;border-radius:99px;border:1px solid var(--line2);font-size:9.5px;animation:chip 3.6s infinite}
-.site .chips i:nth-child(2){animation-delay:1.2s}.site .chips i:nth-child(3){animation-delay:2.4s}
-@keyframes chip{0%,28%{background:var(--btnbg);color:var(--btnfg);border-color:var(--btnbg)}34%,100%{background:transparent;color:inherit}}
-.site .bk .lb{font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
-.site .wabtn{display:flex;align-items:center;justify-content:center;gap:6px;height:36px;border-radius:999px;background:#1FA855;color:#fff;font-weight:600;font-size:11px;margin-top:6px}
-.site .wabtn svg{width:14px;height:14px}
-.site .callbig{display:grid;gap:4px;text-align:center;padding:10px 0}
-.site .callbig b{font-family:var(--h);font-size:22px;font-weight:var(--hw);letter-spacing:var(--ls)}
-.site .ct{display:grid;gap:6px}
-.site .ct div{display:flex;justify-content:space-between;gap:10px;border-bottom:1px dashed var(--line2);padding-bottom:6px}
-.site .ct span{color:var(--mut)}
-.site .map{height:90px;border-radius:12px;margin-top:10px;background:repeating-linear-gradient(35deg,var(--line2) 0 1px,transparent 1px 14px),repeating-linear-gradient(-55deg,var(--line2) 0 1px,transparent 1px 22px),var(--card);position:relative;border:1px solid var(--line2)}
-.site .map::after{content:"";position:absolute;left:50%;top:40%;width:16px;height:16px;margin-left:-8px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--acc)}
-.site .ftr{padding:20px 16px 26px;text-align:center;color:var(--mut);font-size:9px}
-.site .ftr b{display:block;font-family:var(--h);font-weight:var(--hw);font-size:20px;color:var(--fg);text-transform:var(--up);letter-spacing:var(--ls)}
-.site .price-note{margin-top:8px;color:var(--mut);font-size:9px}
-.site .fabw{position:sticky;bottom:12px;height:0;z-index:6;display:flex;justify-content:flex-end;padding-right:12px}
-.site .fab{width:42px;height:42px;margin-top:-54px;border-radius:50%;background:#1FA855;color:#fff;display:grid;place-items:center;box-shadow:0 8px 18px -6px rgba(0,0,0,.45);animation:fab 2.4s ease-in-out infinite}
-.site .fab svg{width:22px;height:22px}
-@keyframes fab{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
-.site .off{display:none}
-/* desktop preview */
-.site.desk{font-size:14px}
-.site.desk .nav{padding:18px 48px}
-.site.desk .nav b{font-size:22px}
-.site.desk .lng{font-size:12px}
-.site.desk .ps{padding:56px 48px}
-.site.desk h4{font-size:40px}
-.site.desk .k{font-size:11px}
-.site.desk .pbtn{height:46px;padding:0 24px;font-size:14px}
-.site.desk .hero-arch{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
-.site.desk .hero-arch .ar{margin:0;width:100%}
-.site.desk .hero-arch h1,.site.desk .hero-full h1,.site.desk .hero-col h1{font-size:72px}
-.site.desk .hero-full{height:640px}
-.site.desk .hero-full .ov{padding:48px}
-.site.desk .hero-col{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-.site.desk .hero-col .cg{grid-template-rows:200px 200px;gap:10px;margin:0}
-.site.desk .grid{grid-template-columns:repeat(4,1fr);gap:12px}
-.site.desk .ba{max-width:520px;aspect-ratio:4/3;margin:0 auto}
-.site.desk .mc{flex:0 0 30%}
-.site.desk .svc{grid-template-columns:1fr 1fr}
-.site.desk .svc div{padding:18px}
-.site.desk .rvs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.site.desk .rv q{font-size:20px}
-.site.desk .acd,.site.desk .ger{grid-template-columns:repeat(2,260px)}
-.site.desk .cert{max-width:560px;padding:36px}
-.site.desk .cert b{font-size:36px}
-.site.desk .ig{grid-template-columns:repeat(6,1fr);gap:6px}
-.site.desk .bk{max-width:560px}
-.site.desk .map{height:220px}
-.site.desk .ftr{font-size:12px}
-.site.desk .ftr b{font-size:34px}
-.site.desk .fab{width:64px;height:64px;margin-top:-84px}
-.site.desk .fab svg{width:32px;height:32px}
-
-/* assemble */
-.asm{flex:1;display:grid;place-items:center;text-align:center}
-.tiles{position:relative;width:240px;height:240px;margin:0 auto 26px}
-.tiles div{position:absolute;width:74px;height:98px;border-radius:12px;overflow:hidden;box-shadow:0 18px 30px -18px rgba(43,33,27,.6);border:3px solid var(--white)}
-
-/* final */
-.fin{display:grid;gap:26px;flex:1}
+/* итог */
+.fin{display:grid;gap:22px;flex:1}
 .fin>*{min-width:0}
-.pack{position:relative;background:var(--espresso);color:var(--ivory);border-radius:28px;padding:24px 22px;overflow:hidden}
+.pack{position:relative;background:var(--espresso);color:var(--ivory);border-radius:26px;padding:22px 20px;overflow:hidden}
 .pack::after{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;border-radius:50%;border:1px solid rgba(214,181,124,.35)}
 .pack .lbl{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2)}
-.pack h3{font-family:var(--serif);font-weight:400;font-size:clamp(30px,7.4vw,46px);line-height:1.02;margin:8px 0 10px}
+.pack h3{font-family:var(--serif);font-weight:400;font-size:clamp(28px,7vw,44px);line-height:1.02;margin:8px 0 8px}
 .pack h3 em{color:var(--gold2)}
 .pack p{margin:0;color:rgba(247,242,234,.78);font-size:15px;line-height:1.5}
-.meters{display:grid;gap:12px;margin-top:18px}
-.meter{display:grid;grid-template-columns:96px 1fr 42px;gap:12px;align-items:center;font-size:14px}
+.meters{display:grid;gap:10px;margin-top:16px}
+.meter{display:grid;grid-template-columns:92px 1fr 40px;gap:12px;align-items:center;font-size:14px}
 .meter .tk{height:6px;border-radius:9px;background:rgba(247,242,234,.14);overflow:hidden}
 .meter .fl{height:100%;width:0;border-radius:9px;background:var(--gold2);transition:width 1.1s var(--ease)}
 .meter b{text-align:right;font-weight:600}
-.viewtg{display:inline-grid;grid-template-columns:1fr 1fr;background:var(--cream);border-radius:999px;padding:4px;margin:18px 0 0}
-.viewtg button{height:40px;padding:0 18px;border-radius:999px;font-size:14px;font-weight:600;transition:background .3s,color .3s}
-.viewtg button[aria-pressed="true"]{background:var(--espresso);color:var(--ivory)}
-.sum{background:var(--white);border:1px solid var(--line);border-radius:24px;padding:18px 20px}
+.sum{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:14px 18px}
 .sum .r{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
 .sum .r:last-child{border-bottom:0}
 .sum dt{font-size:12px;color:var(--muted)}
 .sum dd{margin:2px 0 0;font-weight:600;font-size:15px;line-height:1.35}
 .sum .ed{font-size:13px;color:var(--gold);font-weight:600;padding:8px 0 8px 10px}
-.wish{width:100%;min-height:90px;border-radius:18px;border:1px solid var(--line);background:var(--white);padding:14px;font-size:16px;resize:vertical;outline:none;color:var(--espresso)}
+.wish{width:100%;min-height:84px;border-radius:18px;border:1px solid var(--line);background:var(--white);padding:14px;font-size:16px;resize:vertical;outline:none;color:var(--espresso)}
 .wish:focus{border-color:var(--gold)}
 
 @media (min-width:900px){
-  .scr{padding:104px 40px 48px}
+  .scr{padding:100px 40px 44px}
   .bar{padding:18px 40px}
   .intro-grid{grid-template-columns:1.1fr .9fr}
+  .dcar{margin:14px 0 0;padding:18px 4px 10px;justify-content:flex-start}
+  .dcard{width:300px}
   .bld{grid-template-columns:auto 1fr;grid-template-areas:"stage head" "stage ctl";column-gap:64px;row-gap:0;align-content:center}
   .q-head{grid-area:head;align-self:end}
   .q-ctl{grid-area:ctl;align-self:start}
-  .stage{grid-area:stage;position:sticky;top:100px;background:none;padding:0;align-self:center}
-  .bld .phone{height:auto;width:300px;border-radius:44px;padding:10px}
-  .bld .phone .scroll{border-radius:34px}
-  .bld .phone::before{top:18px;width:74px;height:20px;margin-left:-37px}
-  .bld .h2{font-size:clamp(34px,3.6vw,52px)}
-  .bld .q-head .sub{display:block}
-  .cards{flex-wrap:wrap;overflow:visible;margin:24px 0 0;padding:0}
-  .card{flex:0 0 calc(33.333% - 8px)}
-  .card .vis{height:108px}
-  .toggles{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .fin{grid-template-columns:1.2fr .8fr;align-items:start}
-}
-@media (max-width:370px){
-  .meter{grid-template-columns:84px 1fr 40px}
-  .tg span.l small{display:none}
+  .stage{grid-area:stage;position:sticky;top:96px;background:none;padding:0}
+  .bld .phone{--ph:min(640px,76svh)}
+  .feats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fin{grid-template-columns:auto 1fr;column-gap:56px;align-items:start}
+  .fin .phone{--ph:min(680px,80svh)}
 }
 .still *{animation:none!important;transition:none!important}
+
+/* ================= МИНИ-САЙТЫ ================= */
+.site{--bg:#F7F2EA;--fg:#2B211B;--acc:#B08A52;--card:#FFFDF9;--mut:#8C7A6B;--ln:rgba(43,33,27,.12);--h:'Playfair Display',Georgia,serif;--b:'Golos Text',system-ui,sans-serif;--hw:400;--rad:14px;--btnbg:#2B211B;--btnfg:#F7F2EA;--btnrad:999px;
+  position:relative;min-height:100%;background:var(--bg);color:var(--fg);font-family:var(--b);font-size:11px;line-height:1.45}
+.site *{box-sizing:border-box}
+.site img{width:100%;height:100%;object-fit:cover;display:block}
+.site button{font:inherit;color:inherit}
+.site .sec{padding:24px 16px}
+.site .st{margin-bottom:12px}
+.site .st .n{display:none}
+.site .st .kk{display:block;font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);font-weight:700}
+.site .st h4{margin:4px 0 0;font-family:var(--h);font-weight:var(--hw);font-size:22px;line-height:1.05}
+.site .st h4 em{font-style:italic;color:var(--acc)}
+.site .b2{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:34px;padding:0 16px;border-radius:var(--btnrad);background:var(--btnbg);color:var(--btnfg);font-weight:700;font-size:10.5px;cursor:pointer}
+.site .b2.wa{background:#1FA855;color:#fff}
+.site .b2 svg{width:13px;height:13px}
+.site .b2.full{width:100%}
+.site .cardx{background:var(--card);border:1px solid var(--ln);border-radius:var(--rad);padding:12px}
+.site .chips{display:flex;flex-wrap:wrap;gap:5px;margin:5px 0 10px}
+.site .chip{padding:6px 10px;border-radius:99px;border:1px solid var(--ln);font-size:9.5px;font-weight:600;background:transparent;cursor:pointer;transition:background .2s,color .2s}
+.site .chip.on{background:var(--btnbg);color:var(--btnfg);border-color:var(--btnbg)}
+.site .lb{font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);font-weight:600}
+.site .muted{color:var(--mut)}
+.site .note{font-size:8.5px;color:var(--mut);margin:6px 0 0}
+.site .done{display:none;margin-top:8px;padding:9px 10px;border-radius:10px;background:rgba(31,168,85,.12);color:#15803d;font-weight:600;font-size:10px}
+.site .done.show{display:block}
+.site .nav{position:sticky;top:0;z-index:8;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:30px 16px 10px;background:var(--bg)}
+.site .nav .lg{font-family:var(--h);font-weight:var(--hw);font-size:16px}
+.site .nav .nr{display:flex;align-items:center;gap:8px}
+.site .burger{width:18px;height:9px;border-block:1.5px solid var(--fg)}
+.site .lng{display:inline-flex;border:1px solid var(--ln);border-radius:99px;overflow:hidden}
+.site .lng button{padding:3px 7px;font-size:8.5px;font-weight:700;cursor:pointer}
+.site .lng button.on{background:var(--btnbg);color:var(--btnfg)}
+
+/* функции (общие) */
+.site .ba{position:relative;aspect-ratio:3/4;border-radius:var(--rad);overflow:hidden;--x:50%;touch-action:pan-y}
+.site .ba>img,.site .ba .af img{position:absolute;inset:0}
+.site .ba .af{position:absolute;inset:0;clip-path:inset(0 0 0 var(--x))}
+.site .ba .hd{position:absolute;top:0;bottom:0;left:var(--x);width:2px;margin-left:-1px;background:#fff;pointer-events:none}
+.site .ba .hd::after{content:"⟷";position:absolute;top:50%;left:50%;width:28px;height:28px;margin:-14px 0 0 -14px;border-radius:50%;background:#fff;color:#2B211B;display:grid;place-items:center;font-size:13px;box-shadow:0 4px 10px rgba(0,0,0,.25)}
+.site .ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;margin:0;cursor:ew-resize}
+.site .ba .t{position:absolute;bottom:8px;padding:3px 8px;border-radius:99px;background:rgba(0,0,0,.55);color:#fff;font-size:9px;pointer-events:none}
+.site .shade{position:relative;aspect-ratio:4/5;border-radius:var(--rad);overflow:hidden}
+.site .shade .tint{position:absolute;inset:0;background:var(--tint,transparent);mix-blend-mode:color;opacity:.62;transition:background .4s}
+.site .sws{display:flex;gap:8px;margin:10px 0 0;flex-wrap:wrap}
+.site .sw{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:8.5px;cursor:pointer}
+.site .sw i{width:28px;height:28px;border-radius:50%;border:2px solid var(--bg);box-shadow:0 0 0 1px var(--ln)}
+.site .sw.on i{box-shadow:0 0 0 2px var(--fg)}
+.site .tabs{display:flex;gap:5px;margin-bottom:10px;overflow-x:auto;scrollbar-width:none}
+.site .tabs::-webkit-scrollbar{display:none}
+.site .mw{display:none;grid-template-columns:repeat(3,1fr);gap:5px}
+.site .mw.on{display:grid}
+.site .mw div{aspect-ratio:3/4;border-radius:8px;overflow:hidden}
+.site .mw p{grid-column:1/-1;margin:4px 0 0}
+.site .rrow{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-right:-16px;padding-right:16px}
+.site .rrow::-webkit-scrollbar{display:none}
+.site .rv{flex:0 0 78%;scroll-snap-align:start;background:var(--card);border:1px solid var(--ln);border-radius:var(--rad);padding:12px}
+.site .rv .s{color:var(--acc);letter-spacing:2px;font-size:10px}
+.site .rv q{display:block;margin:6px 0;font-size:11.5px;line-height:1.35;quotes:"«" "»"}
+.site .rv span{color:var(--mut);font-size:9px}
+.site .school{display:grid;grid-template-columns:90px 1fr;gap:10px;align-items:center}
+.site .school .ph{aspect-ratio:3/4;border-radius:10px;overflow:hidden}
+.site .cert{position:relative;border-radius:var(--rad);padding:16px;overflow:hidden;background:linear-gradient(135deg,var(--acc),#F0DDBE);color:#2B211B;margin-bottom:8px}
+.site .cert b{display:block;font-family:var(--h);font-weight:var(--hw);font-size:18px;line-height:1.05}
+.site .cert small{display:block;margin-top:4px;opacity:.75}
+.site .cert::after{content:"";position:absolute;right:-26px;top:-26px;width:96px;height:96px;border-radius:50%;border:1px solid rgba(255,255,255,.6)}
+.site .ig{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-bottom:10px}
+.site .ig div{aspect-ratio:1;overflow:hidden}
+.site .map{height:92px;border-radius:var(--rad);margin:10px 0;background:repeating-linear-gradient(35deg,var(--ln) 0 1px,transparent 1px 14px),repeating-linear-gradient(-55deg,var(--ln) 0 1px,transparent 1px 22px),var(--card);position:relative;border:1px solid var(--ln)}
+.site .map::after{content:"";position:absolute;left:52%;top:36%;width:16px;height:16px;margin-left:-8px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--acc)}
+.site .kv{display:grid;gap:6px}
+.site .kv div{display:flex;justify-content:space-between;gap:8px;border-bottom:1px dashed var(--ln);padding-bottom:6px}
+.site .kv span{color:var(--mut)}
+.site .open{display:inline-flex;align-items:center;gap:5px;font-weight:700;font-size:9.5px}
+.site .open i{width:7px;height:7px;border-radius:50%;background:#9ca3af}
+.site .open.on i{background:#22c55e}
+.site .fabw{position:sticky;bottom:12px;height:0;z-index:9;display:flex;justify-content:flex-end;padding-right:12px}
+.site .fab{width:42px;height:42px;margin-top:-54px;border-radius:50%;background:#1FA855;color:#fff;display:grid;place-items:center;box-shadow:0 8px 18px -6px rgba(0,0,0,.45)}
+.site .fab svg{width:22px;height:22px}
+/* запись */
+.site .days{display:flex;gap:5px;overflow-x:auto;scrollbar-width:none;margin:5px 0 10px}
+.site .days::-webkit-scrollbar{display:none}
+.site .day{flex:0 0 40px;display:grid;justify-items:center;gap:1px;padding:6px 0;border-radius:10px;border:1px solid var(--ln);cursor:pointer;font-size:8.5px}
+.site .day b{font-size:13px}
+.site .day.on{background:var(--btnbg);color:var(--btnfg);border-color:var(--btnbg)}
+.site .slots{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin:5px 0 10px}
+.site .slot{padding:7px 0;border-radius:9px;border:1px solid var(--ln);text-align:center;font-weight:600;font-size:10px;cursor:pointer}
+.site .slot.on{background:var(--btnbg);color:var(--btnfg);border-color:var(--btnbg)}
+.site .chat{display:grid;gap:6px}
+.site .msgs{display:grid;gap:6px}
+.site .bot,.site .me{max-width:82%;padding:8px 10px;border-radius:14px;font-size:10.5px;line-height:1.35}
+.site .bot{background:var(--card);border:1px solid var(--ln);border-bottom-left-radius:4px;justify-self:start}
+.site .me{background:var(--btnbg);color:var(--btnfg);border-bottom-right-radius:4px;justify-self:end}
+.site .copts{display:flex;flex-wrap:wrap;gap:5px}
+
+/* ---- 1. Классика ---- */
+.d-classic .hero{padding:10px 16px 26px}
+.d-classic .hero .k{font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);font-weight:700}
+.d-classic .hero h1{font-family:var(--h);font-weight:400;font-size:30px;line-height:1;margin:8px 0 10px}
+.d-classic .hero h1 em{font-style:italic;color:var(--acc)}
+.d-classic .hero .arch{margin:16px auto 0;width:82%;aspect-ratio:3/4;border-radius:200px 200px 16px 16px;overflow:hidden;border:5px solid #fff;box-shadow:0 20px 30px -20px rgba(43,33,27,.5)}
+.d-classic .grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.d-classic .grid div{border-radius:10px;overflow:hidden;aspect-ratio:3/4}
+.d-classic .svc{display:grid;gap:6px}
+.d-classic .svc div{display:flex;justify-content:space-between;background:var(--card);border:1px solid var(--ln);border-radius:10px;padding:10px;font-weight:600}
+.d-classic .svc span{color:var(--acc);font-size:9.5px}
+.d-classic .ftr{padding:22px 16px 30px;text-align:center}
+.d-classic .ftr b{display:block;font-family:var(--h);font-style:italic;font-size:26px}
+
+/* ---- 2. Журнал ---- */
+.d-journal{--bg:#0E0C0B;--fg:#EFE6D8;--acc:#C9A46A;--card:#181513;--mut:#9A8C7D;--ln:rgba(239,230,216,.14);--h:'Cormorant Garamond',Georgia,serif;--hw:500;--rad:2px;--btnbg:#EFE6D8;--btnfg:#0E0C0B;--btnrad:0}
+.d-journal .nav{background:transparent;position:absolute;left:0;right:0;top:0;color:#fff}
+.d-journal .nav .lg{font-family:var(--b);font-size:9px;letter-spacing:.3em;text-transform:uppercase;font-weight:700}
+.d-journal .burger{border-color:#fff}
+.d-journal .hero{position:relative;height:500px;overflow:hidden}
+.d-journal .hero>img{position:absolute;inset:0}
+.d-journal .hero .ov{position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.2),transparent 30%,rgba(0,0,0,.85));display:flex;flex-direction:column;justify-content:flex-end;padding:16px}
+.d-journal .hero .issue{position:absolute;top:66px;right:16px;font-size:8px;letter-spacing:.2em;color:#fff;text-transform:uppercase;writing-mode:vertical-rl}
+.d-journal .hero h1{margin:0;font-family:var(--h);font-style:italic;font-weight:400;font-size:86px;line-height:.8;color:#fff;letter-spacing:-.03em}
+.d-journal .hero p{margin:10px 0 12px;color:rgba(255,255,255,.8);font-size:10.5px;max-width:80%;text-transform:uppercase;letter-spacing:.12em}
+.d-journal .st{display:flex;align-items:flex-end;gap:10px;border-top:1px solid var(--ln);padding-top:10px}
+.d-journal .st .n{display:block;font-family:var(--h);font-style:italic;font-size:38px;line-height:.8;color:var(--acc)}
+.d-journal .st .kk{color:var(--mut)}
+.d-journal .st h4{font-family:var(--b);text-transform:uppercase;letter-spacing:.12em;font-size:12px;font-weight:700}
+.d-journal .st h4 em{font-style:normal}
+.d-journal .hs{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;margin-right:-16px;padding-right:16px;scroll-snap-type:x mandatory}
+.d-journal .hs::-webkit-scrollbar{display:none}
+.d-journal .hs figure{margin:0;flex:0 0 70%;scroll-snap-align:start}
+.d-journal .hs figure div{aspect-ratio:3/4;overflow:hidden}
+.d-journal .hs figcaption{display:flex;justify-content:space-between;margin-top:6px;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut)}
+.d-journal .svc{counter-reset:s}
+.d-journal .svc div{display:flex;align-items:baseline;gap:10px;padding:10px 0;border-bottom:1px solid var(--ln);font-family:var(--h);font-size:19px}
+.d-journal .svc div::before{counter-increment:s;content:"0" counter(s);font-family:var(--b);font-size:8.5px;color:var(--acc);letter-spacing:.1em}
+.d-journal .ftr{padding:30px 16px;border-top:1px solid var(--ln)}
+.d-journal .ftr b{display:block;font-family:var(--h);font-style:italic;font-size:64px;line-height:.9}
+.d-journal .ftr span{font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--mut)}
+
+/* ---- 3. Поп ---- */
+.d-pop{--bg:#FFE3EC;--fg:#1B0F1E;--acc:#FF2E7E;--card:#fff;--mut:#7B5B6B;--ln:#1B0F1E;--h:'Unbounded',system-ui,sans-serif;--hw:900;--rad:16px;--btnbg:#FF2E7E;--btnfg:#fff;--btnrad:12px}
+.d-pop .mq{background:#1B0F1E;color:#FFE600;overflow:hidden;white-space:nowrap;font-family:var(--h);font-weight:800;font-size:9px;padding:6px 0;margin-top:26px}
+.d-pop .mq span{display:inline-block;animation:mq 8s linear infinite;padding-left:10px}
+@keyframes mq{to{transform:translateX(-50%)}}
+.d-pop .nav{padding-top:10px}
+.d-pop .nav .lg{font-family:var(--h);font-weight:900;text-transform:uppercase;font-size:14px;background:#FFE600;padding:3px 8px;border:2px solid #1B0F1E;border-radius:8px}
+.d-pop .b2,.d-pop .chip.on,.d-pop .slot.on,.d-pop .day.on{border:2px solid #1B0F1E;box-shadow:2px 2px 0 #1B0F1E}
+.d-pop .cardx,.d-pop .rv,.d-pop .ba,.d-pop .shade{border:2px solid #1B0F1E;box-shadow:4px 4px 0 #1B0F1E}
+.d-pop .st h4{font-family:var(--h);font-weight:900;text-transform:uppercase;font-size:19px;letter-spacing:-.03em}
+.d-pop .st h4 em{font-style:normal;background:#FFE600;padding:0 4px}
+.d-pop .st .kk{color:var(--fg)}
+.d-pop .hero{padding:8px 16px 30px;position:relative}
+.d-pop .hero h1{margin:6px 0 12px;font-family:var(--h);font-weight:900;text-transform:uppercase;font-size:31px;line-height:.92;letter-spacing:-.04em}
+.d-pop .hero h1 mark{background:#FF2E7E;color:#fff;padding:0 4px;border-radius:4px}
+.d-pop .stack{position:relative;height:250px;margin-top:18px}
+.d-pop .stack .p{position:absolute;width:58%;padding:6px 6px 22px;background:#fff;border:2px solid #1B0F1E;box-shadow:4px 4px 0 #1B0F1E}
+.d-pop .stack .p div{aspect-ratio:1;overflow:hidden}
+.d-pop .stack .p1{left:2%;top:0;transform:rotate(-7deg)}
+.d-pop .stack .p2{right:2%;top:40px;transform:rotate(6deg)}
+.d-pop .sticker{position:absolute;right:8%;top:-8px;z-index:3;width:62px;height:62px;border-radius:50%;background:#FFE600;border:2px solid #1B0F1E;display:grid;place-items:center;text-align:center;font-family:var(--h);font-weight:900;font-size:10px;line-height:1;transform:rotate(12deg)}
+.d-pop .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.d-pop .grid div{aspect-ratio:1;overflow:hidden;border:2px solid #1B0F1E;border-radius:14px;box-shadow:3px 3px 0 #1B0F1E}
+.d-pop .grid div:nth-child(odd){transform:rotate(-2deg)}
+.d-pop .grid div:nth-child(even){transform:rotate(2deg)}
+.d-pop .svc{display:flex;flex-wrap:wrap;gap:6px}
+.d-pop .svc div{padding:8px 12px;border-radius:99px;background:#fff;border:2px solid #1B0F1E;font-weight:800;font-size:10px;text-transform:uppercase}
+.d-pop .ftr{background:#1B0F1E;color:#FFE600;padding:22px 16px 30px;text-align:center;font-family:var(--h);font-weight:900;text-transform:uppercase}
+.d-pop .ftr b{display:block;font-size:34px;color:#FF2E7E}
+
+/* ---- 4. Минимализм ---- */
+.d-minimal{--bg:#FFFFFF;--fg:#0A0A0A;--acc:#E4312B;--card:#F4F4F2;--mut:#7A7A7A;--ln:rgba(10,10,10,.12);--h:'Manrope',system-ui,sans-serif;--hw:800;--rad:0;--btnbg:#0A0A0A;--btnfg:#fff;--btnrad:0}
+.d-minimal .nav .lg{font-family:var(--h);font-weight:800;font-size:15px;letter-spacing:-.04em}
+.d-minimal .nav .lg::after{content:".";color:var(--acc)}
+.d-minimal .nav .txt{font-size:10px;font-weight:700;border-bottom:1.5px solid var(--fg)}
+.d-minimal .burger{display:none}
+.d-minimal .hero .duo{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.d-minimal .hero .duo div{aspect-ratio:3/4.4;overflow:hidden}
+.d-minimal .hero .tx{padding:18px 16px 26px}
+.d-minimal .hero h1{margin:0;font-family:var(--h);font-weight:800;font-size:34px;line-height:.92;letter-spacing:-.06em}
+.d-minimal .hero .row3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0 16px;border-top:1px solid var(--fg);padding-top:8px}
+.d-minimal .hero .row3 span{font-size:8.5px;color:var(--mut)}
+.d-minimal .hero .row3 b{display:block;font-size:10px;color:var(--fg)}
+.d-minimal .st .kk{color:var(--fg);font-size:9px}
+.d-minimal .st .kk::before{content:"● ";color:var(--acc)}
+.d-minimal .st h4{font-family:var(--h);font-weight:800;font-size:24px;letter-spacing:-.05em}
+.d-minimal .st h4 em{font-style:normal;color:var(--mut)}
+.d-minimal .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin:0 -16px}
+.d-minimal .grid div{aspect-ratio:3/4;overflow:hidden;position:relative}
+.d-minimal .grid div span{position:absolute;left:4px;top:3px;font-size:8px;color:#fff;font-weight:700}
+.d-minimal .svc div{display:grid;grid-template-columns:22px 1fr auto;gap:8px;padding:10px 0;border-top:1px solid var(--ln);font-weight:700;font-size:12px}
+.d-minimal .svc div span{color:var(--mut);font-size:9px;font-weight:600}
+.d-minimal .svc div i{font-style:normal;color:var(--mut);font-size:9px}
+.d-minimal .ftr{padding:26px 16px 30px;border-top:1px solid var(--fg)}
+.d-minimal .ftr b{display:block;font-family:var(--h);font-weight:800;font-size:44px;letter-spacing:-.07em;line-height:.9}
+
+/* ---- 5. Приложение ---- */
+.d-app{--bg:#F5EDF0;--fg:#35203A;--acc:#B5487A;--card:#FFFFFF;--mut:#8E7A88;--ln:rgba(53,32,58,.1);--h:'Golos Text',system-ui,sans-serif;--hw:700;--rad:20px;--btnbg:#35203A;--btnfg:#fff;--btnrad:14px}
+.d-app .nav{padding:30px 14px 8px}
+.d-app .nav .lg{display:flex;align-items:center;gap:8px;font-size:13px}
+.d-app .nav .lg i{width:28px;height:28px;border-radius:50%;background:var(--fg);color:#fff;display:grid;place-items:center;font-style:italic;font-family:'Playfair Display',serif;font-size:14px}
+.d-app .burger{width:28px;height:28px;border:0;border-radius:50%;background:var(--card);box-shadow:0 2px 8px rgba(53,32,58,.1)}
+.d-app .sec{padding:12px 14px}
+.d-app .hello{padding:4px 14px 6px}
+.d-app .hello h1{margin:0;font-size:21px;line-height:1.1;font-weight:700}
+.d-app .hello p{margin:3px 0 0;color:var(--mut)}
+.d-app .stories{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding:10px 14px 6px}
+.d-app .stories::-webkit-scrollbar{display:none}
+.d-app .story{flex:0 0 auto;display:grid;justify-items:center;gap:3px;font-size:9px;font-weight:600}
+.d-app .story div{width:54px;height:54px;border-radius:50%;padding:2px;background:conic-gradient(#B5487A,#F2A65A,#B5487A)}
+.d-app .story img{border-radius:50%;border:2px solid var(--bg)}
+.d-app .promo{margin:8px 14px;border-radius:22px;overflow:hidden;position:relative;height:170px}
+.d-app .promo .ov{position:absolute;inset:0;background:linear-gradient(90deg,rgba(53,32,58,.85),transparent);color:#fff;padding:14px;display:flex;flex-direction:column;justify-content:flex-end}
+.d-app .promo b{font-size:16px;line-height:1.1}
+.d-app .promo .b2{align-self:flex-start;margin-top:8px;background:#fff;color:var(--fg)}
+.d-app .cats{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:6px 14px}
+.d-app .cats::-webkit-scrollbar{display:none}
+.d-app .cats span{flex:0 0 auto;padding:7px 12px;border-radius:12px;background:var(--card);font-weight:600;box-shadow:0 2px 8px rgba(53,32,58,.06)}
+.d-app .cats span:first-child{background:var(--fg);color:#fff}
+.d-app .st h4{font-family:var(--h);font-size:15px;font-weight:700}
+.d-app .st h4 em{font-style:normal;color:var(--fg)}
+.d-app .st .kk{display:none}
+.d-app .cardx,.d-app .rv,.d-app .ba,.d-app .shade{border:0;box-shadow:0 6px 18px -8px rgba(53,32,58,.25)}
+.d-app .grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.d-app .grid .w{background:var(--card);border-radius:18px;overflow:hidden;box-shadow:0 6px 18px -10px rgba(53,32,58,.3)}
+.d-app .grid .w div{aspect-ratio:1}
+.d-app .grid .w span{display:block;padding:6px 8px;font-weight:600;font-size:9.5px}
+.d-app .svc{display:grid;gap:6px}
+.d-app .svc div{display:flex;justify-content:space-between;align-items:center;background:var(--card);border-radius:16px;padding:10px 12px;font-weight:600;box-shadow:0 4px 14px -8px rgba(53,32,58,.25)}
+.d-app .svc div span{width:22px;height:22px;border-radius:8px;background:var(--bg);display:grid;place-items:center}
+.d-app .ftr{height:70px}
+.d-app .tabbar{position:sticky;bottom:0;z-index:9;display:grid;grid-template-columns:repeat(4,1fr);background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-top:1px solid var(--ln);padding:8px 6px 12px;margin-top:-58px}
+.d-app .tabbar span{display:grid;justify-items:center;gap:2px;font-size:8.5px;font-weight:600;color:var(--mut)}
+.d-app .tabbar span i{width:16px;height:16px;border-radius:5px;border:1.6px solid currentColor}
+.d-app .tabbar span.on{color:var(--acc)}
+.d-app .fabw{bottom:70px}
 </style>
 </head>
 <body>
-<div class="grain" aria-hidden="true"></div>
 
 <header class="bar">
   <button class="back off" id="back" aria-label="Назад"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
   <div class="brand"><b>Кима</b><i></i><span>сайт под вас</span></div>
-  <div class="ring" aria-hidden="true"><svg viewBox="0 0 46 46"><circle class="tr" cx="23" cy="23" r="20"/><circle class="pg" id="ringPg" cx="23" cy="23" r="20"/></svg><span id="ringTx">0/5</span></div>
+  <div class="ring" aria-hidden="true"><svg viewBox="0 0 46 46"><circle class="tr" cx="23" cy="23" r="20"/><circle class="pg" id="ringPg" cx="23" cy="23" r="20"/></svg><span id="ringTx">0/3</span></div>
 </header>
-
 <main class="app" id="app"></main>
-
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.7-.1 1.2Z"/></symbol>
-</svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.7-.1 1.2Z"/></symbol></svg>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script>
 (() => {
   const P = new URLSearchParams(location.search);
   const still = P.has('still');
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (still) document.documentElement.classList.add('still');
-  const G = !!window.gsap && !still && !reduce;
+  const G = !!window.gsap && !still && !matchMedia('(prefers-reduced-motion: reduce)').matches;
   const $ = s => document.querySelector(s);
   const VANTA_WA = '77476458557';
   const img = n => `../img/${n}`;
+  const I = n => `<div><img src="${img(n)}" alt=""></div>`;
+  const waI = '<svg><use href="#wa"/></svg>';
 
-  /* ---------- шаги теста ---------- */
-  const B = [
-    { id: 'style', t: 'Какой <em>дизайн</em> вам ближе?', focus: 'hero', opts: [['nude', 'Нюд', 'светлый и тёплый — как сейчас'], ['lux', 'Люкс', 'тёмный фон, шампань'], ['bright', 'Яркий', 'смелый цвет, крупный шрифт']] },
-    { id: 'hero', t: 'Что клиент видит <em>первым</em>?', focus: 'hero', opts: [['arch', 'Арка с фото', 'лучшая работа в рамке'], ['full', 'Фото на весь экран', 'сразу эффект «вау»'], ['collage', 'Коллаж работ', 'сразу видно разнообразие']] },
-    { id: 'works', t: 'Как показать ваши <em>работы</em>?', focus: 'works', opts: [['grid', 'Сетка работ', 'как Instagram, но аккуратнее'], ['ba', 'До и после', 'ползунок: было → стало'], ['masters', 'По мастерам', 'работы каждого мастера']] },
-    { id: 'booking', t: 'Как клиент будет <em>записываться</em>?', focus: 'booking', opts: [['form', 'Онлайн-запись', 'услуга, мастер, время → WhatsApp'], ['button', 'Кнопка WhatsApp', 'просто открыть чат'], ['call', 'Звонок', 'кнопка «позвонить»']] },
-    { id: 'sections', t: 'Что ещё <em>добавить</em> на сайт?', focus: null }
+  /* ---------- варианты ---------- */
+  const DESIGNS = [
+    ['classic', 'Классика', 'Светлый и тёплый, арка с фото — спокойная роскошь'],
+    ['journal', 'Журнал', 'Тёмный, как глянец: фото на весь экран, крупные номера'],
+    ['pop', 'Поп', 'Ярко-розовый, наклейки, смелые буквы — заметно и молодо'],
+    ['minimal', 'Минимализм', 'Белый и строгий: фото вплотную, много воздуха'],
+    ['app', 'Приложение', 'Как приложение: сторис мастеров и меню внизу']
   ];
-  const BL = {}; B.forEach(b => (b.opts || []).forEach(([k, t]) => BL[b.id + ':' + k] = t));
-  const SECS = [['ba', 'До и после', 'ba-after.jpg'], ['masters', 'Мастера', 'blond-lob-2-sm.jpg'], ['services', 'Услуги', 'perm-sm.jpg'], ['reviews', 'Отзывы', 'sunkissed-3-sm.jpg'], ['academy', 'Обучение', 'diploma-sm.jpg'], ['germany', 'История из Германии', 'germany-after.jpg'], ['contacts', 'Контакты и карта', 'vogue-sm.jpg']];
+  const BOOK = [
+    ['calendar', 'Календарь', 'клиент выбирает день и время', '<svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>'],
+    ['form', 'Форма → WhatsApp', 'услуга, мастер и время одним сообщением', '<svg viewBox="0 0 24 24"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7L4 20Z"/></svg>'],
+    ['chat', 'Чат-помощник', 'бот задаёт 3 вопроса и собирает запись', '<svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5Z"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg>']
+  ];
   const FEATS = [
-    ['float', 'WhatsApp на экране', 'кнопка всегда под рукой', '<svg viewBox="0 0 24 24"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7L4 20Z"/></svg>'],
-    ['lang', 'Русский + қазақша', 'два языка', 'РУ<br>ҚАЗ'],
-    ['cert', 'Подарочный сертификат', 'можно подарить услугу', '<svg viewBox="0 0 24 24"><rect x="3" y="9" width="18" height="12" rx="2"/><path d="M12 9v12M3 13h18M12 9c-2-4-7-4-6-1 1 2 4 1 6 1Zm0 0c2-4 7-4 6-1-1 2-4 1-6 1Z"/></svg>'],
-    ['insta', 'Лента Instagram', 'свежие работы на сайте', '<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>']
+    ['ba', 'До и после', 'ползунок: было → стало'],
+    ['shade', 'Примерка оттенка', 'нажал цвет — видно на фото'],
+    ['masters', 'Мастера', 'работы каждого мастера'],
+    ['reviews', 'Отзывы', 'листаются карточками'],
+    ['school', 'Школа', 'курс и заявка на обучение'],
+    ['cert', 'Сертификаты', 'подарок на услугу'],
+    ['insta', 'Лента Instagram', 'свежие работы'],
+    ['map', 'Карта и часы', 'адрес и «открыто сейчас»'],
+    ['lang', 'Русский + қазақша', 'переключатель языка'],
+    ['fab', 'Кнопка WhatsApp', 'всегда на экране']
   ];
-  const PRICE_L = { show: 'Показывать цены', from: 'Цены «от…»', consult: 'По консультации' };
-  const ALL = [...SECS.map(([k, l]) => [k, l]), ...FEATS.map(([k, l]) => [k, l])];
+  const DL = Object.fromEntries(DESIGNS.map(d => [d[0], d[1]]));
+  const BLb = Object.fromEntries(BOOK.map(d => [d[0], d[1]]));
+  const FL = Object.fromEntries(FEATS.map(d => [d[0], d[1]]));
 
-  /* ---------- состояние ---------- */
-  const DEF = () => ({ style: 'nude', hero: 'arch', works: 'grid', booking: 'form', price: 'consult', sec: { ba: true, masters: true, services: true, reviews: true, academy: true, germany: false, contacts: true, float: true, lang: false, cert: false, insta: false }, wish: '', view: 'phone', back: null });
+  const DEF = () => ({ design: 'classic', book: 'calendar', f: { ba: true, shade: false, masters: true, reviews: true, school: false, cert: false, insta: false, map: true, lang: false, fab: true }, wish: '', back: null });
   const S = DEF();
-  const KEY = 'kima-vybor-2';
-  const load = () => { try { const d = JSON.parse(localStorage.getItem(KEY) || 'null'); if (d) Object.assign(S, d, { sec: Object.assign(DEF().sec, d.sec || {}) }); } catch (e) {} };
+  const KEY = 'kima-vybor-3';
+  const load = () => { try { const d = JSON.parse(localStorage.getItem(KEY) || 'null'); if (d) Object.assign(S, d, { f: Object.assign(DEF().f, d.f || {}) }); } catch (e) {} };
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} };
 
-  /* экраны: 0 интро, 1–5 шаги, 6 сборка, 7 итог */
-  const B0 = 1, ASM = B0 + B.length, FIN = ASM + 1;
-  let cur = 0;
+  /* ---------- блоки мини-сайта ---------- */
+  const T = (ru, kz) => `<span data-ru="${ru}" data-kz="${kz}">${ru}</span>`;
+  const st = (n, kk, h) => `<div class="st"><span class="n">${n}</span><div><span class="kk">${kk}</span><h4>${h}</h4></div></div>`;
 
-  /* ---------- что ей подходит (по выбору) ---------- */
-  function result() {
-    const s = S.sec, sc = { rec: 1, port: 1, edu: 0 };
-    sc.rec += { form: 4, button: 2, call: 1 }[S.booking]; if (s.float) sc.rec += 1; if (s.services) sc.rec += 1;
-    sc.port += { grid: 1, ba: 3, masters: 2 }[S.works]; if (S.hero === 'full') sc.port += 1; if (S.style === 'lux') sc.port += 1; if (s.ba) sc.port += 1; if (s.germany) sc.port += 1; if (s.insta) sc.port += 1;
-    if (s.academy) sc.edu += 4; if (s.cert) sc.edu += 1;
-    const max = { rec: 7, port: 9, edu: 5 };
-    const pct = k => Math.max(10, Math.min(100, Math.round(sc[k] / max[k] * 100)));
-    const p = { rec: pct('rec'), port: pct('port'), edu: pct('edu') };
-    let key = p.rec >= p.port ? 'rec' : 'port';
-    if (s.academy && p.edu >= Math.max(p.rec, p.port) - 5) key = 'edu';
-    const PACK = {
-      rec: ['Сайт с <em>онлайн-записью</em>', 'Главное — клиент сам выбирает услугу, мастера и время, а вам приходит готовая запись.'],
-      port: ['Премиум-<em>портфолио</em>', 'Главное — показать уровень ваших работ так, чтобы новый клиент захотел именно к вам.'],
-      edu: ['Салон <em>+ школа</em>', 'Два направления на одном сайте: запись клиентов и раздел обучения с заявкой на курс.']
-    };
-    return { key, title: PACK[key][0], text: PACK[key][1], pct: p };
+  function nav(d, f) {
+    const lng = f.lang ? `<span class="lng"><button class="on" data-act="lang" data-l="ru">РУ</button><button data-act="lang" data-l="kz">ҚАЗ</button></span>` : '';
+    if (d === 'app') return `<div class="nav"><span class="lg"><i>К</i>${T('Салон «Кима»', '«Кима» салоны')}</span><span class="nr">${lng}<span class="burger"></span></span></div>`;
+    if (d === 'minimal') return `<div class="nav"><span class="lg">Кима</span><span class="nr">${lng}<span class="txt">${T('Запись', 'Жазылу')}</span></span></div>`;
+    if (d === 'journal') return `<div class="nav"><span class="lg">Kima — salon</span><span class="nr">${lng}<span class="burger"></span></span></div>`;
+    return `<div class="nav"><span class="lg">Кима</span><span class="nr">${lng}<span class="burger"></span></span></div>`;
+  }
+  function hero(d) {
+    if (d === 'classic') return `<div class="hero"><div class="k">Салон красоты · Шахтинск · 10 лет</div><h1>${T('Цвет, который вам идёт', 'Сізге жарасатын түс')}</h1><p class="muted" style="margin:0 0 12px">Окрашивание, стрижки и уход. Мастера Анастасия, Татьяна и Антонина.</p><span class="b2">${T('Записаться', 'Жазылу')}</span><div class="arch"><img src="${img('sunkissed-2-sm.jpg')}" alt=""></div></div>`;
+    if (d === 'journal') return `<div class="hero"><img src="${img('beige-long-sm.jpg')}" alt=""><span class="issue">Шахтинск · 10 лет</span><div class="ov"><h1>Кима</h1><p>${T('Цвет, который вам идёт', 'Сізге жарасатын түс')}</p><span class="b2" style="align-self:flex-start">${T('Записаться', 'Жазылу')}</span></div></div>`;
+    if (d === 'pop') return `<div class="mq"><span>ОКРАШИВАНИЕ ✦ СТРИЖКИ ✦ УХОД ✦ ОБУЧЕНИЕ ✦ ОКРАШИВАНИЕ ✦ СТРИЖКИ ✦ УХОД ✦ ОБУЧЕНИЕ ✦</span></div>${''}`;
+    if (d === 'minimal') return `<div class="hero"><div class="duo">${I('blond-lob-2-sm.jpg')}${I('wolfcut-sm.jpg')}</div><div class="tx"><h1>${T('Салон красоты Кима', 'Кима сұлулық салоны')}</h1><div class="row3"><span>Город<b>Шахтинск</b></span><span>Опыт<b>10 лет</b></span><span>Адрес<b>Абая, 78</b></span></div><span class="b2">${T('Записаться', 'Жазылу')}</span></div></div>`;
+    return `<div class="hello"><h1>${T('Красота рядом', 'Сұлулық жаныңызда')}</h1><p>Окрашивание, стрижки, уход · Шахтинск</p></div>
+      <div class="stories">${[['Анастасия', 'blond-lob-2-sm.jpg'], ['Татьяна', 'sunkissed-1-sm.jpg'], ['Антонина', 'antonina-work.jpg'], ['Работы', 'caramel-sm.jpg'], ['Школа', 'diploma-sm.jpg']].map(([n, p]) => `<span class="story"><div><img src="${img(p)}" alt=""></div>${n}</span>`).join('')}</div>
+      <div class="promo"><img src="${img('beige-waves-2-sm.jpg')}" alt=""><div class="ov"><b>${T('Запишитесь онлайн<br>за минуту', 'Бір минутта<br>онлайн жазылыңыз')}</b><span class="b2">${T('Записаться', 'Жазылу')}</span></div></div>
+      <div class="cats"><span>Все</span><span>Окрашивание</span><span>Стрижки</span><span>Уход</span></div>`;
+  }
+  function popHero() {
+    return `${nav('pop', S._f)}<div class="hero"><h1>${T('Цвет, который', 'Сізге')} <mark>${T('вам идёт', 'жарасатын түс')}</mark></h1><span class="b2">${T('Записаться', 'Жазылу')} →</span><div class="stack"><span class="sticker">10<br>ЛЕТ</span><div class="p p1">${I('red-streaks-sm.jpg')}</div><div class="p p2">${I('sunkissed-3-sm.jpg')}</div></div></div>`;
+  }
+  function works(d) {
+    const ph = ['blond-lob-1-sm.jpg', 'wolfcut-sm.jpg', 'bal-long-1-sm.jpg', 'caramel-sm.jpg', 'beige-waves-1-sm.jpg', 'red-streaks-sm.jpg'];
+    if (d === 'journal') return `<div class="sec">${st('01', 'Портфолио', 'Работы')}<div class="hs">${[['blond-lob-1-sm.jpg', 'Блонд'], ['bal-long-1-sm.jpg', 'Балаяж'], ['wolfcut-sm.jpg', 'Wolf cut'], ['caramel-sm.jpg', 'Карамель']].map(([p, c], i) => `<figure>${I(p)}<figcaption><span>${c}</span><span>0${i + 1}</span></figcaption></figure>`).join('')}</div></div>`;
+    if (d === 'minimal') return `<div class="sec">${st('', 'Работы', 'Портфолио <em>/ 06</em>')}<div class="grid">${ph.map((p, i) => `<div><img src="${img(p)}" alt=""><span>0${i + 1}</span></div>`).join('')}</div></div>`;
+    if (d === 'app') return `<div class="sec">${st('', '', 'Популярные работы')}<div class="grid">${[['blond-lob-1-sm.jpg', 'Блонд'], ['wolfcut-sm.jpg', 'Wolf cut'], ['caramel-sm.jpg', 'Карамель'], ['bal-long-1-sm.jpg', 'Балаяж']].map(([p, c]) => `<div class="w">${I(p)}<span>${c}</span></div>`).join('')}</div></div>`;
+    if (d === 'pop') return `<div class="sec">${st('', 'Портфолио', 'Наши <em>работы</em>')}<div class="grid">${ph.slice(0, 4).map(I).join('')}</div></div>`;
+    return `<div class="sec">${st('', 'Портфолио', 'Наши <em>работы</em>')}<div class="grid">${ph.slice(0, 4).map(I).join('')}</div></div>`;
+  }
+  function services(d) {
+    const L = ['Окрашивание и рассветление', 'Стрижки', 'Уходы и восстановление', 'Корейская завивка'];
+    const n = d === 'journal' ? '02' : '';
+    if (d === 'minimal') return `<div class="sec">${st('', 'Услуги', 'Что мы делаем')}<div class="svc">${L.map((s, i) => `<div><span>0${i + 1}</span>${s}<i>по консультации</i></div>`).join('')}</div></div>`;
+    if (d === 'app') return `<div class="sec">${st('', '', 'Услуги')}<div class="svc">${L.map(s => `<div>${s}<span>›</span></div>`).join('')}</div></div>`;
+    if (d === 'pop') return `<div class="sec">${st('', 'Услуги', 'Что <em>делаем</em>')}<div class="svc">${L.map(s => `<div>${s}</div>`).join('')}</div></div>`;
+    return `<div class="sec">${st(n, 'Услуги', 'Что мы <em>делаем</em>')}<div class="svc">${L.map(s => `<div>${s}${d === 'classic' ? '<span>по консультации</span>' : ''}</div>`).join('')}</div></div>`;
+  }
+  let num = 2;
+  const nn = () => String(++num).padStart(2, '0');
+  function feature(k, d) {
+    switch (k) {
+      case 'ba': return `<div class="sec" data-sec="ba">${st(nn(), 'До и после', 'Было — <em>стало</em>')}<div class="ba"><img src="${img('ba-before.jpg')}" alt=""><div class="af"><img src="${img('ba-after.jpg')}" alt=""></div><i class="hd"></i><span class="t" style="left:8px">до</span><span class="t" style="right:8px">после</span><input type="range" min="4" max="96" value="50" aria-label="До и после"></div><p class="note">← потяните → · Чёрная база → бежевый блонд, Анастасия</p></div>`;
+      case 'shade': return `<div class="sec" data-sec="shade">${st(nn(), 'Примерка', 'Какой <em>оттенок</em> вам?')}<div class="shade"><img src="${img('beige-long-sm.jpg')}" alt=""><i class="tint"></i></div><div class="sws">${[['Как есть', 'transparent', '#d9cfc4'], ['Бежевый', '#c9a27a', '#c9a27a'], ['Карамель', '#a8663a', '#a8663a'], ['Шоколад', '#4a2c1e', '#4a2c1e'], ['Медный', '#b5542a', '#b5542a']].map(([n, c, v], i) => `<span class="sw${i ? '' : ' on'}" data-act="shade" data-c="${c}"><i style="background:${v}"></i>${n}</span>`).join('')}</div><p class="note">Примерка — ориентир. Точный оттенок подберёт мастер.</p></div>`;
+      case 'masters': return `<div class="sec" data-sec="masters">${st(nn(), 'Команда', 'Наши <em>мастера</em>')}<div class="tabs">${['Анастасия', 'Татьяна', 'Антонина'].map((m, i) => `<button class="chip${i ? '' : ' on'}" data-act="master" data-i="${i}">${m}</button>`).join('')}</div>
+        <div class="mw on" data-mi="0">${['blond-lob-2-sm.jpg', 'bal-long-2-sm.jpg', 'blond-lob-3-sm.jpg'].map(I).join('')}<p class="muted">Блонд, сложное окрашивание, рассветление</p></div>
+        <div class="mw" data-mi="1">${['sunkissed-1-sm.jpg', 'wolfcut-sm.jpg', 'caramel-sm.jpg'].map(I).join('')}<p class="muted">Стрижки, яркие пряди, карамельный беж</p></div>
+        <div class="mw" data-mi="2"><div style="grid-column:1/3;aspect-ratio:3/4"><img src="${img('antonina-work.jpg')}" alt="" style="object-position:50% 90%"></div><p class="muted">Уход, укладки, обучение</p></div></div>`;
+      case 'reviews': return `<div class="sec" data-sec="reviews">${st(nn(), 'Отзывы', 'Говорят <em>гости</em>')}<div class="rrow">
+        <div class="rv"><div class="s">★★★★★</div><q>Вы настоящая волшебница своего дела! Цвет получился невероятно красивым, насыщенным и именно таким, как я хотела.</q><span>об Анастасии · 25.06.2026</span></div>
+        <div class="rv"><div class="s">★★★★★</div><q>Все 6–8 часов я мотала головой и всё держится на 100%</q><span>гостья · 21.06.2026</span></div>
+        <div class="rv"><div class="s">★★★★★</div><q>Всё сделали маме моей красоту, спасибо вам большое. И вашим девочкам</q><span>Екатерина · 14.03.2026</span></div></div></div>`;
+      case 'school': return `<div class="sec" data-sec="school">${st(nn(), 'Школа', 'Учим <em>мастеров</em>')}<div class="cardx school"><div class="ph"><img src="${img('diploma-sm.jpg')}" alt=""></div><div><b style="font-size:12px">Курс «Базовые женские стрижки»</b><p class="muted" style="margin:4px 0 8px">«Ушла с основной работы — занимаюсь стрижками» — Ангелина, ученица</p><span class="b2" data-act="done">Оставить заявку</span></div></div><div class="done">Заявка на курс отправлена в WhatsApp салона (демо)</div></div>`;
+      case 'cert': return `<div class="sec" data-sec="cert">${st(nn(), 'Подарок', 'Подарочный <em>сертификат</em>')}<div class="cert"><b data-cert>На окрашивание</b><small>Салон «Кима» · Шахтинск</small></div><div class="chips">${['Окрашивание', 'Стрижку', 'Уход'].map((s, i) => `<button class="chip${i ? '' : ' on'}" data-act="cert" data-v="${s}">${s}</button>`).join('')}</div><span class="b2" data-act="done">Подарить</span><div class="done">Сертификат оформлен (демо)</div></div>`;
+      case 'insta': return `<div class="sec" data-sec="insta">${st(nn(), 'Instagram', 'Свежие <em>работы</em>')}<div class="ig">${['wolfcut-sm.jpg', 'beige-waves-3-sm.jpg', 'blond-lob-3-sm.jpg', 'bal-long-2-sm.jpg', 'sunkissed-1-sm.jpg', 'perm-sm.jpg'].map(I).join('')}</div><span class="b2">@salon_kima</span></div>`;
+      case 'map': return `<div class="sec" data-sec="map">${st(nn(), 'Контакты', 'Как <em>добраться</em>')}<span class="open" data-open><i></i>—</span><div class="map"></div><div class="kv"><div><span>Адрес</span><b>пр. Абая Кунанбаева, 78</b></div><div><span>Часы</span><b>ежедневно 10:00–19:00</b></div></div><span class="b2" style="margin-top:10px">Маршрут в 2ГИС</span></div>`;
+    }
+    return '';
+  }
+  function booking(b, d) {
+    const head = st(nn(), 'Запись', `${T('Запишитесь', 'Жазылыңыз')} <em>онлайн</em>`);
+    if (b === 'calendar') {
+      const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Almaty' }));
+      const W = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
+      const days = Array.from({ length: 7 }, (_, i) => { const x = new Date(now); x.setDate(now.getDate() + i); return `<span class="day${i ? '' : ' on'}" data-act="pick">${i ? W[x.getDay()] : 'Сег'}<b>${x.getDate()}</b></span>`; }).join('');
+      const slots = ['10:00', '11:30', '13:00', '14:30', '16:00', '17:30'].map((t, i) => `<span class="slot${i === 2 ? ' on' : ''}" data-act="pick">${t}</span>`).join('');
+      return `<div class="sec" data-sec="booking">${head}<div class="cardx"><div class="lb">Услуга</div><div class="chips">${['Окрашивание', 'Стрижка', 'Уход'].map((s, i) => `<span class="chip${i ? '' : ' on'}" data-act="pick">${s}</span>`).join('')}</div><div class="lb">День</div><div class="days">${days}</div><div class="lb">Время</div><div class="slots">${slots}</div><span class="b2 full" data-act="done">Записаться</span><div class="done">Готово! Запись пришла администратору (демо)</div><p class="note">Время — пример. Настроим под ваше расписание.</p></div></div>`;
+    }
+    if (b === 'form') return `<div class="sec" data-sec="booking">${head}<div class="cardx"><div class="lb">Услуга</div><div class="chips">${['Окрашивание', 'Стрижка', 'Уход'].map((s, i) => `<span class="chip${i ? '' : ' on'}" data-act="pick">${s}</span>`).join('')}</div><div class="lb">Мастер</div><div class="chips">${['Анастасия', 'Татьяна', 'Антонина', 'Любой'].map((s, i) => `<span class="chip${i === 3 ? ' on' : ''}" data-act="pick">${s}</span>`).join('')}</div><div class="lb">Когда</div><div class="chips">${['Сегодня', 'Завтра', 'На выходных'].map((s, i) => `<span class="chip${i === 1 ? ' on' : ''}" data-act="pick">${s}</span>`).join('')}</div><span class="b2 wa full" data-act="done">${waI}${T('Записаться в WhatsApp', 'WhatsApp арқылы жазылу')}</span><div class="done">Откроется WhatsApp салона с готовой записью (демо)</div></div></div>`;
+    return `<div class="sec" data-sec="booking">${head}<div class="cardx chat" data-step="0"><div class="msgs"><div class="bot">Здравствуйте! Что хотите сделать?</div></div><div class="copts">${['Окрашивание', 'Стрижка', 'Уход'].map(s => `<button class="chip" data-act="chat">${s}</button>`).join('')}</div></div></div>`;
+  }
+  const CHAT = [
+    ['К какому мастеру записать?', ['Анастасия', 'Татьяна', 'Антонина', 'Любой']],
+    ['Когда вам удобно?', ['Сегодня', 'Завтра', 'На выходных']],
+    ['Отлично! Передаю запись администратору — он подтвердит время в WhatsApp.', []]
+  ];
+  function footer(d) {
+    if (d === 'journal') return `<div class="ftr"><b>Кима</b><span>Салон красоты · Шахтинск</span></div>`;
+    if (d === 'pop') return `<div class="ftr"><b>КИМА</b>салон красоты · Шахтинск</div>`;
+    if (d === 'minimal') return `<div class="ftr"><b>Кима.</b><span class="muted">Шахтинск, пр. Абая Кунанбаева, 78</span></div>`;
+    if (d === 'app') return `<div class="ftr"></div>`;
+    return `<div class="ftr"><b>Кима</b><span class="muted">салон красоты · Шахтинск</span></div>`;
   }
 
-  /* ---------- превью сайта ---------- */
-  const W = n => `<div><img src="${img(n)}" alt=""></div>`;
-  function renderSite(desk) {
-    const t = S.style, sec = S.sec;
-    const h1 = t === 'bright' ? 'Цвет, который <em>вам идёт</em>' : 'Цвет, <em>который</em> вам идёт';
-    const heroTop = `<div class="k">Салон красоты · Шахтинск · 10 лет</div>`;
-    const cta = `<span class="pbtn">Записаться</span>`;
-    let hero;
-    if (S.hero === 'arch') hero = `<div class="ps hero-arch" data-sec="hero"><div>${heroTop}<h1>${h1}</h1><p style="color:var(--mut);margin:0 0 12px">Окрашивание, стрижки и уход. Мастера Анастасия, Татьяна и Антонина.</p>${cta}</div><div class="ar"><img src="${img('sunkissed-2-sm.jpg')}" alt=""></div></div>`;
-    else if (S.hero === 'full') hero = `<div class="ps hero-full" data-sec="hero"><img src="${img('beige-long-sm.jpg')}" alt=""><div class="ov">${heroTop}<h1>${h1}</h1><div>${cta}</div></div></div>`;
-    else hero = `<div class="ps hero-col" data-sec="hero"><div>${heroTop}<h1>${h1}</h1>${cta}</div><div class="cg">${W('sign-girl-sm.jpg')}${W('red-streaks-sm.jpg')}${W('caramel-sm.jpg')}</div></div>`;
-
-    const baBlock = `<div class="ba"><img src="${img('ba-before.jpg')}" alt=""><img class="af" src="${img('ba-after.jpg')}" alt=""><span class="hd"></span><span class="t" style="left:8px">до</span><span class="t" style="right:8px">после</span></div><p style="margin:8px 0 0;color:var(--mut)">Чёрная база → бежевый блонд · Анастасия</p>`;
-    const mastersBlock = `<div class="row">
-      <div class="mc"><div class="ph"><img src="${img('blond-lob-2-sm.jpg')}" alt=""></div><div class="t"><b>Анастасия</b><span>блонд, сложное окрашивание</span></div></div>
-      <div class="mc"><div class="ph"><img src="${img('sunkissed-1-sm.jpg')}" alt=""></div><div class="t"><b>Татьяна</b><span>стрижки, яркие пряди</span></div></div>
-      <div class="mc"><div class="ph"><img src="${img('antonina-work.jpg')}" alt="" style="object-position:50% 90%"></div><div class="t"><b>Антонина</b><span>уход, завивка</span></div></div></div>`;
-    let works;
-    if (S.works === 'grid') works = `<div class="k">Портфолио</div><h4>Наши <em>работы</em></h4><div class="grid">${['blond-lob-1-sm.jpg', 'wolfcut-sm.jpg', 'bal-long-1-sm.jpg', 'red-streaks-sm.jpg', 'beige-waves-2-sm.jpg', 'caramel-sm.jpg', 'sunkissed-3-sm.jpg', 'perm-sm.jpg'].map(W).join('')}</div>`;
-    else if (S.works === 'ba') works = `<div class="k">До и после</div><h4>Было — <em>стало</em></h4>${baBlock}`;
-    else works = `<div class="k">Мастера и их работы</div><h4>Выберите <em>мастера</em></h4>${mastersBlock}`;
-
-    const priceTxt = { show: 'цена ₸', from: 'от … ₸', consult: 'по консультации' }[S.price];
-    const on = c => c ? '' : ' off';
-    const parts = [hero, `<div class="ps" data-sec="works">${works}</div>`];
-    parts.push(`<div class="ps${on(sec.ba && S.works !== 'ba')}" data-sec="ba"><div class="k">До и после</div><h4>Было — <em>стало</em></h4>${baBlock}</div>`);
-    parts.push(`<div class="ps${on(sec.masters && S.works !== 'masters')}" data-sec="masters"><div class="k">Команда</div><h4>Наши <em>мастера</em></h4>${mastersBlock}</div>`);
-    parts.push(`<div class="ps${on(sec.services)}" data-sec="services"><div class="k">Услуги</div><h4>Что мы <em>делаем</em></h4><div class="svc">${['Окрашивание и рассветление', 'Стрижки', 'Уходы и восстановление', 'Корейская завивка'].map(s => `<div><b>${s}</b><span>${priceTxt}</span></div>`).join('')}</div>${S.price !== 'consult' ? '<p class="price-note">Цены впишем вместе с вами</p>' : ''}</div>`);
-    parts.push(`<div class="ps${on(sec.insta)}" data-sec="insta"><div class="k">Instagram</div><h4>Свежие <em>работы</em></h4><div class="ig">${['wolfcut-sm.jpg', 'beige-waves-1-sm.jpg', 'blond-lob-3-sm.jpg', 'bal-long-2-sm.jpg', 'sunkissed-1-sm.jpg', 'beige-waves-3-sm.jpg'].map(W).join('')}</div><span class="pbtn">@salon_kima</span></div>`);
-    parts.push(`<div class="ps${on(sec.reviews)}" data-sec="reviews"><div class="k">Отзывы</div><h4>Говорят <em>гости</em></h4><div class="rvs"><div class="rv"><q>Вы настоящая волшебница своего дела! Покрасили волосы просто идеально…</q><span>гостья об Анастасии · 25.06.2026</span></div><div class="rv"><q>Все 6–8 часов я мотала головой и всё держится на 100%</q><span>гостья · 21.06.2026</span></div></div></div>`);
-    parts.push(`<div class="ps${on(sec.cert)}" data-sec="cert"><div class="cert"><b>Подарочный сертификат</b><small>На любую услугу салона — отличный подарок</small><span class="pbtn">Подарить</span></div></div>`);
-    parts.push(`<div class="ps${on(sec.academy)}" data-sec="academy"><div class="k">Обучение</div><h4>Учим <em>мастеров</em></h4><div class="acd">${W('diploma-sm.jpg')}${W('student-desk.jpg')}</div><p style="margin:0 0 10px;color:var(--mut)">Курс «Базовые женские стрижки»</p><span class="pbtn">Оставить заявку</span></div>`);
-    parts.push(`<div class="ps${on(sec.germany)}" data-sec="germany"><div class="k">История</div><h4>Нас нашли <em>из Германии</em></h4><div class="ger"><div><img src="${img('germany-before.jpg')}" alt=""><span>до</span></div><div><img src="${img('germany-after.jpg')}" alt=""><span>после</span></div></div><p style="margin:0;color:var(--mut)">Гостья нашла салон через Instagram и поисковик.</p></div>`);
-    let bk;
-    if (S.booking === 'form') bk = `<div class="bk"><div class="lb">Услуга</div><div class="chips"><i>Окрашивание</i><i>Стрижка</i><i>Уход</i></div><div class="lb">Мастер</div><div class="chips"><i>Анастасия</i><i>Татьяна</i><i>Антонина</i></div><div class="lb">Когда</div><div class="chips"><i>Сегодня</i><i>Завтра</i><i>Выбрать дату</i></div><span class="wabtn"><svg><use href="#wa"/></svg>Записаться в WhatsApp</span></div>`;
-    else if (S.booking === 'button') bk = `<div class="bk" style="text-align:center"><p style="margin:0 0 8px;color:var(--mut)">Напишите нам — подберём время и мастера</p><span class="wabtn"><svg><use href="#wa"/></svg>Написать в WhatsApp</span></div>`;
-    else bk = `<div class="bk callbig"><span style="color:var(--mut)">Запись по телефону</span><b>+7 707 780 30 37</b><span class="pbtn" style="justify-self:center">Позвонить</span></div>`;
-    parts.push(`<div class="ps" data-sec="booking"><div class="k">Запись</div><h4>Запишитесь <em>к нам</em></h4>${bk}</div>`);
-    parts.push(`<div class="ps${on(sec.contacts)}" data-sec="contacts"><div class="k">Контакты</div><h4>Как <em>добраться</em></h4><div class="ct"><div><span>Адрес</span><b>пр. Абая Кунанбаева, 78</b></div><div><span>Часы</span><b>ежедневно 10:00–19:00</b></div><div><span>Instagram</span><b>@salon_kima</b></div></div><div class="map"></div></div>`);
-    const lng = sec.lang ? `<span class="lng" data-sec="lang"><u>РУ</u> · ҚАЗ</span>` : '';
-    const fab = sec.float ? `<div class="fabw" data-sec="float"><span class="fab"><svg><use href="#wa"/></svg></span></div>` : '';
-    return `<div class="site t-${t}${desk ? ' desk' : ''}"><div class="nav" data-sec="nav"><b>Кима</b><span class="nr">${lng}<i></i></span></div>${parts.join('')}<div class="ftr"><b>Кима</b>салон красоты · Шахтинск</div>${fab}</div>`;
+  function renderSite(d, b, f) {
+    num = d === 'journal' ? 2 : 0; S._f = f;
+    const order = ['ba', 'shade', 'masters', 'reviews', 'school', 'cert', 'insta'];
+    const feats = order.filter(k => f[k]).map(k => feature(k, d)).join('');
+    const top = d === 'pop' ? hero('pop') + popHero() : nav(d, f) + hero(d);
+    const body = `${top}${works(d)}${services(d)}${feats}${booking(b, d)}${f.map ? feature('map', d) : ''}${footer(d)}`;
+    const fab = f.fab ? `<div class="fabw"><span class="fab">${waI}</span></div>` : '';
+    const tab = d === 'app' ? `<div class="tabbar"><span class="on"><i></i>Главная</span><span><i></i>Работы</span><span><i></i>Запись</span><span><i></i>Контакты</span></div>` : '';
+    return `<div class="site d-${d}">${body}${fab}${tab}</div>`;
   }
-
-  function paint(sc, focus, desk) {
-    sc.innerHTML = desk ? `<div class="zoom">${renderSite(true)}</div>` : renderSite(false);
-    if (desk) fitDesk();
-    if (focus === 'lang' || focus === 'float') focus = null;
+  function paint(sc, d, b, f, focus) {
+    sc.innerHTML = renderSite(d, b, f);
+    const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Almaty' })), h = now.getHours() + now.getMinutes() / 60, open = h >= 10 && h < 19;
+    sc.querySelectorAll('[data-open]').forEach(o => { o.classList.toggle('on', open); o.innerHTML = `<i></i>${open ? 'Сейчас открыто · до 19:00' : 'Сейчас закрыто · откроемся в 10:00'}`; });
     if (focus) {
       const el = sc.querySelector(`[data-sec="${focus}"]`);
-      if (el) { const top = Math.max(0, el.offsetTop - (focus === 'hero' ? 60 : 40)); if (G) gsap.to(sc, { scrollTop: top, duration: .7, ease: 'power2.inOut' }); else sc.scrollTop = top; }
-    }
-    if (G) { sc.classList.remove('flash'); void sc.offsetWidth; sc.classList.add('flash'); }
-  }
-  function fitDesk() {
-    const scr = $('.laptop .scr2'); if (!scr) return;
-    const z = scr.querySelector('.zoom'); if (!z) return;
-    const k = scr.clientWidth / 1200; z.style.transform = `scale(${k})`; z.style.height = 0;
-    z.style.marginBottom = (z.scrollHeight * k) + 'px';
-  }
-  addEventListener('resize', fitDesk);
-
-  /* ---------- экраны ---------- */
-  function vis(bid, k) {
-    if (bid === 'style') {
-      const m = { nude: ['#F7F2EA', '#2B211B', '#B08A52', 'Playfair Display', 'italic', 400], lux: ['#0F0D0C', '#F2E9DC', '#D2B57E', 'Cormorant Garamond', 'italic', 500], bright: ['#FFF3F6', '#1D1020', '#E0356B', 'Unbounded', 'normal', 800] }[k];
-      return `<div class="vis" style="background:${m[0]}"><span class="sample" style="font-family:'${m[3]}';font-style:${m[4]};font-weight:${m[5]};color:${m[1]}">Аа</span><span class="sw"><i style="background:${m[0]}"></i><i style="background:${m[1]}"></i><i style="background:${m[2]}"></i></span></div>`;
-    }
-    const wf = {
-      'hero:arch': '<rect x="10" y="10" width="46" height="8" rx="2" fill="#2B211B"/><rect x="10" y="22" width="34" height="5" rx="2" fill="#B08A52"/><path d="M64 70V34a17 17 0 0 1 34 0v36Z" fill="#D6B57C"/><rect x="10" y="56" width="22" height="9" rx="4.5" fill="#2B211B"/>',
-      'hero:full': '<rect x="4" y="4" width="112" height="72" rx="6" fill="#B08A52"/><rect x="12" y="50" width="54" height="8" rx="2" fill="#fff"/><rect x="12" y="62" width="24" height="7" rx="3.5" fill="#fff" opacity=".8"/>',
-      'hero:collage': '<rect x="8" y="10" width="44" height="9" rx="2" fill="#2B211B"/><rect x="8" y="24" width="24" height="7" rx="3.5" fill="#2B211B"/><rect x="60" y="8" width="30" height="64" rx="5" fill="#D6B57C"/><rect x="94" y="8" width="20" height="30" rx="5" fill="#B08A52"/><rect x="94" y="42" width="20" height="30" rx="5" fill="#E2D3BE"/>',
-      'works:grid': [0, 1, 2, 3].map(c => [0, 1].map(r => `<rect x="${8 + c * 27}" y="${8 + r * 34}" width="23" height="30" rx="4" fill="${['#D6B57C', '#B08A52', '#E2D3BE', '#6B5646'][(c + r) % 4]}"/>`).join('')).join(''),
-      'works:ba': '<rect x="14" y="6" width="92" height="68" rx="6" fill="#2B211B"/><rect x="60" y="6" width="46" height="68" fill="#D6B57C"/><rect x="59" y="6" width="2" height="68" fill="#fff"/><circle cx="60" cy="40" r="7" fill="#fff"/>',
-      'works:masters': '<rect x="6" y="10" width="44" height="60" rx="6" fill="#D6B57C"/><rect x="56" y="10" width="44" height="60" rx="6" fill="#B08A52"/><rect x="106" y="10" width="14" height="60" rx="6" fill="#E2D3BE"/><circle cx="28" cy="32" r="8" fill="#fff" opacity=".7"/><circle cx="78" cy="32" r="8" fill="#fff" opacity=".7"/>',
-      'booking:form': '<rect x="10" y="10" width="26" height="10" rx="5" fill="#2B211B"/><rect x="40" y="10" width="26" height="10" rx="5" fill="#E2D3BE"/><rect x="70" y="10" width="26" height="10" rx="5" fill="#E2D3BE"/><rect x="10" y="28" width="30" height="10" rx="5" fill="#E2D3BE"/><rect x="44" y="28" width="30" height="10" rx="5" fill="#2B211B"/><rect x="10" y="54" width="100" height="16" rx="8" fill="#1FA855"/>',
-      'booking:button': '<rect x="14" y="22" width="92" height="20" rx="10" fill="#1FA855"/><circle cx="30" cy="32" r="5" fill="#fff"/><rect x="40" y="29" width="50" height="6" rx="3" fill="#fff"/><rect x="30" y="52" width="60" height="5" rx="2.5" fill="#8C7A6B" opacity=".5"/>',
-      'booking:call': '<rect x="22" y="14" width="76" height="12" rx="3" fill="#2B211B"/><rect x="40" y="36" width="40" height="16" rx="8" fill="#B08A52"/><path d="M52 40h3l1.5 3-1.5 1a7 7 0 0 0 3 3l1-1.5 3 1.5v3a1.3 1.3 0 0 1-1.3 1.3A10 10 0 0 1 52 41.3 1.3 1.3 0 0 1 52 40Z" fill="#fff"/>'
-    }[bid + ':' + k];
-    return `<div class="vis"><svg viewBox="0 0 120 80">${wf}</svg></div>`;
+      if (el) { const top = Math.max(0, el.offsetTop - 50); if (G) gsap.to(sc, { scrollTop: top, duration: .7, ease: 'power2.inOut' }); else sc.scrollTop = top; }
+    } else sc.scrollTop = 0;
   }
 
+  /* интерактив внутри мини-сайтов */
+  document.addEventListener('input', e => { if (e.target.matches('.ba input')) e.target.closest('.ba').style.setProperty('--x', e.target.value + '%'); });
+  document.addEventListener('click', e => {
+    const a = e.target.closest('[data-act]'); if (!a) return;
+    const site = a.closest('.site'); if (!site) return;
+    const act = a.dataset.act;
+    if (act === 'pick') { const grp = a.parentElement; grp.querySelectorAll('[data-act="pick"]').forEach(x => x.classList.toggle('on', x === a)); }
+    if (act === 'done') { const box = a.closest('.sec'); const dn = box.querySelector('.done'); if (dn) { dn.classList.add('show'); if (G) gsap.from(dn, { y: 8, opacity: 0, duration: .4 }); } }
+    if (act === 'shade') { const sec = a.closest('.sec'); sec.querySelector('.tint').style.setProperty('--tint', a.dataset.c); sec.querySelectorAll('.sw').forEach(x => x.classList.toggle('on', x === a)); }
+    if (act === 'master') { const sec = a.closest('.sec'); sec.querySelectorAll('[data-act="master"]').forEach(x => x.classList.toggle('on', x === a)); sec.querySelectorAll('.mw').forEach(m => m.classList.toggle('on', m.dataset.mi === a.dataset.i)); }
+    if (act === 'cert') { const sec = a.closest('.sec'); sec.querySelector('[data-cert]').textContent = 'На ' + a.dataset.v.toLowerCase(); sec.querySelectorAll('[data-act="cert"]').forEach(x => x.classList.toggle('on', x === a)); }
+    if (act === 'lang') { site.querySelectorAll('[data-act="lang"]').forEach(x => x.classList.toggle('on', x.dataset.l === a.dataset.l)); site.querySelectorAll('[data-ru]').forEach(t => t.innerHTML = t.dataset[a.dataset.l]); }
+    if (act === 'chat') {
+      const box = a.closest('.chat'), step = +box.dataset.step, msgs = box.querySelector('.msgs');
+      msgs.insertAdjacentHTML('beforeend', `<div class="me">${a.textContent}</div>`);
+      const [q, opts] = CHAT[step] || CHAT[CHAT.length - 1];
+      msgs.insertAdjacentHTML('beforeend', `<div class="bot">${q}</div>`);
+      box.dataset.step = step + 1;
+      box.querySelector('.copts').innerHTML = opts.length ? opts.map(s => `<button class="chip" data-act="chat">${s}</button>`).join('') : `<span class="b2 wa full">${waI}Открыть WhatsApp</span>`;
+      if (G) gsap.from(msgs.querySelectorAll('div:nth-last-child(-n+2)'), { y: 8, opacity: 0, duration: .35, stagger: .25 });
+    }
+  });
+
+  /* ---------- экраны теста ---------- */
+  const STEPS = 3, FIN = 4;
+  let cur = 0;
   function screenHTML(n) {
     if (n === 0) return `<div class="wrap intro-grid">
       <div><span class="eyebrow">Салон «Кима» × VANTA</span>
         <h1 class="h1">Какой сайт нужен <em>вашему</em> салону?</h1>
-        <p class="sub">Выбирайте, что нравится, — и сразу видите свой сайт на своих фото.</p>
-        <div class="steps-mini"><span>дизайн</span><span>первый экран</span><span>работы</span><span>запись</span><span>функции</span></div>
-        <div class="foot"><button class="btn big" data-next>Пройти тест <span aria-hidden="true">→</span></button><span class="hint">5 шагов · около 2 минут</span></div></div>
+        <p class="sub">5 совершенно разных дизайнов, 3 вида записи и 10 функций — всё на ваших фото, всё можно нажимать.</p>
+        <div class="pills"><span>5 дизайнов</span><span>3 вида записи</span><span>10 функций</span></div>
+        <div class="foot"><button class="btn big" data-next>Пройти тест <span aria-hidden="true">→</span></button><span class="hint">3 шага · около 3 минут</span></div></div>
       <div class="fan"><figure class="f1"><img src="${img('blond-lob-3-sm.jpg')}" alt=""></figure><figure class="f2"><img src="${img('sunkissed-2-sm.jpg')}" alt=""></figure><figure class="f3"><img src="${img('beige-waves-1-sm.jpg')}" alt=""></figure></div></div>`;
-    if (n >= B0 && n < ASM) {
-      const b = B[n - B0], i = n - B0 + 1;
-      let controls;
-      if (b.id === 'sections') controls = `<div class="grp">Разделы</div><div class="toggles">${SECS.map(([k, l, f]) => `<button class="tg" data-sec="${k}" aria-pressed="${!!S.sec[k]}"><img src="${img(f)}" alt=""><span class="l">${l}</span></button>`).join('')}</div>
-        <div class="grp">Функции</div><div class="toggles">${FEATS.map(([k, l, s, ico]) => `<button class="tg" data-sec="${k}" aria-pressed="${!!S.sec[k]}"><span class="fi">${ico}</span><span class="l">${l}<small>${s}</small></span></button>`).join('')}</div>
-        <div class="grp">Цены</div><div class="seg" data-price>${Object.entries(PRICE_L).map(([k, l]) => `<button data-p="${k}" aria-pressed="${S.price === k}">${l}</button>`).join('')}</div>`;
-      else controls = `<div class="cards" data-b="${b.id}">${b.opts.map(([k, t, s]) => `<button class="card" data-v="${k}" aria-pressed="${S[b.id] === k}">${vis(b.id, k)}<b>${t}</b><small>${s}</small></button>`).join('')}</div>`;
-      return `<div class="wrap bld">
-        <div class="q-head"><span class="eyebrow">Шаг ${i} из ${B.length}</span><h2 class="h2">${b.t}</h2>
-          <p class="sub">${b.id === 'sections' ? 'Включайте и выключайте — телефон сразу покажет, как это выглядит.' : 'Нажмите на вариант — телефон покажет его на ваших фото.'}</p></div>
-        <div class="stage"><div class="phone"><div class="scroll" data-phone></div></div></div>
-        <div class="q-ctl">${controls}
-          <div class="foot"><button class="btn" data-next>${S.back !== null ? 'Готово → к итогу' : (i === B.length ? 'Показать мой сайт →' : 'Дальше →')}</button></div></div></div>`;
-    }
-    if (n === ASM) return `<div class="wrap asm"><div><div class="tiles">${['sunkissed-2-sm.jpg', 'blond-lob-2-sm.jpg', 'wolfcut-sm.jpg', 'caramel-sm.jpg', 'beige-long-sm.jpg', 'red-streaks-sm.jpg'].map(f => `<div><img src="${img(f)}" alt="" style="width:100%;height:100%;object-fit:cover"></div>`).join('')}</div><h2 class="h2">Собираем <em>ваш</em> сайт…</h2></div></div>`;
-    if (n === FIN) {
-      const r = result();
-      const secs = SECS.filter(([k]) => S.sec[k]).map(([, l]) => l).join(', ') || '—';
-      const feats = FEATS.filter(([k]) => S.sec[k]).map(([, l]) => l).join(', ') || '—';
-      const row = (dt, dd, step) => `<div class="r"><div><dt>${dt}</dt><dd>${dd}</dd></div><button class="ed" data-edit="${step}">Изменить</button></div>`;
-      return `<div class="wrap fin">
-        <div style="display:flex;flex-direction:column;align-items:center">
-          <div style="align-self:stretch"><span class="eyebrow">Результат теста</span><h2 class="h2">Так будет выглядеть <em>ваш</em> сайт</h2>
-            <div class="viewtg"><button data-view="phone" aria-pressed="${S.view === 'phone'}">Телефон</button><button data-view="desk" aria-pressed="${S.view === 'desk'}">Компьютер</button></div></div>
-          <div style="margin-top:22px;width:100%;display:flex;justify-content:center">${S.view === 'desk' ? '<div class="laptop"><div class="scr2" data-phone></div><div class="laptop-base"></div></div>' : '<div class="phone"><div class="scroll" data-phone></div></div>'}</div>
-          <p class="hint" style="margin:14px 0 0">${S.view === 'desk' ? 'Прокрутите экран ноутбука' : 'Прокрутите экран телефона'} — это ваш сайт целиком.</p>
-        </div>
-        <div style="display:grid;gap:16px">
-          <div class="pack"><span class="lbl">Вам подходит</span><h3>${r.title}</h3><p>${r.text}</p>
-            <div class="meters">${[['rec', 'Запись'], ['port', 'Портфолио'], ['edu', 'Обучение']].map(([k, l]) => `<div class="meter"><span>${l}</span><div class="tk"><div class="fl" data-m="${k}" data-w="${r.pct[k]}"></div></div><b>${r.pct[k]}%</b></div>`).join('')}</div></div>
-          <div class="sum"><dl style="margin:0">
-            ${row('Дизайн', BL['style:' + S.style], 0)}${row('Первый экран', BL['hero:' + S.hero], 1)}${row('Работы', BL['works:' + S.works], 2)}${row('Запись', BL['booking:' + S.booking], 3)}${row('Разделы', secs, 4)}${row('Функции', feats, 4)}${row('Цены', PRICE_L[S.price], 4)}
-          </dl></div>
-          <textarea class="wish" id="wish" placeholder="Пожелания: что добавить или убрать, какие фото точно поставить…">${S.wish || ''}</textarea>
-          <button class="btn wa" id="send"><svg><use href="#wa"/></svg>Отправить выбор в VANTA</button>
-          <p class="hint" style="margin:0">Откроется WhatsApp с готовым сообщением. Мы подготовим сайт по вашему выбору.</p>
-          <button class="btn ghost" data-restart>Пройти заново</button>
-        </div></div>`;
-    }
+    if (n === 1) return `<div class="wrap"><span class="eyebrow">Шаг 1 из 3</span><h2 class="h2">Выберите <em>дизайн</em></h2><p class="sub">Листайте вбок — это 5 разных сайтов. Каждый можно прокрутить и понажимать.</p>
+      <div class="dcar" id="dcar">${DESIGNS.map(([k, t, s]) => `<div class="dcard" data-d="${k}" aria-selected="${S.design === k}"><div class="phone"><div class="scroll" data-ph="${k}"></div></div><div class="meta"><b>${t}</b><span>${s}</span></div><button class="pick" data-choose="${k}">${S.design === k ? 'Выбран ✓' : 'Выбрать'}</button></div>`).join('')}</div>
+      <div class="dots" id="dots">${DESIGNS.map((_, i) => `<i class="${i ? '' : 'on'}"></i>`).join('')}</div>
+      <div class="foot"><button class="btn" data-next>Дальше: запись →</button><span class="hint">выбран: <b id="dsel">${DL[S.design]}</b></span></div></div>`;
+    if (n === 2) return `<div class="wrap bld"><div class="q-head"><span class="eyebrow">Шаг 2 из 3</span><h2 class="h2">Как клиент будет <em>записываться</em>?</h2><p class="sub">Три разные механики — попробуйте каждую прямо в телефоне.</p></div>
+      <div class="stage"><div class="phone"><div class="scroll" data-ph="main"></div></div></div>
+      <div class="q-ctl"><div class="bopts">${BOOK.map(([k, t, s, ic]) => `<button class="bopt" data-book="${k}" aria-pressed="${S.book === k}"><span class="ic">${ic}</span><span><b>${t}</b><small>${s}</small></span></button>`).join('')}</div>
+      <div class="tip"><i>👆</i>Нажимайте кнопки в телефоне — запись работает</div>
+      <div class="foot"><button class="btn" data-next>${S.back ? 'Готово → к итогу' : 'Дальше: функции →'}</button></div></div></div>`;
+    if (n === 3) return `<div class="wrap bld"><div class="q-head"><span class="eyebrow">Шаг 3 из 3</span><h2 class="h2">Какие <em>функции</em> добавить?</h2><p class="sub">Нажмите функцию — телефон покажет её, и её можно попробовать.</p></div>
+      <div class="stage"><div class="phone"><div class="scroll" data-ph="main"></div></div></div>
+      <div class="q-ctl"><div class="feats">${FEATS.map(([k, t, s]) => `<button class="ft" data-feat="${k}" aria-pressed="${!!S.f[k]}"><b>${t}</b><small>${s}</small></button>`).join('')}</div>
+      <div class="foot"><button class="btn" data-next>${S.back ? 'Готово → к итогу' : 'Показать мой сайт →'}</button></div></div></div>`;
+    const r = result();
+    const fl = FEATS.filter(([k]) => S.f[k]).map(([, l]) => l).join(', ') || '—';
+    const row = (dt, dd, step) => `<div class="r"><div><dt>${dt}</dt><dd>${dd}</dd></div><button class="ed" data-edit="${step}">Изменить</button></div>`;
+    return `<div class="wrap fin">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:10px"><div class="phone"><div class="scroll" data-ph="main"></div></div><span class="hint">Это ваш сайт — прокрутите и понажимайте</span></div>
+      <div style="display:grid;gap:14px;align-content:start">
+        <div><span class="eyebrow">Результат теста</span><h2 class="h2">Ваш сайт <em>готов</em> к обсуждению</h2></div>
+        <div class="pack"><span class="lbl">Вам подходит</span><h3>${r.title}</h3><p>${r.text}</p><div class="meters">${[['rec', 'Запись'], ['port', 'Портфолио'], ['edu', 'Обучение']].map(([k, l]) => `<div class="meter"><span>${l}</span><div class="tk"><div class="fl" data-w="${r.pct[k]}"></div></div><b>${r.pct[k]}%</b></div>`).join('')}</div></div>
+        <div class="sum"><dl style="margin:0">${row('Дизайн', DL[S.design], 1)}${row('Запись', BLb[S.book], 2)}${row('Функции', fl, 3)}</dl></div>
+        <textarea class="wish" id="wish" placeholder="Пожелания: что добавить или убрать, какие фото поставить…">${S.wish || ''}</textarea>
+        <button class="btn wa" id="send">${waI}Отправить выбор в VANTA</button>
+        <p class="hint" style="margin:0">Откроется WhatsApp с готовым сообщением — мы подготовим сайт по вашему выбору.</p>
+        <button class="btn ghost" data-restart>Пройти заново</button>
+      </div></div>`;
   }
 
-  /* ---------- навигация ---------- */
+  function result() {
+    const f = S.f, sc = { rec: 0, port: 0, edu: 0 };
+    sc.rec += { calendar: 4, form: 3, chat: 4 }[S.book]; if (f.fab) sc.rec += 1; if (f.map) sc.rec += 1;
+    ['ba', 'shade'].forEach(k => { if (f[k]) sc.port += 2; }); ['masters', 'insta', 'reviews'].forEach(k => { if (f[k]) sc.port += 1; }); if (['journal', 'minimal'].includes(S.design)) sc.port += 1;
+    if (f.school) sc.edu += 4; if (f.cert) sc.edu += 1;
+    const max = { rec: 6, port: 8, edu: 5 }, p = {};
+    Object.keys(sc).forEach(k => p[k] = Math.max(8, Math.min(100, Math.round(sc[k] / max[k] * 100))));
+    let key = p.rec >= p.port ? 'rec' : 'port'; if (f.school && p.edu >= Math.max(p.rec, p.port) - 10) key = 'edu';
+    const PACK = { rec: ['Сайт с <em>онлайн-записью</em>', 'Главное — клиент сам записывается, а вам приходит готовая запись без переписки.'], port: ['Премиум-<em>портфолио</em>', 'Главное — показать уровень ваших работ так, чтобы новый клиент захотел именно к вам.'], edu: ['Салон <em>+ школа</em>', 'Два направления на одном сайте: запись клиентов и обучение мастеров с заявкой.'] };
+    return { title: PACK[key][0], text: PACK[key][1], pct: p };
+  }
+
   function progress(n) {
-    const total = B.length, done = n <= 0 ? 0 : n < ASM ? n - B0 : total;
-    const C = 2 * Math.PI * 20, pg = $('#ringPg');
-    pg.style.strokeDasharray = C; pg.style.strokeDashoffset = C * (1 - done / total);
-    $('#ringTx').textContent = `${done}/${total}`;
-    $('#back').classList.toggle('off', n === 0 || n === ASM);
+    const done = n === 0 ? 0 : n === FIN ? STEPS : n - 1, C = 2 * Math.PI * 20, pg = $('#ringPg');
+    pg.style.strokeDasharray = C; pg.style.strokeDashoffset = C * (1 - done / STEPS);
+    $('#ringTx').textContent = `${done}/${STEPS}`;
+    $('#back').classList.toggle('off', n === 0);
   }
   function go(n, dir = 1) {
-    const app = $('#app');
-    const el = document.createElement('section'); el.className = 'scr on'; el.innerHTML = screenHTML(n);
-    const old = app.querySelector('.scr');
+    const app = $('#app'), old = app.firstElementChild;
+    const el = document.createElement('section'); el.className = 'scr'; el.innerHTML = screenHTML(n);
     const swap = () => { if (old) old.remove(); app.appendChild(el); scrollTo(0, 0); cur = n; progress(n); bind(el, n); save(); };
-    if (G && old) {
-      gsap.to(old, { opacity: 0, x: -40 * dir, filter: 'blur(6px)', duration: .28, ease: 'power2.in', onComplete: () => { swap(); gsap.fromTo(el, { opacity: 0, x: 50 * dir, filter: 'blur(8px)' }, { opacity: 1, x: 0, filter: 'blur(0px)', duration: .55, ease: 'power3.out', clearProps: 'filter,transform' }); anim(el, n); } });
-    } else { swap(); if (G) anim(el, n); }
+    if (G && old) gsap.to(old, { opacity: 0, x: -40 * dir, duration: .25, ease: 'power2.in', onComplete: () => { swap(); gsap.fromTo(el, { opacity: 0, x: 50 * dir }, { opacity: 1, x: 0, duration: .5, ease: 'power3.out', clearProps: 'transform' }); } });
+    else swap();
   }
-  function anim(el, n) {
-    if (n === 0) {
-      gsap.from(el.querySelectorAll('.fan figure'), { y: 80, opacity: 0, duration: 1, stagger: .12, ease: 'expo.out' });
-      gsap.from(el.querySelectorAll('.h1, .sub, .steps-mini, .foot'), { y: 24, opacity: 0, duration: .8, stagger: .08, ease: 'power3.out' });
-    } else if (el.querySelector('.card, .tg')) {
-      gsap.from(el.querySelectorAll('.card, .tg'), { y: 20, opacity: 0, duration: .45, stagger: .04, ease: 'power3.out', delay: .1 });
-      gsap.from(el.querySelector('.phone'), { y: 40, rotate: -3, opacity: 0, duration: .8, ease: 'expo.out' });
-    } else if (n === FIN) {
-      gsap.from(el.querySelectorAll('.pack, .sum, .wish, #send'), { y: 30, opacity: 0, duration: .7, stagger: .08, ease: 'power3.out' });
-    }
-  }
-
   function bind(el, n) {
-    el.querySelectorAll('[data-next]').forEach(b => b.onclick = () => next());
-    const ph = el.querySelector('[data-phone]');
-    if (n >= B0 && n < ASM) {
-      const b = B[n - B0];
-      paint(ph, b.focus, false);
-      const cards = el.querySelector('[data-b]');
-      if (cards) cards.querySelectorAll('.card').forEach(c => c.onclick = () => {
-        S[b.id] = c.dataset.v; cards.querySelectorAll('.card').forEach(x => x.setAttribute('aria-pressed', x === c)); save(); paint(ph, b.focus, false);
+    el.querySelectorAll('[data-next]').forEach(b => b.onclick = next);
+    const main = el.querySelector('[data-ph="main"]');
+    if (n === 0 && G) { gsap.from(el.querySelectorAll('.fan figure'), { y: 80, opacity: 0, duration: 1, stagger: .12, ease: 'expo.out' }); gsap.from(el.querySelectorAll('.h1,.sub,.pills,.foot'), { y: 24, opacity: 0, duration: .8, stagger: .08, ease: 'power3.out' }); }
+    if (n === 1) {
+      const demoF = { ba: true, shade: false, masters: true, reviews: true, school: false, cert: false, insta: false, map: true, lang: false, fab: true };
+      DESIGNS.forEach(([k]) => paint(el.querySelector(`[data-ph="${k}"]`), k, 'form', demoF, null));
+      const car = el.querySelector('#dcar'), dots = [...el.querySelectorAll('#dots i')];
+      car.addEventListener('scroll', () => { const cards = [...car.children]; const mid = car.scrollLeft + car.clientWidth / 2; let best = 0, bd = 1e9; cards.forEach((c, i) => { const d = Math.abs(c.offsetLeft + c.offsetWidth / 2 - mid); if (d < bd) { bd = d; best = i; } }); dots.forEach((d, i) => d.classList.toggle('on', i === best)); }, { passive: true });
+      el.querySelectorAll('[data-choose]').forEach(b => b.onclick = () => {
+        S.design = b.dataset.choose; save();
+        el.querySelectorAll('.dcard').forEach(c => { const on = c.dataset.d === S.design; c.setAttribute('aria-selected', on); c.querySelector('.pick').textContent = on ? 'Выбран ✓' : 'Выбрать'; });
+        el.querySelector('#dsel').textContent = DL[S.design];
+        if (G) gsap.fromTo(b.closest('.dcard').querySelector('.phone'), { scale: .96 }, { scale: 1, duration: .5, ease: 'back.out(3)' });
       });
-      el.querySelectorAll('.tg').forEach(t => t.onclick = () => {
-        const k = t.dataset.sec; S.sec[k] = !S.sec[k]; t.setAttribute('aria-pressed', S.sec[k]); save(); paint(ph, S.sec[k] ? k : null, false);
-      });
-      el.querySelectorAll('[data-p]').forEach(p => p.onclick = () => {
-        S.price = p.dataset.p; el.querySelectorAll('[data-p]').forEach(x => x.setAttribute('aria-pressed', x === p)); save(); paint(ph, 'services', false);
-      });
+      const sel = el.querySelector(`.dcard[data-d="${S.design}"]`);
+      if (sel && sel.previousElementSibling) requestAnimationFrame(() => car.scrollLeft = sel.offsetLeft - (car.clientWidth - sel.offsetWidth) / 2);
     }
-    if (n === ASM) {
-      const tiles = [...el.querySelectorAll('.tiles div')];
-      const target = [[0, 0], [83, 0], [166, 0], [0, 110], [83, 110], [166, 110]];
-      if (G) {
-        tiles.forEach(t => gsap.set(t, { left: gsap.utils.random(-120, 240), top: gsap.utils.random(-160, 260), rotate: gsap.utils.random(-40, 40), opacity: 0 }));
-        gsap.to(tiles, { left: i => target[i][0], top: i => target[i][1] + 10, rotate: 0, opacity: 1, duration: .9, stagger: .08, ease: 'back.out(1.4)' });
-        setTimeout(() => go(FIN), 2000);
-      } else { tiles.forEach((t, i) => { t.style.left = target[i][0] + 'px'; t.style.top = target[i][1] + 10 + 'px'; }); setTimeout(() => go(FIN), still ? 0 : 900); }
+    if (n === 2) {
+      paint(main, S.design, S.book, S.f, 'booking');
+      el.querySelectorAll('[data-book]').forEach(b => b.onclick = () => { S.book = b.dataset.book; save(); el.querySelectorAll('[data-book]').forEach(x => x.setAttribute('aria-pressed', x === b)); paint(main, S.design, S.book, S.f, 'booking'); });
+    }
+    if (n === 3) {
+      paint(main, S.design, S.book, S.f, null);
+      el.querySelectorAll('[data-feat]').forEach(b => b.onclick = () => {
+        const k = b.dataset.feat; S.f[k] = !S.f[k]; save(); b.setAttribute('aria-pressed', S.f[k]);
+        paint(main, S.design, S.book, S.f, S.f[k] && !['lang', 'fab'].includes(k) ? k : null);
+        if (k === 'lang' && S.f.lang) main.scrollTop = 0;
+      });
     }
     if (n === FIN) {
-      paint(ph, null, S.view === 'desk');
-      requestAnimationFrame(() => el.querySelectorAll('[data-w]').forEach(f => f.style.width = f.dataset.w + '%'));
-      el.querySelectorAll('[data-view]').forEach(v => v.onclick = () => { S.view = v.dataset.view; save(); go(FIN, 0); });
-      el.querySelectorAll('[data-edit]').forEach(e => e.onclick = () => { S.back = FIN; save(); go(B0 + +e.dataset.edit, -1); });
+      paint(main, S.design, S.book, S.f, null);
+      requestAnimationFrame(() => el.querySelectorAll('[data-w]').forEach(x => x.style.width = x.dataset.w + '%'));
+      el.querySelectorAll('[data-edit]').forEach(b => b.onclick = () => { S.back = true; save(); go(+b.dataset.edit, -1); });
       el.querySelector('#wish').oninput = e => { S.wish = e.target.value; save(); };
       el.querySelector('#send').onclick = send;
       el.querySelector('[data-restart]').onclick = () => { try { localStorage.removeItem(KEY); } catch (e) {} location.href = location.pathname; };
+      if (G) gsap.from(el.querySelectorAll('.pack,.sum,.wish,#send'), { y: 24, opacity: 0, duration: .6, stagger: .08, ease: 'power3.out' });
     }
   }
-  function next() {
-    if (cur >= B0 && cur < ASM && S.back !== null) { const t = S.back; S.back = null; save(); return go(t); }
-    go(Math.min(FIN, cur + 1));
-  }
-  $('#back').onclick = () => {
-    if (S.back !== null && cur >= B0 && cur < ASM) { const t = S.back; S.back = null; return go(t, -1); }
-    go(cur === FIN ? ASM - 1 : Math.max(0, cur - 1), -1);
-  };
+  function next() { if (S.back && cur >= 1 && cur <= 3) { S.back = null; save(); return go(FIN); } go(Math.min(FIN, cur + 1)); }
+  $('#back').onclick = () => { if (S.back && cur >= 1 && cur <= 3) { S.back = null; return go(FIN, -1); } go(Math.max(0, cur - 1), -1); };
 
   function buildMsg() {
     const r = result(), strip = s => s.replace(/<[^>]+>/g, '');
-    const secs = SECS.filter(([k]) => S.sec[k]).map(([, l]) => l).join(', ') || '—';
-    const feats = FEATS.filter(([k]) => S.sec[k]).map(([, l]) => l).join(', ') || '—';
-    return [
-      'Здравствуйте! Салон «Кима» — результат теста:',
-      `Подходит: ${strip(r.title)} (запись ${r.pct.rec}%, портфолио ${r.pct.port}%, обучение ${r.pct.edu}%)`,
-      '',
-      `• Дизайн: ${BL['style:' + S.style]}`,
-      `• Первый экран: ${BL['hero:' + S.hero]}`,
-      `• Работы: ${BL['works:' + S.works]}`,
-      `• Запись: ${BL['booking:' + S.booking]}`,
-      `• Разделы: ${secs}`,
-      `• Функции: ${feats}`,
-      `• Цены: ${PRICE_L[S.price]}`,
-      S.wish.trim() ? `\nПожелания: ${S.wish.trim()}` : null
-    ].filter(x => x !== null).join('\n');
+    return ['Здравствуйте! Салон «Кима» — результат теста:', `Подходит: ${strip(r.title)} (запись ${r.pct.rec}%, портфолио ${r.pct.port}%, обучение ${r.pct.edu}%)`, '',
+      `• Дизайн: ${DL[S.design]}`, `• Запись: ${BLb[S.book]}`, `• Функции: ${FEATS.filter(([k]) => S.f[k]).map(([, l]) => l).join(', ') || '—'}`,
+      S.wish.trim() ? `\nПожелания: ${S.wish.trim()}` : null].filter(x => x !== null).join('\n');
   }
-  function send() {
-    const url = `https://wa.me/${VANTA_WA}?text=${encodeURIComponent(buildMsg())}`;
-    if (matchMedia('(pointer: coarse)').matches) location.href = url; else window.open(url, '_blank', 'noopener');
-  }
+  function send() { const url = `https://wa.me/${VANTA_WA}?text=${encodeURIComponent(buildMsg())}`; if (matchMedia('(pointer: coarse)').matches) location.href = url; else window.open(url, '_blank', 'noopener'); }
   window.__kima = { S, buildMsg, result, go };
 
-  /* ?go=N — открыть экран сразу (для проверки) */
-  if (P.has('go')) {
-    if (P.get('style')) S.style = P.get('style');
-    if (P.get('view')) S.view = P.get('view');
-    go(+P.get('go'));
-  } else { load(); S.back = null; go(0); }
+  if (P.has('go')) { if (P.get('design')) S.design = P.get('design'); if (P.get('book')) S.book = P.get('book'); if (P.get('all')) FEATS.forEach(([k]) => S.f[k] = true); go(+P.get('go')); }
+  else { load(); S.back = null; go(0); }
 })();
 </script>
 </body>
