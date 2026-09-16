@@ -59,7 +59,7 @@ textarea{font:inherit}
 .bar .acts{display:flex;gap:10px;flex:none}
 .bar .acts.wide{flex:1}
 .bar .acts.wide .btn{width:100%}
-@media(max-width:700px){.bar-in{flex-wrap:wrap}.bar .sel{flex:1 0 100%}.bar .sel.step{display:none}.bar .acts{flex:1}.bar .acts .btn{flex:1;padding:0 14px}.bar .acts .btn:last-child:not(:first-child){flex:1.7}}
+@media(max-width:700px){.bar-in{flex-wrap:wrap}.bar .sel{flex:1 0 100%;white-space:normal;line-height:1.35}.bar .sel.step{display:none}.bar .acts{flex:1}.bar .acts .btn{flex:1;padding:0 14px}.bar .acts .btn:last-child:not(:first-child){flex:1.7}}
 
 /* телефон */
 .phone{position:relative;flex:none;height:var(--ph,420px);width:calc(var(--ph,420px) * .4787);border-radius:calc(var(--ph,420px) * .075);background:#000;padding:8px;box-shadow:0 0 0 1px rgba(242,240,237,.12),0 34px 60px -38px #000}
@@ -157,7 +157,7 @@ textarea{font:inherit}
   .m-side{flex-direction:column;align-items:stretch;width:250px}
   .m-side .nm{text-align:left;margin-bottom:6px}
 }
-@media(max-width:700px) and (max-height:740px){.hd .sub{display:none}.car{--ph:clamp(240px,calc(100svh - 372px),540px)}}
+@media(max-width:700px) and (max-height:740px){.hd .sub{display:none}.opt .ds{display:none}.opt{gap:9px}.car{--ph:clamp(230px,calc(100svh - 368px),540px)}}
 .still *,.still *::before,.still *::after{animation:none!important;transition:none!important}
 @media (prefers-reduced-motion: reduce){.wcol,.scr{animation:none}}
 
