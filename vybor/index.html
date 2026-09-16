@@ -513,6 +513,51 @@ textarea{font:inherit}
 .site .tabbar .on{color:var(--acc)}
 .t-app .fabw{bottom:70px}
 
+/* ===== одна раскладка, но разная подача у каждого стиля ===== */
+/* пропорции фото */
+.w-grid .ph,.site .hs figure .ph,.w-fl .ph,.w-ba .row3 .ph{aspect-ratio:var(--ar,3/4)}
+.t-champagne{--ar:2/3}
+.t-journal{--ar:4/5}
+.t-minimal{--ar:1}
+.t-pop{--ar:1}
+.t-eco{--ar:4/5}
+.t-wine{--ar:2/3}
+.t-app{--ar:1}
+.t-neon{--ar:1}
+/* «фото на весь экран» и «видео» */
+.t-champagne .h-full{height:610px}
+.t-champagne .h-full .ov{align-items:center;text-align:center;padding-bottom:30px}
+.t-champagne .h-full .b2{align-self:center}
+.t-wine .h-full{height:520px}
+.t-wine .h-full .ov{justify-content:flex-start;padding-top:66px;background:linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.15) 52%,rgba(0,0,0,.5))}
+.t-loft .h-full{height:470px}
+.t-loft .h-full .ov{background:linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.12))}
+.t-neon .h-full{height:560px}
+.t-neon .h-full .ov{align-items:center;text-align:center}
+.t-neon .h-full .b2{align-self:center}
+/* «коллаж» */
+.t-journal .h-collage .cg{grid-template-columns:1fr 1fr;grid-template-rows:180px 108px}
+.t-journal .h-collage .cg .ph:first-child{grid-row:1;grid-column:1/3}
+.t-pastel .h-collage .cg{grid-template-columns:.82fr 1.18fr;grid-template-rows:118px 148px}
+/* «фото и карточка» */
+.t-minimal .h-split .hp{height:288px}
+.t-minimal .h-split .cd{margin:-38px 0 0;border-radius:0}
+.t-eco .h-split .hp{height:384px}
+.t-eco .h-split .cd{margin:-78px 16px 0;text-align:center}
+/* шапка */
+.t-champagne .nav,.t-wine .nav,.t-scandi .nav,.t-eco .nav{justify-content:center}
+.t-champagne .nav .nr,.t-wine .nav .nr,.t-scandi .nav .nr,.t-eco .nav .nr{position:absolute;right:16px;top:26px}
+.t-minimal .nav{border-bottom:1px solid var(--ln)}
+.t-loft .nav{border-bottom:2px solid var(--fg)}
+/* подвал */
+.t-journal .ftr,.t-minimal .ftr,.t-loft .ftr{text-align:left}
+.t-loft .ftr{border-top:2px solid var(--fg)}
+.t-minimal .ftr .lg{font-size:52px;letter-spacing:-.06em}
+.t-pop .ftr{background:var(--fg);color:#FFE3EC}
+.t-pop .ftr span{color:rgba(255,227,236,.72)}
+.t-neon .ftr .lg{text-shadow:0 0 18px rgba(255,79,216,.8)}
+.t-scandi .ftr .lg{font-size:24px;letter-spacing:.3em}
+
 /* заставки */
 .splash{position:absolute;inset:9px;z-index:6;border-radius:calc(var(--ph,420px) * .06);overflow:hidden;display:grid;place-items:center;background:var(--bg);color:var(--fg);pointer-events:none;opacity:0}
 .splash>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -622,6 +667,37 @@ textarea{font:inherit}
     ['neon', 'Неон', 'Тёмный фон и розовое свечение'],
     ['scandi', 'Скандинавский', 'Тёплый беж и много воздуха']
   ];
+  const SIDX = Object.fromEntries(STYLES.map(([k], i) => [k, i]));
+  const rot = (a, k) => { const n = ((k % a.length) + a.length) % a.length; return a.slice(n).concat(a.slice(0, n)); };
+  /* фото по стилям: портрет хозяйки, предметный кадр и тёмные работы разведены по разным стилям */
+  const MED = {
+    nude: ['diploma-sm.jpg', 'sunkissed-2-sm.jpg', 'beige-waves-1-sm.jpg', 'blond-lob-1-sm.jpg', 'caramel-sm.jpg', 'bal-long-1-sm.jpg'],
+    champagne: ['bal-long-2-sm.jpg', 'germany-after.jpg', 'beige-long-sm.jpg', 'blond-lob-3-sm.jpg', 'sunkissed-3-sm.jpg', 'caramel-sm.jpg'],
+    journal: ['vogue-sm.jpg', 'blond-lob-1-sm.jpg', 'germany-after.jpg', 'beige-waves-2-sm.jpg', 'sunkissed-1-sm.jpg', 'wolfcut-sm.jpg'],
+    minimal: ['beige-waves-3-sm.jpg', 'blond-lob-2-sm.jpg', 'sunkissed-2-sm.jpg', 'caramel-sm.jpg', 'bal-long-1-sm.jpg', 'wolfcut-sm.jpg'],
+    pop: ['wolfcut-sm.jpg', 'caramel-sm.jpg', 'sunkissed-1-sm.jpg', 'blond-lob-3-sm.jpg', 'beige-waves-2-sm.jpg', 'bal-long-2-sm.jpg'],
+    pastel: ['beige-waves-1-sm.jpg', 'caramel-sm.jpg', 'sunkissed-1-sm.jpg', 'diploma-sm.jpg', 'blond-lob-1-sm.jpg', 'vogue-sm.jpg'],
+    eco: ['sunkissed-3-sm.jpg', 'beige-waves-2-sm.jpg', 'bal-long-1-sm.jpg', 'blond-lob-2-sm.jpg', 'caramel-sm.jpg', 'sunkissed-1-sm.jpg'],
+    loft: ['germany-before.jpg', 'ba-after.jpg', 'bal-long-1-sm.jpg', 'wolfcut-sm.jpg', 'blond-lob-3-sm.jpg', 'beige-waves-3-sm.jpg'],
+    wine: ['germany-after.jpg', 'bal-long-2-sm.jpg', 'caramel-sm.jpg', 'beige-long-sm.jpg', 'sunkissed-2-sm.jpg', 'blond-lob-1-sm.jpg'],
+    app: ['beige-long-sm.jpg', 'sunkissed-1-sm.jpg', 'caramel-sm.jpg', 'wolfcut-sm.jpg', 'blond-lob-2-sm.jpg', 'beige-waves-1-sm.jpg'],
+    neon: ['wolfcut-sm.jpg', 'blond-lob-3-sm.jpg', 'caramel-sm.jpg', 'germany-before.jpg', 'bal-long-2-sm.jpg', 'sunkissed-3-sm.jpg'],
+    scandi: ['beige-waves-2-sm.jpg', 'diploma-sm.jpg', 'sunkissed-3-sm.jpg', 'blond-lob-1-sm.jpg', 'vogue-sm.jpg', 'beige-waves-1-sm.jpg']
+  };
+  const HEAD = {
+    nude: ['Цвет, который вам идёт', 'Сізге жарасатын түс'],
+    champagne: ['Без желтизны. Без серости.', 'Сарғыштықсыз. Сұрлықсыз.'],
+    journal: ['Салон красоты «Кима»', '«Кима» сұлулық салоны'],
+    minimal: ['Стрижки, цвет и уход', 'Шаш қию, түс және күтім'],
+    pop: ['Цвет, который вам идёт', 'Сізге жарасатын түс'],
+    pastel: ['Цвет, который вам идёт', 'Сізге жарасатын түс'],
+    eco: ['Бережный цвет и уход', 'Мұқият түс және күтім'],
+    loft: ['Стрижки, цвет, завивка', 'Қию, түс, бұйралау'],
+    wine: ['Без желтизны. Без серости.', 'Сарғыштықсыз. Сұрлықсыз.'],
+    app: ['Красота рядом', 'Сұлулық жаныңызда'],
+    neon: ['Цвет, который вам идёт', 'Сізге жарасатын түс'],
+    scandi: ['Из чёрного в бежевый блонд', 'Қара түстен бежевый блондқа']
+  };
   const KEYS = ['splash', 'hero', 'works', 'services', 'masters', 'reviews', 'booking'];
   const PRESET = {
     nude: ['logo', 'arch', 'grid', 'list', 'cards', 'cards', 'calendar'],
@@ -665,7 +741,7 @@ textarea{font:inherit}
     { n: 'Татьяна', s: 'Каре, Wolf Cut, карамельный беж, яркие пряди', p: 'sunkissed-1-sm.jpg', w: ['sunkissed-1-sm.jpg', 'wolfcut-sm.jpg'] },
     { n: 'Антонина', s: 'Стрижки, завивка, обучение мастеров', p: 'antonina-work.jpg', w: ['antonina-work.jpg'] }
   ];
-  const WP = [['blond-lob-1-sm.jpg', 'Блонд', 'blond'], ['sunkissed-2-sm.jpg', 'Солнечные пряди', 'color'], ['wolfcut-sm.jpg', 'Wolf Cut', 'cut'], ['beige-waves-2-sm.jpg', 'Бежевый блонд', 'blond'], ['caramel-sm.jpg', 'Карамельный беж', 'color'], ['bal-long-1-sm.jpg', 'Рассветление', 'color'], ['blond-lob-3-sm.jpg', 'Светлый блонд', 'blond'], ['sunkissed-3-sm.jpg', 'Мягкий переход', 'color'], ['antonina-work.jpg', 'Завивка', 'curl']];
+  const WPX = [['blond-lob-1-sm.jpg', 'Блонд', 'blond'], ['sunkissed-2-sm.jpg', 'Солнечные пряди', 'color'], ['wolfcut-sm.jpg', 'Wolf Cut', 'cut'], ['beige-waves-2-sm.jpg', 'Бежевый блонд', 'blond'], ['caramel-sm.jpg', 'Карамельный беж', 'color'], ['bal-long-1-sm.jpg', 'Рассветление', 'color'], ['blond-lob-3-sm.jpg', 'Светлый блонд', 'blond'], ['sunkissed-3-sm.jpg', 'Мягкий переход', 'color'], ['antonina-work.jpg', 'Завивка', 'curl']];
   const FILT = [['all', 'Все'], ['blond', 'Блонд'], ['color', 'Цвет'], ['cut', 'Стрижки'], ['curl', 'Завивка']];
   const SV = ['Окрашивание и тонирование', 'Рассветление, блонд', 'Стрижки', 'Корейская завивка', 'Перманентная укладка', 'Холодное восстановление', 'SPA-уход'];
   const SVC = [['Окрашивание', 'beige-waves-1-sm.jpg'], ['Рассветление', 'bal-long-1-sm.jpg'], ['Стрижки', 'wolfcut-sm.jpg'], ['Завивка', 'antonina-work.jpg']];
@@ -693,21 +769,23 @@ textarea{font:inherit}
     return `<div class="nav"><span class="lg">Кима</span><span class="nr">${lng}<span class="burger"></span></span></div>`;
   }
   function hero(c) {
-    const h1 = T('Цвет, который вам идёт', 'Сізге жарасатын түс'), bt = `<span class="b2">${T('Записаться', 'Жазылу')}</span>`;
+    const K = SIDX[c.style] || 0, HP = MED[c.style] || MED.nude, hd = HEAD[c.style] || HEAD.nude;
+    const h1 = T(hd[0], hd[1]), bt = `<span class="b2">${T('Записаться', 'Жазылу')}</span>`;
     const kk = `<span class="kk">${T('Салон красоты', 'Сұлулық салоны')} · Шахтинск</span>`;
     const lead = 'Окрашивание, стрижки и уход. Мастера Анастасия, Татьяна и Антонина.';
     switch (c.hero) {
-      case 'full': return `<div class="h-full">${IM('beige-long-sm.jpg')}<div class="ov">${kk}<h1>${h1}</h1><p>${lead}</p>${bt}</div></div>`;
-      case 'video': return `<div class="h-full"><div class="v">${['sunkissed-2-sm.jpg', 'beige-waves-2-sm.jpg', 'blond-lob-1-sm.jpg'].map(IM).join('')}</div><div class="ov">${kk}<h1>${h1}</h1><p>${lead}</p>${bt}</div></div>`;
-      case 'collage': return `<div class="h-collage">${kk}<h1>${h1}</h1><div class="cg">${PH('sunkissed-2-sm.jpg')}${PH('blond-lob-1-sm.jpg')}${PH('caramel-sm.jpg')}</div><div class="rw"><span class="mut">Окрашивание, стрижки, уход</span>${bt}</div></div>`;
-      case 'split': return `<div class="h-split">${PH('beige-waves-2-sm.jpg', 'hp')}<div class="cd">${kk}<h1>${h1}</h1><p>${lead}</p>${bt}</div></div>`;
-      case 'type': return `<div class="h-type"><h1><span>Цвет</span><span>Стрижки</span><span>Уход</span></h1><div class="mq"><span>${'Окрашивание / Стрижки / Завивка / Уход / Обучение / '.repeat(2)}</span></div><div class="pair">${PH('sunkissed-3-sm.jpg')}${PH('wolfcut-sm.jpg')}</div>${bt}</div>`;
-      case 'stories': return `<div class="h-stories"><div class="hello"><h1>${T('Красота рядом', 'Сұлулық жаныңызда')}</h1><p>Окрашивание, стрижки, уход · Шахтинск</p></div><div class="stories">${[...MS.map(m => [m.n, m.p]), ['Работы', 'caramel-sm.jpg'], ['Обучение', 'diploma-sm.jpg']].map(([n, p]) => `<span class="story"><i>${IM(p)}</i>${n}</span>`).join('')}</div><div class="promo-c">${IM('beige-waves-2-sm.jpg')}<div class="ov"><b>${T('Запишитесь онлайн<br>за минуту', 'Бір минутта<br>онлайн жазылыңыз')}</b><span class="b2">${T('Записаться', 'Жазылу')}</span></div></div><div class="cats"><span>Все</span><span>Окрашивание</span><span>Стрижки</span><span>Уход</span></div></div>`;
-      case 'ba': return `<div class="h-ba">${kk}<h1>${T('Из чёрного в бежевый блонд', 'Қара түстен бежевый блондқа')}</h1>${BA()}<p class="note">Потяните ползунок. Работа Анастасии</p><div style="margin-top:12px">${bt}</div></div>`;
-      default: return `<div class="h-arch">${kk}<h1>${h1}</h1><p>${lead}</p>${bt}<div class="arch">${IM('sunkissed-2-sm.jpg')}</div></div>`;
+      case 'full': return `<div class="h-full">${IM(HP[0])}<div class="ov">${kk}<h1>${h1}</h1><p>${lead}</p>${bt}</div></div>`;
+      case 'video': return `<div class="h-full"><div class="v">${HP.slice(0, 3).map(IM).join('')}</div><div class="ov">${kk}<h1>${h1}</h1><p>${lead}</p>${bt}</div></div>`;
+      case 'collage': return `<div class="h-collage">${kk}<h1>${h1}</h1><div class="cg">${PH(HP[0])}${PH(HP[1])}${PH(HP[2])}</div><div class="rw"><span class="mut">Окрашивание, стрижки, уход</span>${bt}</div></div>`;
+      case 'split': return `<div class="h-split">${PH(HP[0], 'hp')}<div class="cd">${kk}<h1>${h1}</h1><p>${lead}</p>${bt}</div></div>`;
+      case 'type': return `<div class="h-type"><h1><span>Цвет</span><span>Стрижки</span><span>Уход</span></h1><div class="mq"><span>${'Окрашивание / Стрижки / Завивка / Уход / Обучение / '.repeat(2)}</span></div><div class="pair">${PH(HP[3])}${PH(HP[4])}</div>${bt}</div>`;
+      case 'stories': return `<div class="h-stories"><div class="hello"><h1>${T('Красота рядом', 'Сұлулық жаныңызда')}</h1><p>Окрашивание, стрижки, уход · Шахтинск</p></div><div class="stories">${[...MS.map(m => [m.n, m.p]), ['Работы', 'caramel-sm.jpg'], ['Обучение', 'diploma-sm.jpg']].map(([n, p]) => `<span class="story"><i>${IM(p)}</i>${n}</span>`).join('')}</div><div class="promo-c">${IM(HP[2])}<div class="ov"><b>${T('Запишитесь онлайн<br>за минуту', 'Бір минутта<br>онлайн жазылыңыз')}</b><span class="b2">${T('Записаться', 'Жазылу')}</span></div></div><div class="cats"><span>Все</span><span>Окрашивание</span><span>Стрижки</span><span>Уход</span></div></div>`;
+      case 'ba': return `<div class="h-ba">${kk}<h1>${h1}</h1>${BA()}<p class="note">Потяните ползунок. Работа Анастасии</p><div style="margin-top:12px">${bt}</div></div>`;
+      default: return `<div class="h-arch">${kk}<h1>${h1}</h1><p>${lead}</p>${bt}<div class="arch">${IM(HP[0])}</div></div>`;
     }
   }
   function works(c) {
+    const WP = rot(WPX, SIDX[c.style] || 0);
     let b;
     switch (c.works) {
       case 'carousel': b = `<div class="hs">${WP.slice(0, 6).map(([p, n], i) => `<figure>${PH(p)}<figcaption><span>${n}</span><span>0${i + 1}</span></figcaption></figure>`).join('')}</div>`; break;
@@ -774,23 +852,34 @@ textarea{font:inherit}
       case 'school': return `<div class="sec" data-sec="school">${st('Обучение', 'Учим мастеров')}<div class="cardx school">${PH('diploma-sm.jpg')}<div><b style="font-size:12px">Курс «Базовые женские стрижки»</b><p class="mut" style="margin:4px 0 8px">«Ушла с основной работы — занимаюсь стрижками». Ангелина, ученица</p><span class="b2" data-act="done">Оставить заявку</span></div></div><div class="done">Заявка на курс отправлена (демо)</div></div>`;
       case 'cert': return `<div class="sec" data-sec="cert">${st('Подарок', 'Подарочный сертификат')}<div class="certc"><b data-cert>На окрашивание</b><small>Салон «Кима», Шахтинск</small></div><div class="chips">${['Окрашивание', 'Стрижку', 'Уход'].map((s, i) => `<button class="chip${i ? '' : ' on'}" data-act="cert" data-v="${s}">${s}</button>`).join('')}</div><span class="b2" data-act="done">Подарить</span><div class="done">Сертификат оформлен (демо)</div></div>`;
       case 'faq': return `<div class="sec" data-sec="faq">${st('Вопросы', 'Частые вопросы')}<div class="faq">${FAQ.map(([q, a], i) => `<details${i ? '' : ' open'}><summary>${q}</summary><p>${a}</p></details>`).join('')}</div></div>`;
-      case 'insta': return `<div class="sec" data-sec="insta">${st('Instagram', 'Новые работы')}<div class="ig">${WP.slice(0, 6).map(([p]) => PH(p)).join('')}</div><span class="b2 line full">@salon_kima</span></div>`;
+      case 'insta': return `<div class="sec" data-sec="insta">${st('Instagram', 'Новые работы')}<div class="ig">${rot(WPX, (SIDX[SITE_STYLE] || 0) + 3).slice(0, 6).map(([p]) => PH(p)).join('')}</div><span class="b2 line full">@salon_kima</span></div>`;
       case 'map': return `<div class="sec" data-sec="map">${st('Контакты', 'Как нас найти')}<span class="open" data-open><i></i></span><div class="mapx"></div><div class="kv"><div><span>Адрес</span><b>пр. Абая Кунанбаева, 78</b></div><div><span>Часы</span><b>ежедневно 10:00–19:00</b></div></div><span class="b2 line full">Маршрут в 2ГИС</span></div>`;
     }
     return '';
   }
+  let SITE_STYLE = 'nude';
+  const ORDER = {
+    nude: ['works', 'services', 'masters', 'reviews', 'booking'],
+    champagne: ['works', 'masters', 'services', 'reviews', 'booking'],
+    journal: ['works', 'masters', 'services', 'reviews', 'booking'],
+    minimal: ['works', 'services', 'masters', 'reviews', 'booking'],
+    pop: ['works', 'services', 'reviews', 'masters', 'booking'],
+    pastel: ['masters', 'works', 'reviews', 'services', 'booking'],
+    eco: ['services', 'masters', 'works', 'reviews', 'booking'],
+    loft: ['works', 'services', 'reviews', 'masters', 'booking'],
+    wine: ['reviews', 'works', 'services', 'masters', 'booking'],
+    app: ['masters', 'works', 'services', 'reviews', 'booking'],
+    neon: ['works', 'reviews', 'services', 'masters', 'booking'],
+    scandi: ['services', 'works', 'masters', 'reviews', 'booking']
+  };
   function site(c) {
+    SITE_STYLE = c.style;
     const on = k => !!c.extras[k];
     let h = nav(c) + hero(c);
     if (c.lite) return `<div class="site t-${c.style}${['full', 'video'].includes(c.hero) ? ' over' : ''}">${h}${works(c)}${services(c)}</div>`;
     if (on('promo')) h += extra('promo');
-    h += works(c);
-    if (on('shades')) h += extra('shades');
-    h += services(c) + masters(c);
-    ['match', 'story'].forEach(k => { if (on(k)) h += extra(k); });
-    h += reviews(c);
-    ['school', 'cert', 'faq', 'insta'].forEach(k => { if (on(k)) h += extra(k); });
-    h += booking(c);
+    const build = { works: () => works(c) + (on('shades') ? extra('shades') : ''), services: () => services(c), masters: () => masters(c) + (on('match') ? extra('match') : ''), reviews: () => (on('story') ? extra('story') : '') + reviews(c), booking: () => ['school', 'cert', 'faq', 'insta'].map(k => on(k) ? extra(k) : '').join('') + booking(c) };
+    (ORDER[c.style] || ORDER.nude).forEach(k => { h += build[k](); });
     if (on('map')) h += extra('map');
     h += `<div class="ftr"><span class="lg">Кима</span><span>Салон красоты, Шахтинск, пр. Абая Кунанбаева, 78</span></div>`;
     if (on('fab')) h += `<div class="fabw"><span class="fab">${WA}</span></div>`;
@@ -798,13 +887,13 @@ textarea{font:inherit}
     return `<div class="site t-${c.style}${['full', 'video'].includes(c.hero) ? ' over' : ''}">${h}</div>`;
   }
   function splash(c) {
-    const t = `t-${c.style}`;
+    const t = `t-${c.style}`, HP = MED[c.style] || MED.nude;
     switch (c.splash) {
       case 'logo': return `<div class="splash sp-logo ${t}"><div class="z"><span class="slg">Кима</span><span class="ssub">салон красоты</span></div></div>`;
       case 'curtain': return `<div class="splash sp-curtain ${t}"><i class="ca"></i><i class="cb"></i><div class="z"><span class="slg">Кима</span></div></div>`;
       case 'letters': return `<div class="splash sp-letters ${t}"><div class="z"><span class="slg">${[...'Кима'].map((ch, i) => `<b style="--i:${i}">${ch}</b>`).join('')}</span></div></div>`;
-      case 'photos': return `<div class="splash sp-photos ${t}">${['sunkissed-3-sm.jpg', 'blond-lob-1-sm.jpg', 'caramel-sm.jpg'].map((p, i) => `<img class="p${i + 1}" src="${img(p)}" alt="">`).join('')}<div class="z"><span class="slg">Кима</span></div></div>`;
-      case 'circle': return `<div class="splash sp-circle ${t}"><div class="z"><span class="slg">Кима</span></div><img src="${img('beige-waves-2-sm.jpg')}" alt=""></div>`;
+      case 'photos': return `<div class="splash sp-photos ${t}">${[HP[2], HP[0], HP[4]].map((p, i) => `<img class="p${i + 1}" src="${img(p)}" alt="">`).join('')}<div class="z"><span class="slg">Кима</span></div></div>`;
+      case 'circle': return `<div class="splash sp-circle ${t}"><div class="z"><span class="slg">Кима</span></div><img src="${img(HP[3])}" alt=""></div>`;
       case 'line': return `<div class="splash sp-line ${t}"><div class="z"><i class="ln"></i><span class="slg">Кима</span><span class="ssub">Шахтинск</span></div></div>`;
     }
     return '';
