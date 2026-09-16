@@ -109,6 +109,23 @@ textarea{font:inherit}
 .pick{flex:1;min-height:42px;border-radius:10px;border:1px solid var(--line);color:var(--fg);font-weight:700;font-size:14px;transition:background .2s,color .2s,border-color .2s}
 .opt[aria-selected="true"] .pick{background:var(--acc);border-color:var(--acc);color:#101012}
 
+/* карточки быстрого подбора */
+.cards{display:grid;gap:10px;margin-top:20px}
+.card{display:grid;grid-template-columns:118px 1fr;gap:14px;align-items:center;width:100%;text-align:left;padding:9px 14px 9px 9px;border-radius:14px;background:var(--bg2);border:1px solid transparent;color:var(--fg);transition:border-color .2s,background .2s,transform .15s var(--ease)}
+.card:active{transform:scale(.99)}
+.card[aria-pressed="true"]{border-color:var(--acc);background:rgba(217,242,79,.08)}
+.card .shot{height:138px;border-radius:9px}
+.card .ic{height:138px;display:grid;place-items:center;border-radius:9px;background:#0B0B0D;border:1px dashed var(--line);font-weight:800;font-size:40px;letter-spacing:-.04em;color:var(--dim)}
+.card b{display:block;font-size:17px;font-weight:700;letter-spacing:-.015em;line-height:1.2}
+.card small{display:block;font-size:13.5px;color:var(--dim);line-height:1.38;margin-top:5px}
+@media(min-width:760px){.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card{grid-template-columns:150px 1fr}.card .shot,.card .ic{height:180px}}
+.opt .fit{font-size:11px;font-weight:700;color:var(--fg);background:rgba(217,242,79,.16);border:1px solid rgba(217,242,79,.5);padding:1px 7px;border-radius:99px;white-space:nowrap}
+.ask2{margin-top:22px}
+.ask2 p{margin:0 0 9px;font-size:14px;font-weight:700}
+.chs{display:flex;flex-wrap:wrap;gap:8px}
+.chs button{min-height:40px;padding:0 14px;border-radius:99px;border:1px solid var(--line);font-size:14px;color:var(--fg);transition:background .2s,border-color .2s,color .2s}
+.chs button[aria-pressed="true"]{background:var(--acc);border-color:var(--acc);color:#101012;font-weight:700}
+
 /* дополнительно */
 .stage{--ph:clamp(300px,44svh,540px);position:sticky;top:60px;z-index:6;display:flex;justify-content:center;padding:8px 0 14px;background:linear-gradient(var(--bg) 86%,rgba(16,16,18,0))}
 .tg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
@@ -679,7 +696,7 @@ textarea{font:inherit}
 
   /* ---------- варианты ---------- */
   const STYLES = [
-    ['nude', 'Нюд', 'Бежевый и кофейный, классический шрифт'],
+    ['nude', 'Нюд', 'Бежевый и кофейный, в тон вашим работам'],
     ['champagne', 'Шампань', 'Чёрный фон, золото и тонкие линии'],
     ['journal', 'Журнал', 'Крупные заголовки и номера разделов'],
     ['minimal', 'Минимализм', 'Белый фон, чёрный шрифт, ничего лишнего'],
@@ -746,7 +763,7 @@ textarea{font:inherit}
   const MASTERS = [['cards', 'Карточки', 'Фото, специализация, кнопка записи'], ['circles', 'Кружки', 'Нажали на мастера, видны его работы'], ['profile', 'Профиль', 'Вкладки с большим фото'], ['none', 'Не показывать', 'Без отдельного блока мастеров']];
   const REVIEWS = [['cards', 'Карточки', 'Листаются вбок'], ['chat', 'Переписка', 'Отзывы как сообщения'], ['quote', 'Одна цитата', 'Крупный отзыв, листается кнопками'], ['list', 'Списком', 'Отзывы друг под другом']];
   const BOOKING = [['calendar', 'Онлайн-календарь', 'Услуга, мастер, день и время'], ['form', 'Заявка в WhatsApp', 'Клиент отмечает услугу, вам приходит сообщение'], ['chat', 'Чат-помощник', 'Бот задаёт вопросы и передаёт запись'], ['buttons', 'Кнопки', 'WhatsApp и Instagram, без форм'], ['call', 'Звонок', 'Позвонить или написать, адрес и часы']];
-  const EXTRAS = [['match', 'Подбор мастера', 'Клиент выбирает, что хочет, сайт советует мастера'], ['shades', 'Оттенки', 'Нажимаете цвет и видите работы в нём'], ['promo', 'Акции', 'Блок для ваших скидок и предложений'], ['story', 'История гостьи', 'Гостья из Германии и её преображение'], ['school', 'Обучение', 'Курс для мастеров и заявка'], ['cert', 'Сертификаты', 'Подарочный сертификат на услугу'], ['faq', 'Вопросы и ответы', 'Ответы на частые вопросы'], ['insta', 'Instagram', 'Последние фото из профиля'], ['map', 'Карта и часы', 'Адрес, маршрут, открыто ли сейчас'], ['lang', 'Казахский язык', 'Переключатель РУ и ҚАЗ'], ['fab', 'Кнопка WhatsApp', 'Всегда видна на экране']];
+  const EXTRAS = [['match', 'Подбор мастера', 'Клиент выбирает, что хочет, сайт советует мастера'], ['shades', 'Оттенки', 'Нажимаете цвет и видите работы в нём'], ['promo', 'Акции', 'Блок для ваших скидок и предложений'], ['story', 'История гостьи', 'Гостья из Германии: было и стало'], ['school', 'Обучение', 'Курс для мастеров и заявка'], ['cert', 'Сертификаты', 'Подарочный сертификат на услугу'], ['faq', 'Вопросы и ответы', 'Ответы на частые вопросы'], ['insta', 'Instagram', 'Последние фото из профиля'], ['map', 'Карта и часы', 'Адрес, маршрут, открыто ли сейчас'], ['lang', 'Казахский язык', 'Переключатель РУ и ҚАЗ'], ['fab', 'Кнопка WhatsApp', 'Всегда видна на экране']];
   const STEPS = [
     { id: 'style', name: 'Стиль', q: 'Какой стиль вам ближе?', sub: `${STYLES.length} разных сайтов на фото ваших работ. Листайте вбок, отмечайте сердцем, что нравится, и выберите один.`, opts: STYLES },
     { id: 'splash', name: 'Заставка', q: 'Заставка при открытии сайта', sub: 'Её видят первые секунды. В телефонах она играет по кругу.', opts: SPLASH, loop: true },
@@ -758,7 +775,37 @@ textarea{font:inherit}
     { id: 'booking', name: 'Запись', q: 'Как клиенты будут записываться?', sub: 'Попробуйте записаться прямо в телефоне.', opts: BOOKING, focus: 'booking' },
     { id: 'extras', name: 'Дополнительно', q: 'Что ещё добавить на сайт?', sub: 'Нажмите на функцию, и телефон её покажет. Можно несколько.', toggles: true }
   ];
-  const FIN = STEPS.length + 1;
+  /* быстрый подбор: три простых вопроса карточками, потом сайты в выбранном настроении */
+  const MOODS = [
+    ['light', 'Светлый и нежный', 'Беж, молочный, много воздуха', ['nude', 'scandi', 'pastel', 'eco']],
+    ['dark', 'Тёмный и дорогой', 'Чёрный или винный фон, золотые акценты', ['champagne', 'wine']],
+    ['strict', 'Строгий и современный', 'Белый фон, крупные заголовки', ['minimal', 'journal', 'app']],
+    ['bright', 'Яркий и смелый', 'Сочные цвета, заметно в ленте', ['pop', 'neon', 'loft']],
+    ['any', 'Пока не знаю', 'Покажите все 12 вариантов', STYLES.map(x => x[0])]
+  ];
+  const PRICES = [
+    ['show', 'Да, списком', 'Клиент сразу видит, сколько стоит', 'list'],
+    ['photo', 'Да, с фото услуг', 'У каждой услуги своё фото и цена «от»', 'cards'],
+    ['hide', 'Нет, без цен', 'Цену мастер назовёт после консультации', 'consult']
+  ];
+  const BOOKS = [
+    ['form', 'Заявка в WhatsApp', 'Клиент отмечает услугу и время, приходит готовое сообщение', 'form'],
+    ['calendar', 'Онлайн-календарь', 'Клиент сам выбирает мастера, день и время', 'calendar'],
+    ['buttons', 'Просто кнопки', 'WhatsApp и Instagram, без форм', 'buttons']
+  ];
+  const CARD_STEPS = [
+    { id: 'mood', name: 'Настроение', q: 'Какой сайт вам ближе?', sub: 'Выберите настроение, дальше покажу готовые сайты в нём.', cards: MOODS, opts: MOODS },
+    { id: 'prices', name: 'Цены', q: 'Показывать цены на сайте?', sub: 'Цены впишем ваши, потом их можно менять.', cards: PRICES, opts: PRICES, key: 'services', focus: 'services' },
+    { id: 'book', name: 'Запись', q: 'Как клиентам записываться?', sub: 'Выберите, как вам удобнее принимать записи.', cards: BOOKS, opts: BOOKS, key: 'booking', focus: 'booking' }
+  ];
+  const ALL = [...CARD_STEPS, ...STEPS];
+  const FLOWS = { quick: ['mood', 'prices', 'book', 'style'], full: STEPS.map(x => x.id) };
+  const FL = () => FLOWS[S.mode] || FLOWS.full;
+  const SA = n => ALL.find(x => x.id === FL()[n - 1]);
+  const FIN = () => FL().length + 1;
+  const moodStyles = () => (MOODS.find(m => m[0] === S.mood) || MOODS[4])[3];
+  const WHEN = [['asap', 'Как можно скорее'], ['month', 'В течение месяца'], ['look', 'Пока присматриваюсь']];
+  const TALK = [['call', 'Созвониться'], ['meet', 'Встретиться в салоне'], ['chat', 'Переписка в WhatsApp']];
 
   /* ---------- содержимое (только проверенное) ---------- */
   const MS = [
@@ -873,7 +920,7 @@ textarea{font:inherit}
       case 'promo': return `<div class="sec" data-sec="promo"><div class="promo-x"><span class="kk">Акции</span><b>Здесь будут ваши акции</b><p>Впишем предложения, которые действуют в салоне.</p></div></div>`;
       case 'shades': return `<div class="sec" data-sec="shades">${st('Оттенки', 'Какой цвет вам нравится?')}<div class="shade">${IM(SH[0][2])}<span class="tag2" data-cap>${SH[0][0]}</span></div><div class="sws">${SH.map(([n, cl, p], i) => `<span class="sw${i ? '' : ' on'}" data-act="shade" data-n="${n}" data-p="${p}"><i style="background:${cl}"></i>${n}</span>`).join('')}</div><p class="note">На фото работы салона в этом оттенке</p></div>`;
       case 'match': return `<div class="sec" data-sec="match">${st('Подбор', 'Какой мастер вам подойдёт?')}<div class="cardx match"><p class="q">Что хотите сделать?</p><div class="copts">${MATCH.map(([o], i) => `<button class="chip" data-act="match" data-i="${i}">${o}</button>`).join('')}</div><div class="res" hidden></div></div></div>`;
-      case 'story': return `<div class="sec alt" data-sec="story">${st('История гостьи', 'Из Германии в Шахтинск')}<div class="story-x"><div class="ph">${IM('germany-before.jpg')}<span class="tag2">до</span></div><div class="ph">${IM('germany-after.jpg')}<span class="tag2">после</span></div></div><p class="story-q">Гостья приехала из Германии, нашла салон через Instagram и поисковик и доверила первое преображение.</p><p class="note">Работа Татьяны</p></div>`;
+      case 'story': return `<div class="sec alt" data-sec="story">${st('История гостьи', 'Из Германии в Шахтинск')}<div class="story-x"><div class="ph">${IM('germany-before.jpg')}<span class="tag2">до</span></div><div class="ph">${IM('germany-after.jpg')}<span class="tag2">после</span></div></div><p class="story-q">Гостья приехала из Германии, нашла салон через Instagram и поисковик.</p><p class="note">Работа Татьяны</p></div>`;
       case 'school': return `<div class="sec" data-sec="school">${st('Обучение', 'Учим мастеров')}<div class="cardx school">${PH('diploma-sm.jpg')}<div><b style="font-size:12px">Курс «Базовые женские стрижки»</b><p class="mut" style="margin:4px 0 8px">«Ушла с основной работы — занимаюсь стрижками». Ангелина, ученица</p><span class="b2" data-act="done">Оставить заявку</span></div></div><div class="done">Заявка на курс отправлена (демо)</div></div>`;
       case 'cert': return `<div class="sec" data-sec="cert">${st('Подарок', 'Подарочный сертификат')}<div class="certc"><b data-cert>На окрашивание</b><small>Салон «Кима», Шахтинск</small></div><div class="chips">${['Окрашивание', 'Стрижку', 'Уход'].map((s, i) => `<button class="chip${i ? '' : ' on'}" data-act="cert" data-v="${s}">${s}</button>`).join('')}</div><span class="b2" data-act="done">Подарить</span><div class="done">Сертификат оформлен (демо)</div></div>`;
       case 'faq': return `<div class="sec" data-sec="faq">${st('Вопросы', 'Частые вопросы')}<div class="faq">${FAQ.map(([q, a], i) => `<details${i ? '' : ' open'}><summary>${q}</summary><p>${a}</p></details>`).join('')}</div></div>`;
@@ -942,7 +989,7 @@ textarea{font:inherit}
 
   /* ---------- состояние ---------- */
   const KEY = 'kima-vybor-5';
-  const fresh = () => ({ style: 'nude', ...preset('nude'), extras: { map: true, fab: true }, likes: {}, unsure: {}, touched: {}, wish: '', edit: false });
+  const fresh = () => ({ style: 'nude', ...preset('nude'), extras: { map: true, fab: true }, likes: {}, unsure: {}, touched: {}, wish: '', edit: false, mode: 'full', mood: '', prices: '', book: '', when: '', talk: '' });
   let S = fresh();
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} };
   const load = () => { try { const d = JSON.parse(localStorage.getItem(KEY) || 'null'); if (d) S = Object.assign(fresh(), d, { edit: false }); } catch (e) {} };
@@ -961,30 +1008,49 @@ textarea{font:inherit}
   }
   function introHTML() {
     return `<div class="wrap intro"><div>
-      <h1 class="h1">Соберите сайт своими глазами</h1>
-      <p class="sub">${STYLES.length} стилей, ${SPLASH.length - 1} заставок, ${HERO.length} первых экранов и свой вариант для каждого блока. Всё собрано на фото ваших работ: листайте и нажимайте.</p>
-      <div class="legend"><span>${I_TAP}Ничего заполнять не нужно: только <b>смотреть и выбирать</b></span><span>${I_CHK}в конце выбор уйдёт <b>одним сообщением</b></span></div>
+      <h1 class="h1">Каким будет сайт «Кимы»?</h1>
+      <p class="sub">Все варианты уже собраны на фото ваших работ. Выберите, что нравится, остальное сделаю я.</p>
+      <div class="legend"><span>${I_TAP}Ничего заполнять не нужно, <b>только нажимать</b></span><span>${I_CHK}в конце выбор уйдёт мне <b>одним сообщением</b></span></div>
     </div>${wallHTML()}</div>`;
   }
   function railHTML(n) {
-    const items = STEPS.map((s, k) => [k + 1, s.name]).concat([[FIN, 'Ваш сайт']]);
+    const items = FL().map((id, k) => [k + 1, SA(k + 1).name]).concat([[FIN(), 'Ваш сайт']]);
     return `<nav class="rail">${items.map(([k, name]) => `<button class="ri${k === n ? ' on' : ''}${k < n ? ' done' : ''}" data-jump="${k}"><i>${String(k).padStart(2, '0')}</i>${name}</button>`).join('')}</nav>`;
   }
+  function cardsHTML(n) {
+    const s = SA(n), val = S[s.id];
+    const vis = c => {
+      if (s.id === 'mood') return c[0] === 'any' ? '<span class="ic">12</span>' : `<div class="shot"><div class="scroll">${site({ style: c[3][0], ...preset(c[3][0]), extras: {}, lite: true })}</div></div>`;
+      return `<div class="shot" data-focus="${s.focus}"><div class="scroll">${site(cfg({ [s.key]: c[3] }))}</div></div>`;
+    };
+    return `<div class="wrap stage2">${railHTML(n)}<div class="col">
+      <div class="hd"><div><h2 class="h2">${s.q}</h2><p class="sub">${s.sub}</p></div></div>
+      <div class="cards">${s.cards.map(c => `<button class="card" data-card="${c[0]}" aria-pressed="${val === c[0]}">${vis(c)}<span><b>${c[1]}</b><small>${c[2]}</small></span></button>`).join('')}</div></div></div>`;
+  }
   function stepHTML(n) {
-    const s = STEPS[n - 1], val = S[s.id], likes = S.likes[s.id] || [];
-    const opts = s.opts.map(([id, name, desc]) => {
+    const s = SA(n), likes = S.likes[s.id] || [];
+    const quickStyle = s.id === 'style' && S.mode === 'quick';
+    const list = quickStyle ? s.opts.filter(o => moodStyles().includes(o[0])) : s.opts;
+    if (quickStyle && !list.some(o => o[0] === S.style)) { const id = list[0][0], p = preset(id); S.style = id; KEYS.forEach(k => { if (!S.touched[k]) S[k] = p[k]; }); save(); }
+    const val = S[s.id];
+    const fit = KEYS.includes(s.id) ? preset(S.style)[s.id] : null;
+    const moodName = (MOODS.find(m => m[0] === S.mood) || [])[1];
+    const q = quickStyle ? 'Какой из сайтов нравится больше?' : s.q;
+    const sub = quickStyle ? (S.mood && S.mood !== 'any' ? `${list.length} ${plural(list.length, 'сайт', 'сайта', 'сайтов')} в настроении «${moodName.toLowerCase()}». Листайте вбок, внутри телефона всё нажимается.` : s.sub) : s.sub;
+    const opts = list.map(([id, name, desc]) => {
       const c = s.id === 'style' ? styleCfg(id) : cfg({ [s.id]: id });
       return `<article class="opt" data-o="${id}" aria-selected="${val === id}">${phoneHTML(c, { cls: s.loop && id !== 'none' ? 'play' : '', splash: !!s.loop })}
-        <div><div class="nm"><b>${name}</b><span class="mk">выбрано</span></div><p class="ds">${desc}</p></div>
+        <div><div class="nm"><b>${name}</b>${id === fit ? '<span class="fit">к стилю</span>' : ''}<span class="mk">выбрано</span></div><p class="ds">${desc}</p></div>
         <div class="row"><button class="ib like" data-like="${id}" aria-pressed="${likes.includes(id)}" aria-label="Нравится">${I_HEART}</button><button class="ib" data-view="${id}" aria-label="Открыть крупно">${I_EXP}</button><button class="pick" data-pick="${id}">${val === id ? 'Выбрано' : 'Выбрать'}</button></div></article>`;
     }).join('');
     return `<div class="wrap stage2">${railHTML(n)}<div class="col">
-      <div class="hd"><div><h2 class="h2">${s.q}</h2><p class="sub">${s.sub}</p></div>
-      <div class="nav2"><span class="pos" id="carPos">1/${s.opts.length}</span><button class="ib" data-car="-1" aria-label="Предыдущий">${I_L}</button><button class="ib" data-car="1" aria-label="Следующий">${I_R}</button></div></div>
+      <div class="hd"><div><h2 class="h2">${q}</h2><p class="sub">${sub}</p></div>
+      <div class="nav2"><span class="pos" id="carPos">1/${list.length}</span><button class="ib" data-car="-1" aria-label="Предыдущий">${I_L}</button><button class="ib" data-car="1" aria-label="Следующий">${I_R}</button></div></div>
       <div class="car" id="car">${opts}</div></div></div>`;
   }
   function extrasHTML(n) {
-    const s = STEPS[n - 1];
+    const s = SA(n);
+    S.seenExtras = true;
     return `<div class="wrap stage2">${railHTML(n)}<div class="col bld">
       <div class="stage" id="stage">${phoneHTML(cfg())}</div>
       <div><div class="hd"><div><h2 class="h2">${s.q}</h2><p class="sub">${s.sub}</p></div></div>
@@ -992,22 +1058,26 @@ textarea{font:inherit}
   }
   function finalHTML() {
     const row = (dt, dd, step) => `<div class="r"><div><dt>${dt}</dt><dd>${dd}</dd></div><button class="ed" data-edit="${step}">Изменить</button></div>`;
-    const rows = STEPS.map((s, k) => {
+    const rows = STEPS.map(s => {
       if (s.toggles) {
         const xs = EXTRAS.filter(([x]) => S.extras[x]).map(x => x[1]);
-        return row(s.name, S.unsure.extras ? 'На ваш выбор' : (xs.join(', ') || 'Ничего'), k + 1);
+        return row(s.name, S.unsure.extras ? 'На ваш выбор' : (xs.join(', ') || 'Ничего'), s.id);
       }
       const nm = optName(s, S[s.id]);
-      if (S.unsure[s.id]) return row(s.name, `На ваш выбор<small>сейчас стоит: ${nm}</small>`, k + 1);
+      if (S.unsure[s.id]) return row(s.name, `На ваш выбор<small>сейчас стоит: ${nm}</small>`, s.id);
+      const auto = S.mode === 'quick' && KEYS.includes(s.id) && !S.touched[s.id];
       const lk = (S.likes[s.id] || []).filter(x => x !== S[s.id]).map(x => optName(s, x));
-      return row(s.name, `${nm}${lk.length ? `<small>ещё нравится: ${lk.join(', ')}</small>` : ''}`, k + 1);
+      return row(s.name, `${nm}${auto ? '<small>подобрано под стиль</small>' : ''}${lk.length ? `<small>ещё нравится: ${lk.join(', ')}</small>` : ''}`, s.id);
     }).join('');
-    return `<div class="wrap stage2">${railHTML(FIN)}<div class="col fin">
+    const ask = (key, title, list) => `<div class="ask2"><p>${title}</p><div class="chs">${list.map(([id, t]) => `<button data-ask="${key}" data-v="${id}" aria-pressed="${S[key] === id}">${t}</button>`).join('')}</div></div>`;
+    return `<div class="wrap stage2">${railHTML(FIN())}<div class="col fin">
       <div class="fin-ph">${phoneHTML(cfg(), { cls: S.splash !== 'none' ? 'play once' : '', splash: true })}
         <div class="row">${S.splash !== 'none' ? '<button class="btn ghost" data-replay>Повторить заставку</button>' : ''}<button class="btn ghost" data-view="__final">На весь экран</button></div></div>
-      <div><h2 class="h2">Ваш сайт готов</h2><p class="sub">Это ваш сайт: прокрутите его и понажимайте. Любой пункт ниже можно поменять.</p>
+      <div><h2 class="h2">Так будет выглядеть ваш сайт</h2><p class="sub">Прокрутите его и понажимайте. Любой пункт ниже можно поменять.</p>
         <div class="sum" style="margin-top:20px"><dl style="margin:0">${rows}</dl></div>
-        <p class="note2">Кнопка <b>«Изменить»</b> вернёт к нужному шагу, выбор сохранится.</p>
+        <p class="note2">Кнопка <b>«Изменить»</b> вернёт к нужному пункту, остальное сохранится.</p>
+        ${ask('when', 'Когда нужен сайт?', WHEN)}
+        ${ask('talk', 'Как удобнее обсудить детали?', TALK)}
         <textarea class="wish" id="wish" style="margin-top:14px" placeholder="Пожелания: что добавить или убрать, какие фото поставить">${esc(S.wish)}</textarea>
         <p class="note2">Внизу <b>«Отправить выбор»</b>: откроется WhatsApp с готовым сообщением, останется нажать «Отправить».</p>
         <div style="margin-top:14px"><button class="btn ghost" data-restart>Пройти заново</button></div></div></div></div>`;
@@ -1019,16 +1089,17 @@ textarea{font:inherit}
   }
   function header(n) {
     $('#back').classList.toggle('off', n === 0);
-    $('#ttl').textContent = n === 0 ? 'выбор сайта' : n === FIN ? 'ваш сайт' : STEPS[n - 1].name.toLowerCase();
-    $('#cnt').innerHTML = n === 0 ? '' : n === FIN ? 'готово' : `${String(n).padStart(2, '0')}<s>&thinsp;/&thinsp;${STEPS.length}</s>`;
-    $('#progFill').style.width = (n === 0 ? 0 : n === FIN ? 100 : n / STEPS.length * 100) + '%';
+    $('#ttl').textContent = n === 0 ? 'выбор сайта' : n === FIN() ? 'ваш сайт' : SA(n).name.toLowerCase();
+    $('#cnt').innerHTML = n === 0 ? '' : n === FIN() ? 'готово' : `${String(n).padStart(2, '0')}<s>&thinsp;/&thinsp;${FL().length}</s>`;
+    $('#progFill').style.width = (n === 0 ? 0 : n === FIN() ? 100 : n / FL().length * 100) + '%';
   }
   function bar(n) {
     let h;
-    if (n === 0) h = `<span class="sel">${STEPS.length} шагов, около 5 минут. В конце отправите выбор в WhatsApp</span><div class="acts"><button class="btn" data-next>Начать</button></div>`;
-    else if (n === FIN) h = `<div class="acts wide"><button class="btn" data-send>${WA}Отправить выбор в WhatsApp</button></div>`;
+    if (n === 0) h = `<span class="sel">Быстро: 4 вопроса, около 2 минут. Подробно: каждый блок сайта</span><div class="acts wide"><button class="btn ghost" data-mode="full">Подробно</button><button class="btn" data-mode="quick">Быстрый подбор</button></div>`;
+    else if (n === FIN()) h = `<div class="acts wide"><button class="btn" data-send>${WA}Отправить выбор в WhatsApp</button></div>`;
     else {
-      const s = STEPS[n - 1], label = S.edit ? 'Сохранить' : n === STEPS.length ? 'Посмотреть сайт' : 'Дальше';
+      const s = SA(n), label = S.edit ? 'Сохранить' : n === FL().length ? 'Посмотреть сайт' : 'Дальше';
+      if (s.cards && !S.edit) { $('#bar').innerHTML = `<div class="bar-in"><span class="sel step" id="sel">${S[s.id] ? selText(s) : 'Нажмите на подходящий вариант'}</span><div class="acts"><button class="btn" data-next>${S[s.id] ? label : 'Пропустить'}</button></div></div>`; return; }
       h = `<span class="sel step" id="sel">${selText(s)}</span><div class="acts"><button class="btn ghost" data-unsure>Не знаю</button><button class="btn" data-next>${label}</button></div>`;
     }
     $('#bar').innerHTML = `<div class="bar-in">${h}</div>`;
@@ -1040,20 +1111,22 @@ textarea{font:inherit}
       else if (mode === 'replace') history.replaceState({ s: n, d: depth }, '');
     } catch (e) {}
     const app = $('#app');
-    app.innerHTML = `<section class="scr">${n === 0 ? introHTML() : n === FIN ? finalHTML() : STEPS[n - 1].toggles ? extrasHTML(n) : stepHTML(n)}</section>`;
+    app.innerHTML = `<section class="scr">${n === 0 ? introHTML() : n === FIN() ? finalHTML() : SA(n).toggles ? extrasHTML(n) : SA(n).cards ? cardsHTML(n) : stepHTML(n)}</section>`;
     window.scrollTo(0, 0);
     header(n); bar(n); prep(app); save();
     requestAnimationFrame(() => { after(n); maybeHelp(n); });
   }
   function refocus(n) {
-    if (cur !== n || n === 0 || n === FIN) return;
-    const s = STEPS[n - 1];
+    if (cur !== n || n === 0 || n === FIN()) return;
+    const s = SA(n);
+    if (s.cards) return document.querySelectorAll('.card .shot[data-focus]').forEach(sh => focusSec(sh, sh.dataset.focus));
     if (s.focus) document.querySelectorAll('#car .phone').forEach(p => focusSec(p, s.focus));
   }
   function after(n) {
-    if (n === 0 || n === FIN) return;
-    const s = STEPS[n - 1];
+    if (n === 0 || n === FIN()) return;
+    const s = SA(n);
     if (s.toggles) return;
+    if (s.cards) { const f = () => document.querySelectorAll('.card .shot[data-focus]').forEach(sh => focusSec(sh, sh.dataset.focus)); f(); setTimeout(f, 700); if (document.fonts) document.fonts.ready.then(f); return; }
     refocus(n);
     setTimeout(() => refocus(n), 700);
     if (document.fonts) document.fonts.ready.then(() => refocus(n));
@@ -1062,7 +1135,7 @@ textarea{font:inherit}
     const upd = () => { const items = [...car.children], mid = car.scrollLeft + car.clientWidth / 2; let best = 0, bd = 1e9; items.forEach((c, k) => { const d = Math.abs(c.offsetLeft + c.offsetWidth / 2 - mid); if (d < bd) { bd = d; best = k; } }); const pos = $('#carPos'); if (pos) pos.textContent = `${best + 1}/${items.length}`; };
     car.addEventListener('scroll', upd, { passive: true }); upd();
   }
-  function next() { if (S.edit) { S.edit = false; return go(FIN); } go(Math.min(FIN, cur + 1)); }
+  function next() { if (S.edit) { S.edit = false; return go(FIN()); } go(Math.min(FIN(), cur + 1)); }
   function back() { if (depth > 0) return history.back(); S.edit = false; go(Math.max(0, cur - 1), 'replace'); }
   addEventListener('popstate', e => {
     const st = e.state && typeof e.state.s === 'number' ? e.state : { s: 0, d: 0 };
@@ -1081,6 +1154,7 @@ textarea{font:inherit}
         <li>${I_TAP}<span>Внутри телефона всё живое: <b>прокручивайте и нажимайте</b>, попробуйте записаться, как это сделает клиент.</span></li>
         <li>${I_EXP}<span>Значок со стрелками открывает вариант <b>на весь экран</b>.</span></li>
         <li>${I_HEART}<span>Сердце отмечает то, что <b>тоже нравится</b>, кроме основного выбора.</span></li>
+        <li>${I_CHK}<span>Метка <b>«к стилю»</b> показывает вариант, который лучше всего подходит к выбранному стилю.</span></li>
         <li>${I_CHK}<span>Не можете решить: нажмите <b>«Не знаю»</b>, выберу сам. В конце всё уйдёт одним сообщением.</span></li>
       </ul>
       <button class="btn" data-hclose>Понятно</button></div>`;
@@ -1105,7 +1179,7 @@ textarea{font:inherit}
     document.documentElement.style.overflow = 'hidden';
     try { depth++; history.pushState({ s: cur, d: depth, m: 1 }, ''); } catch (e) {}
     prep(m);
-    const s = cur > 0 && cur < FIN ? STEPS[cur - 1] : null;
+    const s = cur > 0 && cur < FIN() ? SA(cur) : null;
     if (s && s.focus) requestAnimationFrame(() => focusSec(m.querySelector('.phone'), s.focus));
     const close = fromPop => { if (!m.isConnected) return; m.remove(); document.documentElement.style.overflow = ''; document.removeEventListener('keydown', onKey); if (!fromPop) history.back(); };
     m.__close = close;
@@ -1117,7 +1191,7 @@ textarea{font:inherit}
     });
   }
   function choose(id) {
-    const s = STEPS[cur - 1];
+    const s = SA(cur);
     S[s.id] = id; S.unsure[s.id] = false;
     if (s.id === 'style') { const p = preset(id); KEYS.forEach(k => { if (!S.touched[k]) S[k] = p[k]; }); }
     else S.touched[s.id] = true;
@@ -1130,15 +1204,21 @@ textarea{font:inherit}
     STEPS.filter(s => !s.toggles).forEach(s => {
       if (S.unsure[s.id]) return L.push(`${s.name}: на ваш выбор`);
       const lk = (S.likes[s.id] || []).filter(x => x !== S[s.id]).map(x => optName(s, x));
-      L.push(`${s.name}: ${optName(s, S[s.id])}${lk.length ? ` (ещё нравится: ${lk.join(', ')})` : ''}`);
+      const auto = S.mode === 'quick' && KEYS.includes(s.id) && !S.touched[s.id];
+      L.push(`${s.name}: ${optName(s, S[s.id])}${auto ? ' (подобрано под стиль)' : ''}${lk.length ? ` (ещё нравится: ${lk.join(', ')})` : ''}`);
     });
     L.push('');
     if (S.unsure.extras) L.push('Дополнительно: на ваш выбор');
     else {
       const on = EXTRAS.filter(([k]) => S.extras[k]).map(x => x[1]), off = EXTRAS.filter(([k]) => !S.extras[k]).map(x => x[1]);
-      L.push(`Дополнительно: ${on.join(', ') || 'ничего'}`, `Не нужно: ${off.join(', ') || 'нет'}`);
+      L.push(`Дополнительно: ${on.join(', ') || 'ничего'}`);
+      if (S.seenExtras) L.push(`Не нужно: ${off.join(', ') || 'нет'}`);
     }
     if (S.wish.trim()) L.push('', `Пожелания: ${S.wish.trim()}`);
+    const w = WHEN.find(x => x[0] === S.when), t = TALK.find(x => x[0] === S.talk);
+    if (w || t) L.push('');
+    if (w) L.push(`Когда нужен сайт: ${w[1].toLowerCase()}`);
+    if (t) L.push(`Как обсудить: ${t[1].toLowerCase()}`);
     return L.join('\n');
   }
   function send() { const url = `https://wa.me/${VANTA_WA}?text=${encodeURIComponent(buildMsg())}`; if (matchMedia('(pointer: coarse)').matches) location.href = url; else window.open(url, '_blank', 'noopener'); }
@@ -1147,19 +1227,21 @@ textarea{font:inherit}
   $('#back').onclick = back;
   $('#ask').onclick = help;
   $('#bar').addEventListener('click', e => {
+    const md = e.target.closest('[data-mode]');
+    if (md) { S.mode = md.dataset.mode; save(); return go(1); }
     if (e.target.closest('[data-next]')) return next();
     if (e.target.closest('[data-send]')) return send();
-    if (e.target.closest('[data-unsure]')) { const s = STEPS[cur - 1]; S.unsure[s.id] = true; save(); next(); }
+    if (e.target.closest('[data-unsure]')) { const s = SA(cur); S.unsure[s.id] = true; save(); next(); }
   });
   $('#app').addEventListener('click', e => {
     const t = e.target;
     const pick = t.closest('[data-pick]'); if (pick) return choose(pick.dataset.pick);
     const like = t.closest('[data-like]');
-    if (like) { const s = STEPS[cur - 1], a = S.likes[s.id] = S.likes[s.id] || [], id = like.dataset.like, i = a.indexOf(id); if (i < 0) a.push(id); else a.splice(i, 1); like.setAttribute('aria-pressed', i < 0); save(); return; }
+    if (like) { const s = SA(cur), a = S.likes[s.id] = S.likes[s.id] || [], id = like.dataset.like, i = a.indexOf(id); if (i < 0) a.push(id); else a.splice(i, 1); like.setAttribute('aria-pressed', i < 0); save(); return; }
     const view = t.closest('[data-view]');
     if (view) {
       if (view.dataset.view === '__final') return openModal(cfg(), 'Ваш сайт', STYLES.find(x => x[0] === S.style)[1], null, false);
-      const s = STEPS[cur - 1], o = s.opts.find(x => x[0] === view.dataset.view);
+      const s = SA(cur), o = s.opts.find(x => x[0] === view.dataset.view);
       return openModal(s.id === 'style' ? styleCfg(o[0]) : cfg({ [s.id]: o[0] }), o[1], o[2], o[0], !!s.loop);
     }
     const jump = t.closest('[data-jump]'); if (jump) { S.edit = false; return go(+jump.dataset.jump); }
@@ -1172,10 +1254,22 @@ textarea{font:inherit}
       const stage = $('#stage'); stage.innerHTML = phoneHTML(cfg()); prep(stage);
       const ph = stage.querySelector('.phone');
       requestAnimationFrame(() => focusSec(ph, S.extras[k] && !['lang', 'fab'].includes(k) ? k : null));
-      $('#sel').innerHTML = selText(STEPS[cur - 1]);
+      $('#sel').innerHTML = selText(SA(cur));
       return;
     }
-    const ed = t.closest('[data-edit]'); if (ed) { S.edit = true; return go(+ed.dataset.edit); }
+    const ed = t.closest('[data-edit]');
+    if (ed) { const id = ed.dataset.edit; if (!FL().includes(id)) S.mode = 'full'; S.edit = true; return go(FL().indexOf(id) + 1); }
+    const card = t.closest('[data-card]');
+    if (card) {
+      const s = SA(cur), v = card.dataset.card; S[s.id] = v; S.unsure[s.id] = false;
+      if (s.key) { const c = s.cards.find(x => x[0] === v); S[s.key] = c[3]; S.touched[s.key] = true; S.unsure[s.key] = false; }
+      save();
+      document.querySelectorAll('[data-card]').forEach(b => b.setAttribute('aria-pressed', b === card));
+      const n0 = cur; setTimeout(() => { if (cur === n0) next(); }, 380);
+      return;
+    }
+    const ak = t.closest('[data-ask]');
+    if (ak) { const k = ak.dataset.ask; S[k] = S[k] === ak.dataset.v ? '' : ak.dataset.v; save(); ak.parentElement.querySelectorAll('[data-ask]').forEach(b => b.setAttribute('aria-pressed', S[k] === b.dataset.v)); return; }
     if (t.closest('[data-replay]')) { const p = $('.fin-ph .phone'); p.classList.remove('play'); void p.offsetWidth; p.classList.add('play'); return; }
     if (t.closest('[data-restart]')) { try { localStorage.removeItem(KEY); } catch (err) {} S = fresh(); return go(0, 'replace'); }
   });
@@ -1220,7 +1314,7 @@ textarea{font:inherit}
   } else {
     load();
     const hs = history.state;
-    if (hs && typeof hs.s === 'number' && hs.s >= 0 && hs.s <= FIN) { depth = hs.d || 0; go(hs.m ? hs.s : hs.s, 'none'); }
+    if (hs && typeof hs.s === 'number' && hs.s >= 0 && hs.s <= FIN()) { depth = hs.d || 0; go(hs.m ? hs.s : hs.s, 'none'); }
     else go(0, 'replace');
   }
 })();
