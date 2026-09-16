@@ -100,7 +100,7 @@ textarea{font:inherit}
 .opt{flex:none;scroll-snap-align:center;width:calc(var(--ph) * .4787);display:grid;gap:12px;align-content:start}
 .opt .phone{transition:box-shadow .3s var(--ease)}
 .opt[aria-selected="true"] .phone{box-shadow:0 0 0 2px var(--acc),0 34px 60px -38px #000}
-.opt .nm{display:flex;align-items:baseline;gap:8px}
+.opt .nm{display:flex;align-items:center;flex-wrap:wrap;gap:4px 8px}
 .opt .nm b{font-size:15.5px;font-weight:700;letter-spacing:-.015em}
 .opt .mk{display:none;font-size:11px;font-weight:700;color:var(--acc)}
 .opt[aria-selected="true"] .mk{display:inline}
@@ -112,7 +112,10 @@ textarea{font:inherit}
 /* карточки быстрого подбора */
 .cards{display:grid;gap:10px;margin-top:20px}
 .card{display:grid;grid-template-columns:118px 1fr;gap:14px;align-items:center;width:100%;text-align:left;padding:9px 14px 9px 9px;border-radius:14px;background:var(--bg2);border:1px solid transparent;color:var(--fg);transition:border-color .2s,background .2s,transform .15s var(--ease)}
+.card{cursor:pointer;-webkit-user-select:none;user-select:none}
 .card:active{transform:scale(.99)}
+.card:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.card .shot,.card .ic{pointer-events:none}
 .card[aria-pressed="true"]{border-color:var(--acc);background:rgba(217,242,79,.08)}
 .card .shot{height:138px;border-radius:9px}
 .card .ic{height:138px;display:grid;place-items:center;border-radius:9px;background:#0B0B0D;border:1px dashed var(--line);font-weight:800;font-size:40px;letter-spacing:-.04em;color:var(--dim)}
@@ -166,7 +169,7 @@ textarea{font:inherit}
 @media(min-width:760px){.help{align-items:center}}
 
 /* крупный просмотр */
-.modal{position:fixed;inset:0;z-index:60;background:rgba(9,9,10,.9);display:flex;align-items:center;justify-content:center;padding:18px;animation:fade .25s both}
+.modal{position:fixed;inset:0;z-index:60;background:rgba(9,9,10,.97);display:flex;align-items:center;justify-content:center;padding:18px;animation:fade .25s both}
 @keyframes fade{from{opacity:0}}
 .m-in{--ph:min(720px,calc(100svh - 190px));display:flex;flex-direction:column;align-items:center;gap:16px}
 .m-side{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;max-width:420px}
@@ -1021,11 +1024,12 @@ textarea{font:inherit}
     const s = SA(n), val = S[s.id];
     const vis = c => {
       if (s.id === 'mood') return c[0] === 'any' ? '<span class="ic">12</span>' : `<div class="shot"><div class="scroll">${site({ style: c[3][0], ...preset(c[3][0]), extras: {}, lite: true })}</div></div>`;
-      return `<div class="shot" data-focus="${s.focus}"><div class="scroll">${site(cfg({ [s.key]: c[3] }))}</div></div>`;
+      const ms = S.mood && S.mood !== 'any' ? moodStyles()[0] : S.style;
+      return `<div class="shot" data-focus="${s.focus}"><div class="scroll">${site({ ...styleCfg(ms), [s.key]: c[3] })}</div></div>`;
     };
     return `<div class="wrap stage2">${railHTML(n)}<div class="col">
       <div class="hd"><div><h2 class="h2">${s.q}</h2><p class="sub">${s.sub}</p></div></div>
-      <div class="cards">${s.cards.map(c => `<button class="card" data-card="${c[0]}" aria-pressed="${val === c[0]}">${vis(c)}<span><b>${c[1]}</b><small>${c[2]}</small></span></button>`).join('')}</div></div></div>`;
+      <div class="cards">${s.cards.map(c => `<div class="card" role="button" tabindex="0" data-card="${c[0]}" aria-pressed="${val === c[0]}">${vis(c)}<span><b>${c[1]}</b><small>${c[2]}</small></span></div>`).join('')}</div></div></div>`;
   }
   function stepHTML(n) {
     const s = SA(n), likes = S.likes[s.id] || [];
@@ -1040,7 +1044,7 @@ textarea{font:inherit}
     const opts = list.map(([id, name, desc]) => {
       const c = s.id === 'style' ? styleCfg(id) : cfg({ [s.id]: id });
       return `<article class="opt" data-o="${id}" aria-selected="${val === id}">${phoneHTML(c, { cls: s.loop && id !== 'none' ? 'play' : '', splash: !!s.loop })}
-        <div><div class="nm"><b>${name}</b>${id === fit ? '<span class="fit">к стилю</span>' : ''}<span class="mk">выбрано</span></div><p class="ds">${desc}</p></div>
+        <div><div class="nm"><b>${name}</b>${id === fit ? '<span class="fit">к стилю</span>' : ''}</div><p class="ds">${desc}</p></div>
         <div class="row"><button class="ib like" data-like="${id}" aria-pressed="${likes.includes(id)}" aria-label="Нравится">${I_HEART}</button><button class="ib" data-view="${id}" aria-label="Открыть крупно">${I_EXP}</button><button class="pick" data-pick="${id}">${val === id ? 'Выбрано' : 'Выбрать'}</button></div></article>`;
     }).join('');
     return `<div class="wrap stage2">${railHTML(n)}<div class="col">
@@ -1273,6 +1277,7 @@ textarea{font:inherit}
     if (t.closest('[data-replay]')) { const p = $('.fin-ph .phone'); p.classList.remove('play'); void p.offsetWidth; p.classList.add('play'); return; }
     if (t.closest('[data-restart]')) { try { localStorage.removeItem(KEY); } catch (err) {} S = fresh(); return go(0, 'replace'); }
   });
+  $('#app').addEventListener('keydown', e => { const c = e.target.closest && e.target.closest('[data-card]'); if (c && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); c.click(); } });
   $('#app').addEventListener('input', e => { if (e.target.id === 'wish') { S.wish = e.target.value; save(); } });
 
   /* ---------- интерактив внутри мини-сайтов ---------- */
