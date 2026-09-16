@@ -80,6 +80,14 @@ textarea{font:inherit}
 .shot .scroll{width:100%;height:100%;overflow:hidden}
 @media(min-width:760px){.wall{grid-template-columns:repeat(3,1fr)}}
 
+/* подсказки */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin:14px 0 0;font-size:12.5px;color:var(--dim)}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.legend svg{width:15px;height:15px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.legend b{color:var(--fg);font-weight:600}
+.note2{margin:12px 0 0;font-size:12.5px;color:var(--dim)}
+.note2 b{color:var(--fg);font-weight:600}
+
 /* шаги */
 .stage2{display:grid;gap:22px}
 .rail{display:none}
@@ -126,6 +134,20 @@ textarea{font:inherit}
 .wish::placeholder{color:#6E6E77}
 .wish:focus{border-color:var(--acc)}
 
+/* как это работает */
+.help{position:fixed;inset:0;z-index:70;background:rgba(9,9,10,.86);display:flex;align-items:flex-end;justify-content:center;padding:18px;animation:fade .25s both}
+.help-in{width:100%;max-width:420px;background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:20px}
+.help h3{margin:0 0 4px;font-size:19px;font-weight:800;letter-spacing:-.02em}
+.help p.hs{margin:0 0 14px;font-size:13.5px;color:var(--dim)}
+.help ul{list-style:none;margin:0 0 18px;padding:0;display:grid;gap:12px}
+.help li{display:grid;grid-template-columns:22px 1fr;gap:11px;align-items:start;font-size:13.5px;line-height:1.4;color:var(--dim)}
+.help li b{color:var(--fg);font-weight:600}
+.help svg{width:18px;height:18px;margin-top:1px;fill:none;stroke:var(--acc);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.help .btn{width:100%}
+.ask{width:34px;height:34px;flex:none;border-radius:50%;border:1px solid var(--line);color:var(--dim);font-size:14px;font-weight:700;display:grid;place-items:center;transition:color .2s,border-color .2s}
+.ask:hover{color:var(--fg);border-color:var(--fg)}
+@media(min-width:760px){.help{align-items:center}}
+
 /* крупный просмотр */
 .modal{position:fixed;inset:0;z-index:60;background:rgba(9,9,10,.9);display:flex;align-items:center;justify-content:center;padding:18px;animation:fade .25s both}
 @keyframes fade{from{opacity:0}}
@@ -157,7 +179,7 @@ textarea{font:inherit}
   .m-side{flex-direction:column;align-items:stretch;width:250px}
   .m-side .nm{text-align:left;margin-bottom:6px}
 }
-@media(max-width:700px) and (max-height:740px){.hd .sub{display:none}.opt .ds{display:none}.opt{gap:9px}.car{--ph:clamp(230px,calc(100svh - 368px),540px)}}
+@media(max-width:700px) and (max-height:740px){.hd .sub{display:none}.legend{display:none}.opt .ds{display:none}.opt{gap:9px}.car{--ph:clamp(230px,calc(100svh - 368px),540px)}}
 .still *,.still *::before,.still *::after{animation:none!important;transition:none!important}
 @media (prefers-reduced-motion: reduce){.wcol,.scr{animation:none}}
 
@@ -619,6 +641,7 @@ textarea{font:inherit}
     <span class="mark">Кима</span>
     <span class="ttl" id="ttl"></span>
     <span class="cnt" id="cnt"></span>
+    <button class="ask" id="ask" aria-label="Как это работает">?</button>
   </div>
   <div class="prog"><i id="progFill"></i></div>
 </header>
@@ -640,6 +663,8 @@ textarea{font:inherit}
   const WA = '<svg viewBox="0 0 24 24"><use href="#wa"/></svg>';
   const I_HEART = '<svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg>';
   const I_EXP = '<svg viewBox="0 0 24 24"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7"/></svg>';
+  const I_TAP = '<svg viewBox="0 0 24 24"><path d="M9 11V6.5a1.5 1.5 0 0 1 3 0V11"/><path d="M12 11V9.5a1.5 1.5 0 0 1 3 0V12"/><path d="M15 12v-1a1.5 1.5 0 0 1 3 0v4a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6v-2a1.5 1.5 0 0 1 3 0"/></svg>';
+  const I_CHK = '<svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>';
   const I_L = '<svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>';
   const I_R = '<svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>';
   const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
@@ -938,6 +963,7 @@ textarea{font:inherit}
     return `<div class="wrap intro"><div>
       <h1 class="h1">Соберите сайт своими глазами</h1>
       <p class="sub">${STYLES.length} стилей, ${SPLASH.length - 1} заставок, ${HERO.length} первых экранов и свой вариант для каждого блока. Всё собрано на фото ваших работ: листайте и нажимайте.</p>
+      <div class="legend"><span>${I_TAP}Ничего заполнять не нужно: только <b>смотреть и выбирать</b></span><span>${I_CHK}в конце выбор уйдёт <b>одним сообщением</b></span></div>
     </div>${wallHTML()}</div>`;
   }
   function railHTML(n) {
@@ -979,9 +1005,11 @@ textarea{font:inherit}
     return `<div class="wrap stage2">${railHTML(FIN)}<div class="col fin">
       <div class="fin-ph">${phoneHTML(cfg(), { cls: S.splash !== 'none' ? 'play once' : '', splash: true })}
         <div class="row">${S.splash !== 'none' ? '<button class="btn ghost" data-replay>Повторить заставку</button>' : ''}<button class="btn ghost" data-view="__final">На весь экран</button></div></div>
-      <div><h2 class="h2">Ваш сайт готов</h2><p class="sub">Проверьте выбор. Любой пункт можно изменить.</p>
+      <div><h2 class="h2">Ваш сайт готов</h2><p class="sub">Это ваш сайт: прокрутите его и понажимайте. Любой пункт ниже можно поменять.</p>
         <div class="sum" style="margin-top:20px"><dl style="margin:0">${rows}</dl></div>
-        <textarea class="wish" id="wish" style="margin-top:20px" placeholder="Пожелания: что добавить или убрать, какие фото поставить">${esc(S.wish)}</textarea>
+        <p class="note2">Кнопка <b>«Изменить»</b> вернёт к нужному шагу, выбор сохранится.</p>
+        <textarea class="wish" id="wish" style="margin-top:14px" placeholder="Пожелания: что добавить или убрать, какие фото поставить">${esc(S.wish)}</textarea>
+        <p class="note2">Внизу <b>«Отправить выбор»</b>: откроется WhatsApp с готовым сообщением, останется нажать «Отправить».</p>
         <div style="margin-top:14px"><button class="btn ghost" data-restart>Пройти заново</button></div></div></div></div>`;
   }
   function selText(s) {
@@ -1015,7 +1043,7 @@ textarea{font:inherit}
     app.innerHTML = `<section class="scr">${n === 0 ? introHTML() : n === FIN ? finalHTML() : STEPS[n - 1].toggles ? extrasHTML(n) : stepHTML(n)}</section>`;
     window.scrollTo(0, 0);
     header(n); bar(n); prep(app); save();
-    requestAnimationFrame(() => after(n));
+    requestAnimationFrame(() => { after(n); maybeHelp(n); });
   }
   function refocus(n) {
     if (cur !== n || n === 0 || n === FIN) return;
@@ -1043,6 +1071,32 @@ textarea{font:inherit}
     if (st.s !== cur) { S.edit = false; go(st.s, 'none'); }
   });
 
+  const HKEY = 'kima-help-1';
+  function help() {
+    const m = document.createElement('div'); m.className = 'help';
+    m.innerHTML = `<div class="help-in">
+      <h3>Как это работает</h3>
+      <p class="hs">Ничего заполнять не нужно, только смотреть и выбирать.</p>
+      <ul>
+        <li>${I_TAP}<span>Внутри телефона всё живое: <b>прокручивайте и нажимайте</b>, попробуйте записаться, как это сделает клиент.</span></li>
+        <li>${I_EXP}<span>Значок со стрелками открывает вариант <b>на весь экран</b>.</span></li>
+        <li>${I_HEART}<span>Сердце отмечает то, что <b>тоже нравится</b>, кроме основного выбора.</span></li>
+        <li>${I_CHK}<span>Не можете решить: нажмите <b>«Не знаю»</b>, выберу сам. В конце всё уйдёт одним сообщением.</span></li>
+      </ul>
+      <button class="btn" data-hclose>Понятно</button></div>`;
+    document.body.appendChild(m);
+    document.documentElement.style.overflow = 'hidden';
+    const close = () => { m.remove(); document.documentElement.style.overflow = ''; document.removeEventListener('keydown', onKey); try { localStorage.setItem(HKEY, '1'); } catch (e) {} };
+    const onKey = e => { if (e.key === 'Escape') close(); };
+    document.addEventListener('keydown', onKey);
+    m.addEventListener('click', e => { if (e.target === m || e.target.closest('[data-hclose]')) close(); });
+  }
+  function maybeHelp(n) {
+    if (n !== 1) return;
+    let seen = false;
+    try { seen = !!localStorage.getItem(HKEY); } catch (e) {}
+    if (!seen && !STILL) setTimeout(help, 450);
+  }
   function openModal(c, name, desc, pickId, loop) {
     const m = document.createElement('div'); m.className = 'modal';
     const cls = c.splash !== 'none' ? (loop ? 'play' : 'play once') : '';
@@ -1091,6 +1145,7 @@ textarea{font:inherit}
 
   /* ---------- события оболочки ---------- */
   $('#back').onclick = back;
+  $('#ask').onclick = help;
   $('#bar').addEventListener('click', e => {
     if (e.target.closest('[data-next]')) return next();
     if (e.target.closest('[data-send]')) return send();
